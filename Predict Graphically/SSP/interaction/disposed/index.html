@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Change the title for each page, this is what appears on the browser tab -->
+<title>2col vis page</title>
+<link rel="stylesheet" href="new1.css">
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
+<div class="wrapper">
+    <!-- The header is going to be the large, centered text at the top. 
+         You can change it to whatever you need for each page. -->
+    
+    <div class="twoCol">
+        <div class="firstCol">
+            <header>
+                    header for top of page
+            </header>
+            <div class=""> <!-- this div contains our svg elements. some are nested in divs to "flex" in the correct direction-->
+                <svg class="smallsvg-left"><!-- small svg at left of main -->
+                </svg>
+
+                <svg class="mainsvg"><!-- main svg -->
+                </svg>
+
+                <div class="vert-svg-col">
+                    <svg class="smallsvg-right1">
+                    </svg>
+
+                    <svg class="smallsvg-right2">
+                    </svg>
+                </div>
+            </div>
+
+        <!-- text box below here -->
+        <h3>Some info about the text box</h3>
+        <input type="text">
+        </div>
+
+        <div class="secondCol">
+            <div class="map-and-list-holder">
+                <div class="map-holder">
+                    <img src="hamilton.png">
+                </div>
+                <div class="list-holder">
+
+                </div>
+            </div>
+        <!-- text box below here -->
+        <h3>Some info about the text box</h3>
+        <input class="textbox-class" type="text">
+        
+        <!-- Put the arrow button here -->
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

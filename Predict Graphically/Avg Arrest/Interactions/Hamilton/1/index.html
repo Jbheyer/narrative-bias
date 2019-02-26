@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Change the title for each page, this is what appears on the browser tab -->
+<title>Hamilton County</title>
+<link rel="stylesheet" href="new1.css">
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
+<div class="wrapper">
+    <!-- The header is going to be the large, centered text at the top. 
+         You can change it to whatever you need for each page. -->
+    
+    <div class="twoCol">
+        <div class="firstCol">
+            <header>
+                PREDICT THE PERCENTAGE OF DRUG RELATED ARRESTS FOR 2017 WITHIN HAMILTON COUNTY USING THE VISUALIZATION SPACE BELOW
+
+            </header>
+            <div class="svgcontainer"> <!-- this div contains our svg elements. some are nested in divs to "flex" in the correct direction-->
+                <svg class="smallsvg-left", width="50px" height="50px" viewBox="0 0 50 50"><!-- small svg at left of main -->
+                    <rect width="50px" height="50px"/>
+                    Drag and Drop Bar
+                </svg>
+                Drag and Drop Bar
+                <svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                       <!-- main svg -->
+                       <rect width="600px" height="600px" viewBox="-300 -300 600 600"/>
+                </svg>
+                
+                <div class="vert-svg-col">
+                    <svg class="smallsvg-right1">
+                    </svg>
+
+                    <svg class="smallsvg-right2">
+                    </svg>
+                </div>
+            </div>
+
+        <!-- text box below here -->
+        <h3>Some info about the text box</h3>
+        <input type="text">
+        </div>
+
+        <div class="secondCol">
+            <div class="map-and-list-holder">
+                <div class="map-holder">
+                    <img src="hamilton1.png">
+                </div>
+                <div class="list-holder">
+                        <li>2017 population of 274,569</li>
+                        <li>0 Opioid Treatment Program</li>
+                        <li>6,637 average arrests over 2016-2017</li>
+                        <li>2016 average drug related arrests: 1,102</li>
+                </div>
+            </div>
+        <!-- text box below here -->
+        <h3>Some info about the text box</h3>
+        <input class="textbox-class" type="text">
+        
+        <!-- Put the arrow button here -->
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+*{
+    font: lighter 16px sans-serif;
+    margin-top: 100;
+    padding: 0;
+}
+
+html {
+    background-image: radial-gradient white;
+
+}
+/* Styles the larger text at the top of the page */
+header {
+    margin: 0 auto;
+    font: 44px sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
+/* Styles the wrapper div which contains all content */
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+/* Styles the three column div  */ 
+   .image {
+    margin-top: 70px;
+    margin-left: 190px;
+    position: center;
+}   .image img{
+    width:1000px;
+    position: center;
+}   
+/*styles the h1-h3 header sections */
+
+h2 {
+    position: relative;
+    font: 28px sans-serif;
+    margin-left: -10px;
+    margin-top: 50px;
+    text-align: center;
+}
+h3 {
+    position: left;
+    font-size: 6px sans-serif;
+    margin-left: -190px;
+    margin-top: 50px;
+    text-align: left;
+}
+.arrow {
+    margin-left: 1500px;
+    font-size: 30px;
+    margin-top: -50px;
+    width: 50px;
+    height: 50px;
+}
