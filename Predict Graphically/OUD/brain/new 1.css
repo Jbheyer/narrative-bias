@@ -22,12 +22,15 @@ header {
 /* Styles the wrapper div which contains all content */
 .wrapper {
     width: 80%;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 }
 /* Styles picture  */
 .container {
-    position: relative; left: 650px; right: -150px; bottom: -50px;
+    position: relative; 
+    left: 650px; 
+    right: -150px; 
+    bottom: -50px;
     width: 50%;
   }
   

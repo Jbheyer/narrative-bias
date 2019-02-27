@@ -22,7 +22,7 @@ header {
 /* Styles the wrapper div which contains all content */
 .wrapper {
     width: 80%;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 }
 ul li{ /* Styles for the ul (unordered lists) in the left column */
