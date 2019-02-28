@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="allContent">
+
+<div class="column1">
+<div id="textContentHolder">
+    <p id="textContent">
+        Predict the percentage of drug related arrests for the Indiana Counties St. Joseph and
+    Hamilton using the visualization below
+    </p>
+</div>
+
+    <div id="visualizationHolder">
+        <!--place image here-->
+        <div id="sideBarLeft">
+            <img class="icon1"/></div>
+        <div id="tableHolder"></div>
+        <div id="sideBarRight">
+            <p>Predicted</p>
+            <div class="box1">
+
+            </div>
+            <p>Actual</p>
+            <div class="box2">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="textContentTwo">
+        <p>Explain why you predict this?</p>
+    </div>
+
+    <input type="text" placeholder="Enter Text"/>
+
+    <button id="styledButton">Show Me The Data</button>
+</div>
+
+
+<div class="column2">
+    <img id="indianaMap" src="both2.PNG"/>
+    <p>What do you think (if any) between your predictions and what the data suggest?</p>
+    <input type="text" placeholder="Enter Text"/>
+</div>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/chart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

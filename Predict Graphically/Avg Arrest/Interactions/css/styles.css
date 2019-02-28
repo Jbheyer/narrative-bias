@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+   width: 100%;
+    height: 100%;
+}
+
+input {
+    width: 400px;
+    height: 50px;
+}
+
+/*CONTENT HOLDERS*/
+
+.allContent {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.column1 {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.column2 p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+#textContentHolder {
+    width: 90%;
+    margin-top: 10px;
+}
+
+#textContent {
+
+    text-align: center;
+
+}
+
+#textContentTwo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#visualizationHolder {
+    width: 90%;
+    height: 75%;
+    margin-top: -3px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#sideBarLeft {
+    width: 60px;
+    height: 90%;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#sideBarRight {
+    width: 60px;
+    height: 90%;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#sideBarRight p {
+    text-align: center;
+    font-size: 1vh;
+    margin-top: 10px;
+
+
+}
+
+#tableHolder {
+    width: 500px;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+    border: 1px solid black;
+
+}
+
+#indianaMap {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+#styledButton {
+    background-image: linear-gradient(to bottom right, #6aa36a, #68bc66); /* Green */
+    color: white;
+   border: none;
+    margin-top: 10px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.icon1 {
+    width: 100%;
+    height: 40px;
+    margin-top: -50px;
+}
+
+
+.box1 {
+    width: 100%;
+    height: 40px;
+    background-color: #b1d4ff;
+    border: 1px solid black;
+}
+
+.box2 {
+    width: 100%;
+    height: 40px;
+    background-color: #fffdfd;
+    border: 1px solid black;
+
+}
