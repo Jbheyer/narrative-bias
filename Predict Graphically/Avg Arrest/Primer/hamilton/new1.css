@@ -11,7 +11,7 @@ html {
 /* Styles the larger text at the top of the page */
 header {
     margin: 0 auto;
-    font: 44px sans-serif;
+    font: 2vw sans-serif;
     text-align: center;
     margin-top: 30px;
 }
@@ -22,11 +22,11 @@ header {
 }
 /* Styles the three column div  */ 
    .image {
-    margin-top: 70px;
+    margin-top: 35px;
     margin-left: 190px;
     position: center;
 }   .image img{
-    width:1000px;
+    width:900px;
     position: center;
 }   
 /*styles the h1-h3 header sections */
@@ -35,14 +35,14 @@ h2 {
     position: relative;
     font: 28px sans-serif;
     margin-left: -10px;
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: center;
 }
 h3 {
     position: left;
     font-size: 6px sans-serif;
     margin-left: -190px;
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: left;
 }
 .arrow {
