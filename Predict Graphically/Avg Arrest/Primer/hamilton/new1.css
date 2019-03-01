@@ -26,8 +26,10 @@ header {
     margin-left: 190px;
     position: center;
 }   .image img{
-    width:900px;
-    position: center;
+    width:1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }   
 /*styles the h1-h3 header sections */
 

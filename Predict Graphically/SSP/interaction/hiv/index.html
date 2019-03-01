@@ -1,62 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<!-- Change the title for each page, this is what appears on the browser tab -->
-<title>2col vis page</title>
-<link rel="stylesheet" href="new1.css">
-<script type="text/javascript" src="app.js"></script>
+    <meta charset="UTF-8">
+    <title>Drug Related Arrests</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
-<div class="wrapper">
-    <!-- The header is going to be the large, centered text at the top. 
-         You can change it to whatever you need for each page. -->
-    
-    <div class="twoCol">
-        <div class="firstCol">
-            <header>
-                    header for top of page
-            </header>
-            <div class=""> <!-- this div contains our svg elements. some are nested in divs to "flex" in the correct direction-->
-                <svg class="smallsvg-left"><!-- small svg at left of main -->
-                </svg>
 
-                <svg class="mainsvg"><!-- main svg -->
-                </svg>
+<div class="allContent">
 
-                <div class="vert-svg-col">
-                    <svg class="smallsvg-right1">
-                    </svg>
-
-                    <svg class="smallsvg-right2">
-                    </svg>
-                </div>
-            </div>
-
-        <!-- text box below here -->
-        <h3>Some info about the text box</h3>
-        <input type="text">
-        </div>
-
-        <div class="secondCol">
-            <div class="map-and-list-holder">
-                <div class="map-holder">
-                    <img src="hamilton.png">
-                </div>
-                <div class="list-holder">
-
-                </div>
-            </div>
-        <!-- text box below here -->
-        <h3>Some info about the text box</h3>
-        <input class="textbox-class" type="text">
-        
-        <!-- Put the arrow button here -->
-
-        </div>
-    </div>
+<div class="column1">
+<div id="textContentHolder">
+    <p id="textContent">
+        <strong>PREDICT</strong> THE <strong>PERCENTAGE OF DRUG RELATED ARRESTS</strong> FOR THE INDIANA COUNTIES ST. JOSEPH AND HAMILTON USING THE VISUALIZATION SPACE BELOW
+    </p>
 </div>
 
+    <div id="visualizationHolder">
+        <!--place image here-->
+        <div id="sideBarLeft">
+        <!-- why does the the text over icon1 not follow the #sideBarLeft in the css?-->
+            <p></p>
+            <img class="icon1" src ="bar.PNG"/></div>
+        <div id="tableHolder"></div>
+        <div id="sideBarRight">
+            <p><strong>GAP</strong></p>
+            <div class="dot">
+           
+            </div>   
+            <p><strong>PREDICTED</strong></p>
+            <div class="box1">
+
+            </div>
+            <p><strong>ACTUAL DATA</strong></p>
+            <div class="box2">
+
+             
+            </div>
+        </div>
+    </div>
+
+    <div id="textContentTwo">
+        <p><strong>EXPLAIN</strong> WHY YOU PREDICTED THIS?</p>
+    </div>
+
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">            
+              </div>
+              <div class="col-75">
+                <textarea id="subject" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              
+            </div>
+            </form>
+          </div> 
+
+    <button id="styledButton">SHOW ME THE DATA</button>
+</div>
+
+
+<div class="column2">
+    <img id="indianaMap" src="both2.PNG"/>
+    <p><strong>WHAT</strong> DO YOU THINK THE GAP (IF ANY) BETWEEN <strong>YOUR PREDICTION AND THE DATA SUGGESTS?</strong></p>
+    
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">
+              
+            <div class="row">
+              <div class="col-25">
+                <label for="response"></label>
+              </div>
+              <div class="col-75">
+                <textarea id="subject" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            
+            
+            </form>
+          </div> 
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/chart.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
