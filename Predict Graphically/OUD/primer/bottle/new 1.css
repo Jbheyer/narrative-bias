@@ -37,4 +37,9 @@ ul li{ /* Styles for the ul (unordered lists) in the left column */
     margin-top: 100px;
 }
 
-/*styles the h1-h3 header sections */
+span {
+    font-size: 300%;
+    position: relative;
+    text-align: right;
+    margin-left: 1500px;
+}

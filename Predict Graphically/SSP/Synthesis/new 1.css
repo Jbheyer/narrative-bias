@@ -21,8 +21,8 @@ header {
 }
 /* Styles the wrapper div which contains all content */
 .wrapper {
-    width: 80%;
-    height: 50vh;
+    width: 80vw;
+    height: 100%;
     margin: 0 auto;
 }
 /* Styles the three column div  */
