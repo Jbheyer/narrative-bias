@@ -9,7 +9,7 @@ html {
 }
 
 body {
-   width: 100%;
+   width: 1200px;
     height: 100%;
 }
 
@@ -43,6 +43,7 @@ input {
     align-items: center;
     justify-content: center;
     margin-top: -0%;
+    margin-left: 50%;
 }
 
 .column2 p {
@@ -110,17 +111,17 @@ input {
 
 #tableHolder {
     width: 500px;
-    height: 70%;
+    height: 700px;
+    margin-top: -100px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    border: 2px solid black;
 
 }
 
 #indianaMap {
-    width: 900px;
-    height: 500px;
+    width: 600px;
+    height: 350px;
     border: none;
 }
 
@@ -138,7 +139,7 @@ input {
 }
 
 .icon1 {
-    width: 100%;
+    width: 50px;
     height: 40px;
     margin-top: -50px;
     border: 2px solid black;
@@ -176,16 +177,15 @@ input {
 
 }
 
-span {
-    font-size: 500%;
-    position: relative;
-    text-align: right;
-    margin-left: 800px;
-    margin-top: -100px;
+#arrowHolder {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
 }
-@media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
+#arrow {
+    font-size: 500%;
+    cursor: pointer;
+    margin-top: -100px;
+
+}

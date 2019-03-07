@@ -6,7 +6,11 @@
 
 html {
     background-image: radial-gradient white;
+    width: 100%;
+}
 
+body {
+    width: 100%;
 }
 /* Styles the larger text at the top of the page */
 header {
@@ -26,7 +30,7 @@ header {
     margin-left: 190px;
     position: center;
 }   .image img{
-    width:1000px;
+    width:800px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -47,10 +51,15 @@ h3 {
     margin-top: 100px;
     text-align: left;
 }
-span {
+
+#arrowHolder {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+#arrow {
     font-size: 500%;
-    position: relative;
-    text-align: right;
-    margin-left: 1300px;
+    cursor: pointer;
     margin-top: -100px;
 }
