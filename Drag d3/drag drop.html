@@ -1,0 +1,166 @@
+
+<html>
+<head>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<style>
+
+		* {
+			font: 8pt sans-serif;
+			text-align: center;
+		}
+		#Container1 {
+			display: flex
+		}
+
+		#column1 {
+			width: 500px;
+		}
+
+		#dragme {
+			border: 2px solid black;
+		}
+		#textHolder {
+			text-align: center;
+		}
+		
+		#text1{
+			font-weight: 700;
+		}
+
+		#text2{
+			font-weight: 700;
+		}
+
+		.axis {
+
+		}
+
+		.axis line {
+			stroke: #000000;
+		}
+		.axis path {
+			stroke: #000000;
+			fill: none;
+		}
+
+		.dummyBar {
+			fill: #ebebeb;
+			stroke: black;
+			stroke-width: 1px;
+			stroke-dasharray: 8 2
+
+		}
+	</style>
+</head>
+
+<body style="width: 900px">
+
+	<div id="Container1">
+		
+		<div id="column1">
+			<div id="textHolder">
+				
+			</div>
+
+			<div id="visHolder">
+				<svg width="475" height="500" style="fill: black; border: solid 1px black">
+					
+
+
+					<g id="chart" transform="translate(125,75)">
+						<text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
+						<text id="text2" x="175" y="320">HAMILTON COUNTY</text>
+						<line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+
+						<g id="yAxis" class="axis">
+							
+						</g>
+					</g>
+
+					<!-- drag me rectangle and label -->
+					<g>
+						<text x="15" y="300">DRAG & DROP</text>
+						<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
+					</g>
+
+				</svg>
+			</div>
+		</div>
+
+		<script>
+		var CHART_WIDTH = 300;
+		var CHART_HEIGHT = 300;
+
+
+		// create y scale, ranging from 0 to 100
+		var yScale = d3.scale.linear()
+			.domain([0, 100])
+			.range([CHART_HEIGHT, 0]);
+
+		// create y axis. For x axis, we're just using a line
+		var yAxis = d3.svg.axis()
+			.scale(yScale)
+			.orient("left");
+
+		d3.select("#yAxis").call(yAxis);
+
+		// create text variable to append to line
+
+
+		// create two dummy bars as place holders to drag onto
+		// that way, the viewer has an intution of were to drop the bar
+		var dummy1 = d3.select("#chart").append("rect")
+			.attr('x', 50)
+			.attr('y', yScale(30))
+			.attr('width', 50)
+			.attr('height', CHART_HEIGHT - yScale(30))
+			.attr('class', 'dummyBar')
+
+		var dummy2 = d3.select("#chart").append("rect")
+			.attr('x', 200)
+			.attr('y', yScale(30))
+			.attr('width', 50)
+			.attr('height', CHART_HEIGHT - yScale(30))
+			.attr('class', 'dummyBar')
+
+
+		// create event handler for dragging
+		d3.select("#dragme")
+			.on('mousedown', function() 
+			{
+
+				// remember the coordinates of the rectangle
+				var rectX = +d3.select("#dragme").attr('x');
+				var rectY = +d3.select("#dragme").attr('y');
+
+				// create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
+				d3.select(document).on('mousemove', function() 
+				{
+					// get the coordinates of mouse pointer relative to the SVG
+					var d = d3.mouse(d3.select("svg").node());
+
+					// move the rectangle to those new coordinates
+					d3.select("#dragme")
+						.attr('x', d[0])
+						.attr('y', d[1]);
+					
+				});
+
+				// create another event handler when the mouse is released
+				d3.select(document).on('mouseup', function() {
+
+					// return the 'dragme' rectnagle to the original position (since we've probably moved it since)
+					d3.select("#dragme")
+						.attr('x', rectX)
+						.attr('y', rectY);
+
+					// and, remove the mousemove event handler (we don't need it)
+					d3.select(document).on('mousemove', null);
+					d3.select(document).on('mouseup', null);
+				})
+			});
+
+	</script>
+
+</body>
+</html>
