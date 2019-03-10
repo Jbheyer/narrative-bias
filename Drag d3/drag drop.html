@@ -65,7 +65,7 @@
 			<div id="visHolder">
 				<svg width="475" height="500" style="fill: black; border: solid 1px black">
 					
-
+					<!-- create text variable to append to line -->
 
 					<g id="chart" transform="translate(125,75)">
 						<text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
@@ -104,20 +104,20 @@
 
 		d3.select("#yAxis").call(yAxis);
 
-		// create text variable to append to line
+		
 
 
 		// create two dummy bars as place holders to drag onto
 		// that way, the viewer has an intution of were to drop the bar
 		var dummy1 = d3.select("#chart").append("rect")
-			.attr('x', 50)
+			.attr('x', 25)
 			.attr('y', yScale(30))
 			.attr('width', 50)
 			.attr('height', CHART_HEIGHT - yScale(30))
 			.attr('class', 'dummyBar')
 
 		var dummy2 = d3.select("#chart").append("rect")
-			.attr('x', 200)
+			.attr('x', 175)
 			.attr('y', yScale(30))
 			.attr('width', 50)
 			.attr('height', CHART_HEIGHT - yScale(30))
@@ -148,6 +148,7 @@
 
 				// create another event handler when the mouse is released
 				d3.select(document).on('mouseup', function() {
+					
 
 					// return the 'dragme' rectnagle to the original position (since we've probably moved it since)
 					d3.select("#dragme")
@@ -160,6 +161,8 @@
 				})
 			});
 
+
+			
 	</script>
 
 </body>
