@@ -22,7 +22,7 @@ header {
 /* Styles the wrapper div which contains all content */
 .wrapper {
     width: 80%;
-    height: 50vh;
+    height: 30vh;
     margin: 0 auto;
 }
 /* Styles the three column div  */
@@ -58,7 +58,7 @@ label {
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -104,7 +104,7 @@ input[type=submit]:hover {
   justify-content: flex-end;
 }
 #arrow {
-  font-size: 500%;
+  font-size: 300%;
   cursor: pointer;
-  margin-top: -25px;
+  margin-top: -10px;
 }

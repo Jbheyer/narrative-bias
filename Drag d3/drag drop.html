@@ -105,8 +105,6 @@
 		d3.select("#yAxis").call(yAxis);
 
 		
-
-
 		// create two dummy bars as place holders to drag onto
 		// that way, the viewer has an intution of were to drop the bar
 		var dummy1 = d3.select("#chart").append("rect")
@@ -145,6 +143,7 @@
 						.attr('y', d[1]);
 					
 				});
+			
 
 				// create another event handler when the mouse is released
 				d3.select(document).on('mouseup', function() {
@@ -161,8 +160,9 @@
 				})
 			});
 
-
+				// this is new code
 			
+
 	</script>
 
 </body>

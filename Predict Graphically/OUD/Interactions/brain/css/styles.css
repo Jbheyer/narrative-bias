@@ -44,7 +44,7 @@ input {
     justify-content: center;
 }
 
-.column2 p {
+.column2 ul li {
     margin-top: 10px;
     margin-bottom: 20px;
     text-align: center;
@@ -67,7 +67,11 @@ input {
     margin-bottom: 20px;
 }
 
-
+#textContentThree {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -120px;
+}
 #visualizationHolder {
     width: 90%;
     height: 70%;
@@ -117,10 +121,11 @@ input {
 
 }
 
-#indianaMap {
-    width: 900px;
+#brain {
+    width: 800px;
     height: 500px;
     border: none;
+    margin-left: -120px;
 }
 
 #styledButton {
@@ -168,9 +173,16 @@ input {
     border: 2px solid black;
 }
 
-#subject {
+#subject1 {
     width: 500px;
     height: 100px;
     border: 1px solid black;
+}
+
+#subject2 {
+    width: 500px;
+    height: 100px;
+    border: 1px solid black;
+    margin-left: -150px;
 
 }
