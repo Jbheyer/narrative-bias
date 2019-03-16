@@ -56,6 +56,12 @@
 			stroke-width: 1px;
 			
 		}
+		.dummy2 {
+			fill: red;
+			stroke: black;
+			stroke-width: 1px;
+			
+		}
 	</style>
 </head>
 
@@ -197,13 +203,13 @@
 					if (overDummy1) {
 						// we've release the blue square over dummy1
 						console.log("**** Released square over dummy 1 **** "); 
-						var dummyBar = d3.select("#chart").append("rect")
-							.attr('x', 30)
+						var overDummy1 = d3.select("#chart").append("rect")
+							.attr('x', 35)
 							.attr('y', yScale(30))
 							.attr('width', 50)
 							.attr('height', CHART_HEIGHT - yScale(30))
 							.attr('fill', 'red')
-							.attr('class', 'dummyBar')
+							.attr('class', 'dummy1')
 							
 							
 					}
@@ -218,7 +224,8 @@
 							.attr('y', yScale(30))
 							.attr('width', 50)
 							.attr('height', CHART_HEIGHT - yScale(30))
-							.attr('class', 'dummyBar', 'fill: red')
+							.attr('fill' , 'red')
+							.attr('class', 'dummy2')
 							
 					}
 				})
