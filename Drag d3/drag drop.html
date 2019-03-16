@@ -48,7 +48,13 @@
 			stroke: black;
 			stroke-width: 1px;
 			stroke-dasharray: 8 2
+		}
 
+		.dummy1 {
+			fill: red;
+			stroke: black;
+			stroke-width: 1px;
+			
 		}
 	</style>
 </head>
@@ -121,7 +127,33 @@
 			.attr('height', CHART_HEIGHT - yScale(30))
 			.attr('class', 'dummyBar')
 
+		// Am I over dummy1? 
+		var overDummy1 = false;
+		dummy1.on("mouseover", function() 
+		{
+			console.log("Over dummy 1");
+			overDummy1 = true;
+		});
 
+		dummy1.on("mouseout", function() 
+		{
+			console.log("no longer over dummy 1");
+			overDummy1 = false;
+		})
+
+		//Am I over dummy2
+		var overDummy2 = false;
+		dummy2.on("mouseover", function() 
+		{
+			console.log("Over dummy 2");
+			overDummy2 = true;
+		});
+
+		dummy2.on("mouseout", function() 
+		{
+			console.log("no longer over dummy 2");
+			overDummy2 = false;
+		})
 		// create event handler for dragging
 		d3.select("#dragme")
 			.on('mousedown', function() 
@@ -157,7 +189,40 @@
 					// and, remove the mousemove event handler (we don't need it)
 					d3.select(document).on('mousemove', null);
 					d3.select(document).on('mouseup', null);
+					
+					
+					// ***** NOW, this is where we get to tell it how to react when
+					// releasing over the dummies
+					var overDummy1 = true;
+					if (overDummy1) {
+						// we've release the blue square over dummy1
+						console.log("**** Released square over dummy 1 **** "); 
+						var dummyBar = d3.select("#chart").append("rect")
+							.attr('x', 30)
+							.attr('y', yScale(30))
+							.attr('width', 50)
+							.attr('height', CHART_HEIGHT - yScale(30))
+							.attr('fill', 'red')
+							.attr('class', 'dummyBar')
+							
+							
+					}
+					//NOT WORKING AT THE MOMENT some issue with recog of 
+					//releasing over dummy2
+					var overDummy2 = true;
+					if (overDummy2) {
+						// we've release the blue square over dummy1
+						console.log("**** Released square over dummy 1 **** "); 
+						var overDummy2 = d3.select("#chart").append("rect")
+							.attr('x', 185)
+							.attr('y', yScale(30))
+							.attr('width', 50)
+							.attr('height', CHART_HEIGHT - yScale(30))
+							.attr('class', 'dummyBar', 'fill: red')
+							
+					}
 				})
+					
 			});
 
 				// this is new code
