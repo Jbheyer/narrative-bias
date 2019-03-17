@@ -200,9 +200,10 @@
 					// ***** NOW, this is where we get to tell it how to react when
 					// releasing over the dummies
 					var overDummy1 = true;
+					var overDummy2 = true;
 					if (overDummy1) {
 						// we've release the blue square over dummy1
-						console.log("**** Released square over dummy 1 **** "); 
+						console.log("**** Released square over dummy 1**** "); 
 						var overDummy1 = d3.select("#chart").append("rect")
 							.attr('x', 35)
 							.attr('y', yScale(30))
@@ -211,14 +212,9 @@
 							.attr('fill', 'steelblue')
 							.attr('class', 'dummy1')
 							
-							
-					}
-					//NOT WORKING AT THE MOMENT some issue with recog of 
-					//releasing over dummy2
-					var overDummy2 = true;
-					if (overDummy2) {
+					}	else { (overDummy2) 
 						// we've release the blue square over dummy1
-						console.log("**** Released square over dummy 1 **** "); 
+						console.log("**** Released square over dummy 2 **** "); 
 						var overDummy2 = d3.select("#chart").append("rect")
 							.attr('x', 185)
 							.attr('y', yScale(30))
