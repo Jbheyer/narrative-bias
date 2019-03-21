@@ -1,243 +1,351 @@
 
 <html>
-<head>
-	<script src="https://d3js.org/d3.v3.min.js"></script>
-	<style>
-
-		* {
-			font: 8pt sans-serif;
-			text-align: center;
-		}
-		#Container1 {
-			display: flex
-		}
-
-		#column1 {
-			width: 500px;
-		}
-
-		#dragme {
-			border: 2px solid black;
-			stroke-width: 2px;
-		}
-		#textHolder {
-			text-align: center;
-		}
-		
-		#text1{
-			font-weight: 700;
-		}
-
-		#text2{
-			font-weight: 700;
-		}
-
-		.axis {
-
-		}
-
-		.axis line {
-			stroke: #000000;
-		}
-		.axis path {
-			stroke: #000000;
-			fill: none;
-		}
-
-		.dummyBar1 {
-			fill: #ebebeb;
-			stroke: black;
-			stroke-width: 1px;
-			stroke-dasharray: 8 2
-		}
-
-		.dummyBar2 {
-			fill: #ebebeb;
-			stroke: black;
-			stroke-width: 1px;
-			stroke-dasharray: 8 2
-		}	
-		.dummy1 {
-			fill: steelblue;
-			stroke: black;
-			stroke-width: 2px;
+	<head>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<style>
+	
+			* {
+				font: 8pt sans-serif;
+				text-align: center;
+			}
+			#Container1 {
+				display: flex
+			}
+	
+			#column1 {
+				width: 500px;
+			}
+	
+			#dragme {
+				border: 2px solid black;
+				stroke-width: 2px;
+			}
+			#textHolder {
+				text-align: center;
+			}
 			
-		}
-		.dummy2 {
-			fill: steelblue;
-			stroke: black;
-			stroke-width: 2px;
+			#text1{
+				font-weight: 700;
+			}
+	
+			#text2{
+				font-weight: 700;
+			}
+	
+			.axis {
+	
+			}
+	
+			.axis line {
+				stroke: #000000;
+			}
+			.axis path {
+				stroke: #000000;
+				fill: none;
+			}
+	
+			.dummyBar1 {
+				fill: #ebebeb;
+				stroke: black;
+				stroke-width: 1px;
+				stroke-dasharray: 8 2
+			}
+	
+			.dummyBar2 {
+				fill: #ebebeb;
+				stroke: black;
+				stroke-width: 1px;
+				stroke-dasharray: 8 2
+			}	
+			.dummy1 {
+				fill: steelblue;
+				stroke: black;
+				stroke-width: 2px;
+				cursor: ns-resize;
+			}
+			.dummy2 {
+				fill: steelblue;
+				stroke: black;
+				stroke-width: 2px;
+				cursor: ns-resize;
+			}
+			.dummy1:hover {
+				fill: aquamarine
+			}
+			.dummy2:hover {
+				fill: aquamarine
+			}
+		</style>
+	</head>
+	
+	<body style="width: 900px">
+	
+		<div id="Container1">
 			
-		}
-	</style>
-</head>
-
-<body style="width: 900px">
-
-	<div id="Container1">
-		
-		<div id="column1">
-			<div id="textHolder">
-				
-			</div>
-
-			<div id="visHolder">
-				<svg width="475" height="500" style="fill: black; border: solid 1px black">
+			<div id="column1">
+				<div id="textHolder">
 					
-					<!-- create text variable to append to line -->
-
-					<g id="chart" transform="translate(125,75)">
-						<text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
-						<text id="text2" x="175" y="320">HAMILTON COUNTY</text>
-						<line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
-
-						<g id="yAxis" class="axis">
-							
-						</g>
-					</g>
-
-					<!-- drag me rectangle and label -->
-					<g>
-						<text x="15" y="300">DRAG & DROP</text>
-						<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
-					</g>
-
-				</svg>
-			</div>
-		</div>
-
-		<script>
-		var CHART_WIDTH = 300;
-		var CHART_HEIGHT = 300;
-
-
-		// create y scale, ranging from 0 to 100
-		var yScale = d3.scale.linear()
-			.domain([0, 100])
-			.range([CHART_HEIGHT, 0]);
-
-		// create y axis. For x axis, we're just using a line
-		var yAxis = d3.svg.axis()
-			.scale(yScale)
-			.orient("left");
-
-		d3.select("#yAxis").call(yAxis);
-
-		
-		// create two dummy bars as place holders to drag onto
-		// that way, the viewer has an intution of were to drop the bar
-		var dummyBar1 = d3.select("#chart").append("rect")
-			.attr('x', 25)
-			.attr('y', yScale(30))
-			.attr('width', 50)
-			.attr('height', CHART_HEIGHT - yScale(30))
-			.attr('class', 'dummyBar1')
-
-		var dummyBar2 = d3.select("#chart").append("rect")
-			.attr('x', 175)
-			.attr('y', yScale(30))
-			.attr('width', 50)
-			.attr('height', CHART_HEIGHT - yScale(30))
-			.attr('class', 'dummyBar2')
-
-		// Am I over dummy1? 
-		var overDummyBar1 = false;
-		dummyBar1.on("mouseover", function() 
-		{
-			console.log("Over dummyBar 1");
-			overDummyBar1 = true;
-		});
-
-		dummyBar1.on("mouseout", function() 
-		{
-			console.log("no longer over dummyBar 1");
-			overDummyBar1 = false;
-		})
-
-		//Am I over dummy2
-		var overDummyBar2 = false;
-		dummyBar2.on("mouseover", function() 
-		{
-			console.log("Over dummyBar 2");
-			overDummyBar2 = true;
-		});
-
-		dummyBar2.on("mouseout", function() 
-		{
-			console.log("no longer over dummyBar 2");
-			overDummyBar2 = false;
-		})
-		// create event handler for dragging
-		d3.select("#dragme")
-			.on('mousedown', function() 
-			{
-
-				// remember the coordinates of the rectangle
-				var rectX = +d3.select("#dragme").attr('x');
-				var rectY = +d3.select("#dragme").attr('y');
-
-				// create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
-				d3.select(document).on('mousemove', function() 
-				{
-					// get the coordinates of mouse pointer relative to the SVG
-					var d = d3.mouse(d3.select("svg").node());
-
-					// move the rectangle to those new coordinates, added +5
-					d3.select("#dragme")
-						.attr('x', d[0] + 5)
-						.attr('y', d[1] + 5)
-					
-				});
-			
-
-				// create another event handler when the mouse is released
-				d3.select(document).on('mouseup', function() {
-					
-
-					// return the 'dragme' rectnagle to the original position (since we've probably moved it since)
-					d3.select("#dragme")
-						.attr('x', rectX)
-						.attr('y', rectY);
-
-					// and, remove the mousemove event handler (we don't need it)
-					d3.select(document).on('mousemove', null);
-					d3.select(document).on('mouseup', null);
-					
-					
-					// ***** NOW, this is where we get to tell it how to react when
-					// releasing over the dummies
-								
-					if (overDummyBar1 == true) {
-						// we've release the blue square over dummy1
-						console.log("**** Released square over dummy 1**** "); 
-						var overDummy1 = d3.select("#chart").append("rect")
-							.attr('x', 25)
-							.attr('y', yScale(30))
-							.attr('width', 50)
-							.attr('height', CHART_HEIGHT - yScale(30))
-							.attr('fill', 'steelblue')
-							.attr('class', 'dummy1');
+				</div>
+	
+				<div id="visHolder">
+					<svg width="475" height="500" style="fill: black; border: solid 1px black">
 						
-				}	else if (overDummyBar2) {
-						// we've release the blue square over dummy1
-						console.log("**** Released square over dummy 2 **** "); 
-						var overDummy2 = d3.select("#chart").append("rect")
-							.attr('x', 175)
-							.attr('y', yScale(30))
-							.attr('width', 50)
-							.attr('height', CHART_HEIGHT - yScale(30))
-							.attr('fill' , 'steelblue')
-							.attr('class', 'dummy2');
-						}
-						return false;
-				})
-					
-			});
-
-				// this is new code
+						<!-- create text variable to append to line -->
+	
+						<g id="chart" transform="translate(125,75)">
+							<text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
+							<text id="text2" x="175" y="320">HAMILTON COUNTY</text>
+							<line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+	
+							<g id="yAxis" class="axis">
+								
+							</g>
+						</g>
+	
+						<!-- drag me rectangle and label -->
+						<g>
+							<text x="15" y="300">DRAG & DROP</text>
+							<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
+						</g>
+	
+					</svg>
+				</div>
+			</div>
+	
+			<script>
+			var CHART_WIDTH = 300;
+			var CHART_HEIGHT = 300;
+	
+	
+			// create y scale, ranging from 0 to 100
+			var yScale = d3.scale.linear()
+				.domain([0, 100])
+				.range([CHART_HEIGHT, 0]);
+	
+			// create y axis. For x axis, we're just using a line
+			var yAxis = d3.svg.axis()
+				.scale(yScale)
+				.orient("left");
+	
+			d3.select("#yAxis").call(yAxis);
+	
 			
-				
-	</script>
+			// create two dummy bars as place holders to drag onto
+			// that way, the viewer has an intution of were to drop the bar
+			var dummyBar1 = d3.select("#chart").append("rect")
+				.attr('x', 25)
+				.attr('y', yScale(30))
+				.attr('width', 50)
+				.attr('height', CHART_HEIGHT - yScale(30))
+				.attr('class', 'dummyBar1')
+	
+			var dummyBar2 = d3.select("#chart").append("rect")
+				.attr('x', 175)
+				.attr('y', yScale(30))
+				.attr('width', 50)
+				.attr('height', CHART_HEIGHT - yScale(30))
+				.attr('class', 'dummyBar2')
+	
+			// Am I over dummy1? 
+			var overDummyBar1 = false;
+			dummyBar1.on("mouseover", function() 
+			{
+				console.log("Over dummyBar 1");
+				overDummyBar1 = true;
+			});
+	
+			dummyBar1.on("mouseout", function() 
+			{
+				console.log("no longer over dummyBar 1");
+				overDummyBar1 = false;
+			})
 
-</body>
-</html>
+			//set global var for down dummy on mouse down click
+			var downDummy1 = false;
+			var downDummy2 = false;
+	
+			//Am I over dummy2
+			var overDummyBar2 = false;
+			dummyBar2.on("mouseover", function() 
+			{
+				console.log("Over dummyBar 2");
+				overDummyBar2 = true;
+			});
+	
+			dummyBar2.on("mouseout", function() 
+			{
+				console.log("no longer over dummyBar 2");
+				overDummyBar2 = false;
+			})
+	
+			// create event handler for dragging/drag and drop square
+			d3.select("#dragme")
+				.on('mousedown', function() 
+				{
+	
+					// remember the coordinates of the rectangle
+					var rectX = +d3.select("#dragme").attr('x');
+					var rectY = +d3.select("#dragme").attr('y');
+	
+					// create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
+					d3.select(document).on('mousemove', function() 
+					{
+						// get the coordinates of mouse pointer relative to the SVG
+						var mouseCoord = d3.mouse(d3.select("svg").node());
+	
+						// move the rectangle to those new coordinates, added +5
+						d3.select("#dragme")
+							.attr('x', mouseCoord[0] + 5)
+							.attr('y', mouseCoord[1] + 5)
+						
+					});
+				
+	
+					// create another event handler when the mouse is released
+					d3.select(document).on('mouseup', function() {
+						
+	
+						// return the 'dragme' rectnagle to the original position (since we've probably moved it since)
+						d3.select("#dragme")
+							.attr('x', rectX)
+							.attr('y', rectY);
+	
+						// and, remove the mousemove event handler (we don't need it)
+						d3.select(document).on('mousemove', null);
+						d3.select(document).on('mouseup', null);
+						
+						
+						// ***** NOW, this is where we get to tell it how to react when
+						// releasing over the dummies
+									
+						if (overDummyBar1 == true) {
+							// we've release the blue square over dummy1
+							console.log("**** Released square over dummy 1**** "); 
+							var overDummy1 = d3.select("#chart").append("rect")
+								.attr('x', 25)
+								.attr('y', yScale(30))
+								.attr('width', 50)
+								.attr('height', CHART_HEIGHT - yScale(30))
+								.attr('fill', 'steelblue')
+								.attr('class', 'dummy1');
+							
+							//mouse down on dummy 1 within if function
+							overDummy1.on("mousedown", function() 
+							{
+								console.log("down on dummy 1");
+								downDummy1 = true;
+								
+	
+									// *create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
+									d3.select(document).on('mousemove', function() 
+									{
+									// get the coordinates of mouse pointer relative to the SVG
+									var mouseCoord = d3.mouse(d3.select("svg").node());
+																	
+									// add mousecoord for mouse to move the rectangle to those new coordinates
+									d3.select('.dummy1')
+										.attr('y', mouseCoord[0])
+										.attr('height', CHART_HEIGHT)
+
+
+										
+									
+										
+									
+									});
+				
+	
+									// create another event handler when the mouse is released
+									d3.select(document).on('mouseup', function() {
+	
+										// and, remove the mousemove event handler (we don't need it)
+										d3.select(document).on('mousemove', null);
+										d3.select(document).on('mouseup', null);
+									});
+							});	
+	
+							overDummy1.on("mouseup", function() 
+							{
+								console.log("no longer down on dummy 1");
+								downDummy1 = true;
+							});
+							
+						}	
+						else if (overDummyBar2) {
+							// we've release the blue square over dummy1
+							console.log("**** Released square over dummy 2 **** "); 
+							var overDummy2 = d3.select("#chart").append("rect")
+								.attr('x', 175)
+								.attr('y', yScale(30))
+								.attr('width', 50)
+								.attr('height', CHART_HEIGHT - yScale(30))
+								.attr('fill' , 'steelblue')
+								.attr('class', 'dummy2');
+	
+							overDummy2.on("mousedown", function() 
+						{
+							console.log("down on dummy 2");
+							downDummy2 = true;
+						
+						
+								// *create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
+									d3.select(document).on('mousemove', function() 
+								{
+									// get the coordinates of mouse pointer relative to the SVG
+									var mouseCoord = d3.mouse(d3.select("svg").node());
+			
+									// add mousecoord for mouse to move the rectangle to those new coordinates
+									d3.select('.dummy2')
+										.attr('y', mouseCoord[0])
+										
+									
+								});
+				
+	
+									// create another event handler when the mouse is released
+									d3.select(document).on('mouseup', function() {
+						
+	
+						
+	
+										// and, remove the mousemove event handler (we don't need it)
+										d3.select(document).on('mousemove', null);
+										d3.select(document).on('mouseup', null);
+									});
+							});	
+							
+							overDummy2.on("mouseup", function() 
+						{
+								console.log("no longer down on dummy 2");
+								downDummy2 = true;
+							
+							});
+						
+						
+					}
+							
+							
+							
+	
+							
+							
+							
+					})
+				});
+				
+	
+	
+	
+					
+					
+	
+	
+	
+	
+	
+	
+	
+		</script>
+	
+	</body>
+	</html>
