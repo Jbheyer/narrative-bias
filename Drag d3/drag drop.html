@@ -235,21 +235,20 @@
 								console.log("down on dummy 1");
 								downDummy1 = true;
 								
-	
+
 									// *create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
 									d3.select(document).on('mousemove', function() 
 									{
 									// get the coordinates of mouse pointer relative to the SVG
 									var mouseCoord = d3.mouse(d3.select("svg").node());
 																	
+													
 									// add mousecoord for mouse to move the rectangle to those new coordinates
 									d3.select('.dummy1')
-										.attr('y', mouseCoord[0])
-										.attr('height', CHART_HEIGHT)
-
-
+										.attr('x', mouseCoord[0] - 150)
+										.attr('y', mouseCoord[1] - 80)
 										
-									
+	
 										
 									
 									});
@@ -296,7 +295,9 @@
 			
 									// add mousecoord for mouse to move the rectangle to those new coordinates
 									d3.select('.dummy2')
-										.attr('y', mouseCoord[0])
+										.attr('x', mouseCoord[0] - 150)
+										.attr('y', mouseCoord[1] - 80)
+										.attr('height', CHART_HEIGHT/2) 
 										
 									
 								});
