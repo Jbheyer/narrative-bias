@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+#contentHolderOne {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+#verticalOne {
+    width: 20%;
+    height: 100%;
+    /*background-color: grey;*/
+    border-bottom: 1px dashed black;
+    display: flex;
+    flex-flow: column;
+}
+
+#horizontalTitle {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin-left: 5px;
+}
+
+#horizontalTitle p {
+    font-size: 1.5vh;
+    margin-left: 5px;
+}
+
+#horizontalTitle h1 {
+
+}
+
+.verticalImageHolder {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verticalImageHolder img {
+    width: 150px;
+    height: 500px;
+    background-color: grey;
+}
+
+#verticalTwo {
+    width: 60%;
+    height: 100%;
+    border-right: 1px dashed black;
+    border-bottom: 1px dashed black;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+}
+
+#chartDescHolder {
+    width: 100%;
+    height: 100px;
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+
+#chartDescHolder h2 {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.subTextOne {
+    font-size: 1.5vh;
+    margin-bottom: 5px;
+}
+
+.subTextTwo {
+    font-size: 1vh;
+}
+
+/*Change to flew-grow 1 if there is no key*/
+#chartHolder {
+    width: 90%;
+    flex-grow: 0.8;
+    background-color: lightgoldenrodyellow;
+}
+
+/*Delete key in html and here if this is included in D3*/
+
+#key {
+    width: 90%;
+    background-color: lightblue;
+    flex-grow: 0.2;
+}
+
+#verticalThree {
+    width: 20%;
+    height: 100%;
+    /*background-color: grey;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxHolder {
+    width: 100px;
+    height: 100px;
+}
+
+.boxHeader {
+    font-size: 1.5vh;
+    margin-bottom: 5px;
+}
+
+.boxArea {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#contentHolderBottom {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#contentHolderBottom .boxArea {
+    width: 90px;
+    height: 90px;
+}
+
+.bottomContentParagraphHolder {
+    width: 100%;
+    margin-left: 10px;
+    font-size: 1.3vh;
+    margin-bottom: 10px;
+}
+
+#bottomBoxHolder {
+    width: 80%;
+    height: 125px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
