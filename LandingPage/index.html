@@ -2,42 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <style>
+    .bar1 { fill: aqua; }
+    .bar2 { fill: deepskyblue; }
+    .bar3 { fill: steelblue; }
+    .bar:hover {fill: orange; }
+    .axis--x path { display: none; }
+    .line {
+        fill: none;
+        stroke: royalblue;
+        stroke-width: 3;
+    }
+    .dot {
+        fill: royalblue;
+        stroke: royalblue;
+    }
+    </style>
+    <title>Landing Page</title>
     <link type="text/css" rel="stylesheet" href="css/styles.css"/>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
 </head>
 
 <body>
+    
 
 <div id="contentHolderOne">
 <div id="verticalOne">
     <div id="horizontalTitle">
-        <h1>X,XXX</h1>
-        <p>Ubi est velox amor?</p>
+        <h1><b>1,138</b></h1>
+        <p>Opioid related overdoses deaths 2017</p>
     </div>
 
     <div class="verticalImageHolder">
         <!--Put your image here for left column-->
-        <img src="" class="verticalImage"/>
+        <img src="guy1.png" class="verticalImage"/>
     </div>
 </div>
 <div id="verticalTwo">
 
     <!--Descriptions for Chart-->
     <div id="chartDescHolder">
-    <h2>Est placidus adelphis, cesaris.Zelus noceres.</h2>
-        <p class="subTextOne">Indictios experimentum in fidelis vierium!</p>
-        <p class="subTextTwo">Ubi est salvus candidatus</p>
+    <h2><b>1,809 Drug Overdose Deaths in Indiana 2006-2017</b></h2>
+        <p class="subTextOne">As the numbers of overdoses related to opioid use continue to rise, there appears to be no solution in sight.</p>
+        <p class="subTextTwo">Total Drug Overdoses Deaths: Underlying cause of X40-X44, X60-X64, X85 or Y10-Y14</p>
     </div>
 
     <!--Place Chart/Populate Chart Here-->
     <div id="chartHolder">
+           
+            <script>
+                    //adding data for main chart
+                    var dataset = [
+                    ['2006',170,728],
+                    ['2007',235,771],
+                    ['2008',304,818],
+                    ['2009',323,903],
+                    ['2010',283,923],
+                    ['2011',347,957],
+                    ['2012',361, 999],
+                    ['2013',350, 1049],
+                    ['2014',452, 1152],
+                    ['2015',529, 1236],
+                    ['2016',785, 1518],
+                    ['2017',1138, 1809],
+                ];
+            
+                    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+                        width = 1020,
+                        height = 500;
+            
+                    var xScale = d3.scaleBand()
+                            .rangeRound([0, width])
+                            .padding(0.1)
+                            .domain(dataset.map(function(d) {
+                              return d[0];
+                            }));
 
+                    yScale = d3.scaleLinear()
+                            .rangeRound([height, 0])
+                            .domain([0, d3.max(dataset, (function (d) {
+                              return d[2];
+                            }))]);
+            
+                    var svg = d3.select("#chartHolder").append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom);
+            
+                    var g = svg.append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            
+                    // axis-x
+                    g.append("g")
+                        .attr("class", "axis axis--x")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(xScale));
+                    
+                    // axis-y
+                    g.append("g")
+                        .attr("class", "axis axis--y")
+                        .call(d3.axisLeft(yScale));
+                    
+                    var bar = g.selectAll("rect")
+                        .data(dataset)
+                        .enter().append("g");
+                    
+                    // bar chart
+                    bar.append("rect")
+                        .attr("x", function(d) { return xScale(d[0]); })
+                        .attr("y", function(d) { return yScale(d[2]); })
+                        .attr("width", xScale.bandwidth())
+                        .attr("height", function(d) { return height - yScale(d[2]); })
+                        .attr("class", function(d) {
+                        var s = "bar ";
+                        if (d[1] < 400) {
+                            return s + "bar1";
+                        } else if (d[1] < 800) {
+                            return s + "bar2";
+                        } else {
+                            return s + "bar3";
+                        }
+                        });
+                    
+                    // labels on the bar chart
+                    bar.append("text")
+                        .attr("dy", "1.3em")
+                        .attr("x", function(d) { return xScale(d[0]) + xScale.bandwidth() / 2; })
+                        .attr("y", function(d) { return yScale(d[2]); })
+                        .attr("text-anchor", "middle")
+                        .attr("font-family", "sans-serif")
+                        .attr("font-size", "11px")
+                        .attr("fill", "black")
+                        .text(function(d) {
+                        return d[2];
+                        });
+                    
+                    // line chart
+                    var line = d3.line()
+                        .x(function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
+                        .y(function(d) { return yScale(d[1]); })
+                        .curve(d3.curveMonotoneX);
+                    
+                    bar.append("path")
+                        .attr("class", "line") // Assign a class for styling
+                        .attr("d", line(dataset)); // 11. Calls the line generator
+                    
+                    bar.append("circle") // Uses the enter().append() method
+                        .attr("class", "dot") // Assign a class for styling
+                        .attr("cx", function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
+                        .attr("cy", function(d) { return yScale(d[1]); })
+                        .attr("r", 5);
+                    
+            </script>
+        
     </div>
-
     <!--Potential Key div if you need populate using D3 here-->
     <div id="key">
 
-    </div>
+        </div>
+ 
+            
+           
+
+    
+
+    <!--Potential Key div if you need populate using D3 here-->
+    
 </div>
 
     <!---->
@@ -108,6 +237,8 @@
     </div>
 </div>
 </div>
+
+
 
 </body>
 </html>
