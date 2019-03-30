@@ -122,10 +122,12 @@ input {
 }
 
 #brain {
-    width: 800px;
+    width: 750px;
     height: 500px;
     border: none;
     margin-left: -120px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #styledButton {

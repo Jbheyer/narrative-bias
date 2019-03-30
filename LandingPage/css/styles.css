@@ -72,19 +72,19 @@ body {
 #chartDescHolder {
     width: 100%;
     height: 100px;
-    margin-left: 5px;
+    margin-left: 35px;
     margin-top: 5px;
-    font-size: 2.5vh;
+    font-size: 3vh;
 
 }
 
 #chartDescHolder h2 {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 4px;
 }
 
 .subTextOne {
-    font-size: 1.5vh;
+    font-size: 1.75vh;
     margin-bottom: 5px;
 }
 
@@ -96,7 +96,8 @@ body {
 #chartHolder {
     width: 90%;
     flex-grow: 1.0;
-    background-color: white
+    background-color: white;
+    display: flex;
 }
 
 
@@ -110,22 +111,53 @@ body {
     align-items: center;
 }
 
+#verticalThree .boxHeader {
+    margin-left: 5px;
+}
+
 .boxHolder {
-    width: 100px;
+    width: 200px;
     height: 100px;
+}
+
+.boxHolder img {
+    cursor: pointer;
 }
 
 .boxHeader {
-    font-size: 1.5vh;
+    font-size: 1.75vh;
     margin-bottom: 5px;
+    text-align: center;
+    margin-left: -62px;    
 }
 
 .boxArea {
-    width: 100px;
+    width: 105px;
     height: 100px;
-    border: 1px solid black;
+    display: flex;
 }
 
+.boxArea1 img {
+    width: 225px;
+    height: 150px;
+    flex-direction: column;
+    border: 2px solid black;
+}
+.boxArea2 img {
+    width: 225px;
+    height: 150px;
+    flex-direction: column;
+    border: 2px solid black;
+}
+.boxArea3 img {
+    width: 225px;
+    height: 150px;
+    flex-direction: column;
+    border: 2px solid black;
+}
+.boxArea img {
+    border: 2px solid black;
+}
 #contentHolderBottom {
     width: 100%;
     height: 20%;
@@ -136,15 +168,19 @@ body {
 }
 
 #contentHolderBottom .boxArea {
-    width: 90px;
+    width: 110px;
     height: 90px;
+}
+
+#ContentHolderBottom .boxHeader h1 {
+    width: 80px;
 }
 
 .bottomContentParagraphHolder {
     width: 100%;
-    margin-left: 10px;
-    font-size: 1.3vh;
-    margin-bottom: 10px;
+    margin-left: 60px;
+    font-size: 1.95vh;
+    margin-bottom: 15px;
 }
 
 #bottomBoxHolder {
@@ -152,11 +188,25 @@ body {
     height: 125px;
     display: flex;
     justify-content: space-around;
+    margin-left: 50px;
 }
 .axis text {
 	font-family: sans-serif;
     font-size: 11px;
-    margin-left: -10px;
+    margin-left: -30px;
 }
 
+#arrowHolder {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 150px;
+}
+#arrow {
+    font-size: 500%;
+    cursor: pointer;
+    margin-top: -10;
+    display: flex-end;
+}
 

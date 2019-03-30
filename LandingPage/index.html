@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <style>
-    .bar1 { fill: steelblue; stroke: black; }
-    .bar2 { fill: steelblue; stroke: black;}
+    .bar1 { fill: powderblue; stroke: black; }
+    .bar2 { fill: lightsteelblue; stroke: black;}
     .bar3 { fill: steelblue; stroke: black;}
     .bar:hover {fill: orange; }
     .axis--x path { display: none; }
@@ -18,6 +18,8 @@
         fill: red;
         stroke: black;
     }
+    .axis { font-size: 15px sans-serif; }
+
     </style>
     <title>Landing Page</title>
     <link type="text/css" rel="stylesheet" href="css/styles.css"/>
@@ -53,7 +55,7 @@
             
            
             <script>
-                    //adding data for main chart
+                    //adding datasets for for main chart and updates
                     var dataset = [
                     ['2006',170,728],
                     ['2007',235,771],
@@ -68,10 +70,25 @@
                     ['2016',785, 1518],
                     ['2017',1138, 1809],
                 ];
+
+                var datasetKy = [
+                    ['2006',8,17],
+                    ['2007',8,17],
+                    ['2008',304,818],
+                    ['2009',323,903],
+                    ['2010',283,923],
+                    ['2011',347,957],
+                    ['2012',361, 999],
+                    ['2013',350, 1049],
+                    ['2014',452, 1152],
+                    ['2015',529, 1236],
+                    ['2016',785, 1518],
+                    ['2017',1138, 1809],
+                ];
             
             
                     var margin = {top: 20, right: 20, bottom: 30, left: 40},
-                        width = 1020,
+                        width = 1000,
                         height = 500;
             
                     var xScale = d3.scaleBand()
@@ -94,7 +111,7 @@
                     var g = svg.append("g")
                         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-                        
+                    
             
                     // axis-x
                     g.append("g")
@@ -146,8 +163,9 @@
                         .attr("y", function(d) { return yScale(d[2]); })
                         .attr("text-anchor", "middle")
                         .attr("font-family", "sans-serif")
-                        .attr("font-size", "11px")
+                        .attr("font-size", "15px")
                         .attr("fill", "black")
+                        .attr("font-weight", "bold")
                         .text(function(d) {
                         return d[2];
                         });
@@ -182,21 +200,22 @@
     <!--Right Side box-->
 <div id="verticalThree">
     <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
-        <div class="boxArea">
-            <img src=""/>
+        <h1 class="boxHeader">Arrest Rates</h1>
+        <div class="boxArea1">
+            <img src="arrestRates.PNG" class="arrestRates1"/>
+            
         </div>
     </div>
      <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
-        <div class="boxArea">
-            <img src=""/>
+        <h1 class="boxHeader">Opioid Use Disorder</h1>
+        <div class="boxArea2">
+            <img src="brain1.PNG"/>
         </div>
     </div>
      <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
-        <div class="boxArea">
-            <img src=""/>
+        <h1 class="boxHeader">Syringe Services Programs</h1>
+        <div class="boxArea3">
+            <img src="SSP.PNG"/>
         </div>
     </div>
 
@@ -204,44 +223,48 @@
 </div>
 <!--Bottom Section Content-->
 <div id="contentHolderBottom">
-    <p class="bottomContentParagraphHolder">Cur fluctui resistere?Elevatuss sunt lacteas de domesticus coordinatae.Demissio de castus mens, contactus torus!</p>
+    <p class="bottomContentParagraphHolder"><b>Indiana is not the only state in the grip of a drug overdose crisis</b> – this data ranges from 2006-2016 with the red trend line showing opioid overdose deaths
+        </p>
     <div class="bottomContentBoxHolder">
     <div id="bottomBoxHolder">
     <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
+        <h1 class="boxHeader">Kentucky 2006-2016</h1>
         <div class="boxArea">
-            <img src=""/>
+            <img src="ky.PNG"/>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
+        <h1 class="boxHeader">Ohio 2006-2016</h1>
         <div class="boxArea">
-            <img src=""/>
+            <img src="ohio.PNG"/>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
+        <h1 class="boxHeader">Michigan 2006-2016</h1>
         <div class="boxArea">
-            <img src=""/>
+            <img src="mich.PNG"/>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
+        <h1 class="boxHeader">Illinois 2006-2016</h1>
         <div class="boxArea">
-            <img src=""/>
+            <img src="ill.PNG"/>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
+        <h1 class="boxHeader">West Virginia 2006-2016</h1>
         <div class="boxArea">
-            <img src=""/>
+            <img src="westv.PNG"/>
         </div>
     </div>
         <div class="boxHolder">
-        <h1 class="boxHeader">lorum ipsum</h1>
+        <h1 class="boxHeader">Virginia 2006-2016</h1>
             <div class="boxArea">
-            <img src=""/>
+            <img src="vir.PNG"/>
+            <div id="arrowHolder"><div id="arrow">&#10152;</div>
+        </div>
             </div>
+            
         </div>
     </div>
 </div>
