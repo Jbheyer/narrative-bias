@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drug Related Arrests</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="allContent">
+    
+
+<div class="column1">
+<div id="textContentHolder">
+    <p id="textContent">
+        <strong>THE DATA BELOW REPRESENTS THE PERCENTAGE OF DRUG RELATED ARRESTS</strong> FOR THE INDIANA COUNTIES ST. JOSEPH AND HAMILTON
+    </p>
+</div>
+
+    <div id="visualizationHolder">
+        <!--place image here-->
+        <div id="sideBarLeft">
+        <!-- why does the the text over icon1 not follow the #sideBarLeft in the css?-->
+            <p></p>
+            <img class="icon1" src =""/></div>
+        <div id="tableHolder">
+            <div id="Container1">
+				
+	
+                <div id="column3">
+                  <div id="textHolder">
+          
+                    
+          
+                  </div>
+          
+            
+          
+                  <div id="visHolder">
+                    <svg width="475" height="500" style="fill: black; border: solid 1px black">
+          
+                      
+                      <!-- create text variable to append to line -->
+          
+            
+                      <g id="chart" transform="translate(125,75)">
+          
+                        <text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
+                        <text id="text2" x="175" y="320">HAMILTON COUNTY</text>
+                        <line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+          
+            
+          
+                        <g id="yAxis" class="axis">
+          
+                          
+          
+                        </g>
+          
+                      </g>
+          
+            
+          
+                      <!-- drag me rectangle and label -->
+          
+                      <g>
+          
+                        <text x="15" y="300">DRAG & DROP</text>
+                        <rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
+          
+                      </g>
+          
+            
+          
+                    </svg>
+          
+                  </div>
+          
+                </div>
+          
+
+        </div>
+        <div id="sideBarRight">
+            <p><strong>GAP</strong></p>
+            <div class="dot">
+           
+            </div>   
+            <p><strong>PREDICTED</strong></p>
+            <div class="box1">
+
+            </div>
+            <p><strong>ACTUAL DATA</strong></p>
+            <div class="box2">
+
+             
+            </div>
+        </div>
+    </div>
+
+    <div id="textContentTwo">
+        <p><strong>EXPLAIN</strong> WHY YOU PREDICTED THIS?</p>
+    </div>
+
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">            
+              </div>
+              <div class="col-75">
+                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              
+            </div>
+            </form>
+          </div> 
+
+    <button id="styledButton">SHOW ME THE DATA</button>
+</div>
+
+
+<div class="column2">
+    <img id="indianaMap" src="both2.PNG"/>
+    <div id="textContentThree">
+    <p><strong>WHAT</strong> DO YOU THINK THE GAP (IF ANY) BETWEEN <strong>YOUR PREDICTION AND THE DATA SUGGESTS?</strong></p>
+    </div>
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">
+              
+            <div class="row">
+              <div class="col-25">
+                <label for="response"></label>
+              </div>
+              <div class="col-75">
+                <textarea id="subject2" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            </form>
+          </div> 
+          <div id="arrowHolder"><div id="arrow">&#10152;</div></div>
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/chart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
