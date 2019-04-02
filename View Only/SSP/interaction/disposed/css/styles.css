@@ -18,6 +18,76 @@ input {
     height: 50px;
 }
 
+#Container1 {
+    display: flex
+}
+
+#column3 {
+    width: 500px;
+}
+
+#dragme {
+
+    border: 2px solid black;
+    stroke-width: 2px;
+}
+
+#textHolder {
+    text-align: center;
+}
+
+#text1{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#text2{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#text4 {
+    font-weight: 700;
+    font-size: 12px  
+}
+
+#text5 {
+    font-weight: 700;
+    font-size: 14px; 
+}
+
+.axis {
+
+}
+
+.axis line {
+    stroke: #000000;
+}
+
+.axis path {
+    stroke: #000000;
+    fill: none;
+}
+
+.dummyBar1 {
+
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 1px;
+    
+}
+
+.dummy1 {
+
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 2px;
+    cursor: ns-resize;
+}
+
+.dummy1:hover {
+    fill: aquamarine
+}
 
 /*CONTENT HOLDERS*/
 
@@ -43,7 +113,7 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 8%;
+    margin-top: 7%;
     margin-left: 0 auto;
 }
 
@@ -58,6 +128,7 @@ input {
 #textContentHolder {
     width: 80%;
     margin-top: 10px;
+    display: flex;
 }
 
 #textContent {
@@ -74,7 +145,6 @@ input {
 #textContentThree {
     margin-top: 0 auto;
     margin-bottom: 0 auto;
-    margin-top: -15px;
 }
 
 #textContentThree p {
@@ -83,7 +153,6 @@ input {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    margin-top: 50px;
 }
 
 #visualizationHolder {
@@ -133,13 +202,13 @@ input {
     align-items: flex-end;
     justify-content: center;
     border: 2px solid black;
+
 }
-#textOpioid {
+
+#indianaMap {
     width: 700px;
     height: 400px;
     border: none;
-    display: flex;
-    margin-top: -50px;
 }
 
 #styledButton {
@@ -159,7 +228,7 @@ input {
     width: 50px;
     height: 40px;
     margin-top: -50px;
-    border: 2px solid black;
+    border: none;
 }
 
 .dot {
@@ -211,3 +280,4 @@ input {
     200px;
 
 }
+

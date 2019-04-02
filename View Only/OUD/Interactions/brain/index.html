@@ -8,12 +8,11 @@
 <body>
 
 <div class="allContent">
-
 <div class="column1">
 <div id="textContentHolder">
     <p id="textContent">
-        VIEW THE<strong> PERCENTAGE</strong> OF PEOPLE RECEIVING TREATMENT AT AN <strong>OPIOID TREATMENT PROGRAM</strong> THAT HAVE BEEN <strong>DIAGNOSED</strong> WITH AN 
-        OPIOID USE DISORDER
+        <strong>VIEW</strong> THE PRECENTAGE OF PEOPLE<strong> RECEIVING TREATMENT </strong> AT AN OPIOID TREATMENT PROGRAM THAT HAVE BEEN<strong> DIAGNOSED 
+          WITH AN OPIOID USE DISORDER</strong>
     </p>
 </div>
 
@@ -22,22 +21,48 @@
         <div id="sideBarLeft">
         <!-- why does the the text over icon1 not follow the #sideBarLeft in the css?-->
             <p></p>
-            <img class="icon1" src ="bar.PNG"/></div>
-        <div id="tableHolder"></div>
-        <div id="sideBarRight">
-            <p><strong>GAP</strong></p>
-            <div class="dot">
-           
-            </div>   
-            <p><strong>PREDICTED</strong></p>
-            <div class="box1">
+            <id class="icon1" src =""/></div>     
+            
+          
+                  <div id="visHolder">
+                    <svg width="500" height="400" style="fill: black; border: solid 2px black">
+          
+                      
+                      <!-- create text variable to append to line -->
+          
+            
+                      <g id="chart" transform="translate(120,50)">
+          
+                        <text id="text1" x="112" y="320">DIAGNOSED</text>
+                        
+                        <text id="text5" x="-225" y="-55" transform="rotate(-90)">RECEIVING TREATMENT</text>
 
-            </div>
-            <p><strong>ACTUAL DATA</strong></p>
-            <div class="box2">
-
-             
-            </div>
+                        <line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+          
+            
+          
+                        <g id="yAxis" class="axis">
+          
+                          
+          
+                        </g>
+          
+                      </g>
+          
+            
+          
+                      <!-- drag me rectangle and label -->
+          
+                     
+          
+            
+          
+                    </svg>
+        
+                       
+        </div>
+          <div id="sideBarRight">
+              
         </div>
     </div>
 
@@ -60,20 +85,15 @@
             </form>
           </div> 
 
-    <button id="styledButton">SHOW ME THE DATA</button>
+    
 </div>
 
 
 <div class="column2">
-  <div class="textCol">
-      
-              
-    
-  <img id="brain" src="brain1.PNG"/>
-  <div id="textContentThree">
-      <p><strong>EXPLAIN</strong> IF THIS IS <strong>DIFFERENT THAN WHAT YOU THOUGHT THE DATA WOULD SHOW</strong></p>
-      </div>
-</div>
+    <img id="indianaMap" src="brain1.PNG"/>
+    <div id="textContentThree">
+    <p><strong>EXPLAIN</strong> IF THIS IS DIFFERENT THAN WHAT YOU THOUGHT <strong>THE DATA WOULD SHOW</strong></p>
+    </div>
     <div class="container">
             <form action="/action_page.php">
             <div class="row">
@@ -87,13 +107,13 @@
                 <textarea id="subject2" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
               </div>
             </div>
-            <div id="arrowHolder"><div id="arrow">&#10152;</div></div>
-            
             </form>
           </div> 
-</div>
+          <div id="arrowHolder"><div id="arrow">&#10152;</div></div>
 </div>
 
+</div>
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>

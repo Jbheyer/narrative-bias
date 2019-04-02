@@ -4,6 +4,11 @@
 				
 				var CHART_WIDTH = 300;
 				var CHART_HEIGHT = 300;
+
+				var data1 = [
+					{"sharedLabel": "13"},
+					{"sharedLabel": "16"}
+				];
 	
 			
 				// create y scale, ranging from 0 to 100
@@ -39,22 +44,25 @@
 	
 				var dummyBar1 = d3.select("#chart").append("rect")
 	
-					.attr('x', 25)
-					.attr('y', yScale(30))
+					.attr('x', 60)
+					.attr('y', yScale(13))
 					.attr('width', 50)
-					.attr('height', CHART_HEIGHT - yScale(30))
+					.attr('height', CHART_HEIGHT - yScale(13))
 					.attr('class', 'dummyBar1')
 	
 		
 	
 				var dummyBar2 = d3.select("#chart").append("rect")
 	
-					.attr('x', 175)
-					.attr('y', yScale(30))
+					.attr('x', 200)
+					.attr('y', yScale(16))
 					.attr('width', 50)
-					.attr('height', CHART_HEIGHT - yScale(30))
+					.attr('height', CHART_HEIGHT - yScale(16))
 					.attr('class', 'dummyBar2')
-	
+					
+
+					
+						
 		
 	
 				// Am I over dummy1? 

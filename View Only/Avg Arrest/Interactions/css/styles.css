@@ -51,6 +51,11 @@ input {
     font-size: 12px  
 }
 
+#text5 {
+    font-weight: 700;
+    font-size: 14px; 
+}
+
 .axis {
 
 }
@@ -66,19 +71,19 @@ input {
 
 .dummyBar1 {
 
-    fill: #ebebeb;
+    fill: steelblue;
     stroke: black;
     stroke-width: 1px;
-    stroke-dasharray: 8 2
+    
 }
 
 
 .dummyBar2 {
 
-    fill: #ebebeb;
+    fill: steelblue;
     stroke: black;
     stroke-width: 1px;
-    stroke-dasharray: 8 2
+    
 }	
 
 .dummy1 {
@@ -143,6 +148,7 @@ input {
 #textContentHolder {
     width: 80%;
     margin-top: 10px;
+    display: flex;
 }
 
 #textContent {
