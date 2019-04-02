@@ -361,6 +361,8 @@
 									.attr('height', CHART_HEIGHT - yScale(30))
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
+
+								
 	
 								
 	
@@ -371,7 +373,10 @@
 									console.log("down on dummy 1");
 									downDummy1 = true;
 	
-									
+									//
+									svg.append("text")
+										.attr('y', yReverse);
+
 										//mouse state for mousedown
 										mousestate = d3.mouse(d3.select("svg").node());
 											console.log("mouse state  " + mousestate)
