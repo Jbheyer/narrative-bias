@@ -260,7 +260,7 @@
 				var mousestate;
 				var barLength;
 				var yBar;
-		
+				var svg = d3.select("svg");
 	
 				//Am I over dummy2
 	
@@ -386,6 +386,7 @@
 														.attr("y");
 														console.log("length of y in bar " + yBar)
 	
+										
 	
 										//create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
 	
@@ -418,8 +419,8 @@
 										var reScaledLength = yReverse(newBarLength);
 											console.log("scaled length " + reScaledLength);
 											
-	
-	
+										
+			
 																	
 	
 	
