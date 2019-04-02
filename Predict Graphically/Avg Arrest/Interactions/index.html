@@ -8,12 +8,11 @@
 <body>
 
 <div class="allContent">
-    
-
 <div class="column1">
 <div id="textContentHolder">
     <p id="textContent">
-        <strong>PREDICT</strong> THE <strong>PERCENTAGE OF DRUG RELATED ARRESTS</strong> FOR THE INDIANA COUNTIES ST. JOSEPH AND HAMILTON USING THE VISUALIZATION SPACE BELOW
+        <strong>PREDICT</strong> THE <strong>PERCENTAGE OF DRUG RELATED ARRESTS</strong> FOR THE INDIANA COUNTIES <strong>ST. JOSEPH AND HAMILTON </strong>USING THE 
+        VISUALIZATION SPACE BELOW
     </p>
 </div>
 
@@ -22,22 +21,66 @@
         <div id="sideBarLeft">
         <!-- why does the the text over icon1 not follow the #sideBarLeft in the css?-->
             <p></p>
-            <img class="icon1" src ="bar.PNG"/></div>
-        <div id="tableHolder"></div>
-        <div id="sideBarRight">
-            <p><strong>GAP</strong></p>
-            <div class="dot">
-           
-            </div>   
-            <p><strong>PREDICTED</strong></p>
-            <div class="box1">
+            <id class="icon1" src =""/></div>     
+            
+          
+                  <div id="visHolder">
+                    <svg width="500" height="400" style="fill: black; border: solid 2px black">
+          
+                      
+                      <!-- create text variable to append to line -->
+          
+            
+                      <g id="chart" transform="translate(135,50)">
+          
+                        <text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
+                        <text id="text2" x="175" y="320">HAMILTON COUNTY</text>
+                        <text id="text5" x="-210" y="-45" transform="rotate(-90)">DRUG RELATED ARRESTS</text>
 
-            </div>
-            <p><strong>ACTUAL DATA</strong></p>
-            <div class="box2">
+
+                        <line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+          
+            
+          
+                        <g id="yAxis" class="axis">
+          
+                          
+          
+                        </g>
+          
+                      </g>
+          
+            
+          
+                      <!-- drag me rectangle and label -->
+          
+                      <g>
+          
+                        <text id="text4" x="15" y="300">DRAG & DROP</text>
+                        <rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
+          
+                      </g>
+          
+            
+          
+                    </svg>
+        
+                       
+        </div>
+          <div id="sideBarRight">
+              <p><strong>GAP</strong></p>
+              <div class="dot">
+            
+              </div>   
+              <p><strong>PREDICTED</strong></p>
+              <div class="box1">
+
+              </div>
+              <p><strong>ACTUAL DATA</strong></p>
+              <div class="box2">
 
              
-            </div>
+              </div>
         </div>
     </div>
 
@@ -67,7 +110,7 @@
 <div class="column2">
     <img id="indianaMap" src="both2.PNG"/>
     <div id="textContentThree">
-    <p><strong>WHAT</strong> DO YOU THINK THE GAP (IF ANY) BETWEEN <strong>YOUR PREDICTION AND THE DATA SUGGESTS?</strong></p>
+    <p><strong>WHAT</strong> DO YOU THINK THE GAP (IF ANY) <strong>BETWEEN YOUR PREDICTION AND THE DATA SUGGESTS?</strong></p>
     </div>
     <div class="container">
             <form action="/action_page.php">

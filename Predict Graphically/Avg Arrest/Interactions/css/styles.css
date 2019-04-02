@@ -18,7 +18,97 @@ input {
     height: 50px;
 }
 
+#Container1 {
+    display: flex
+}
 
+#column3 {
+    width: 500px;
+}
+
+#dragme {
+
+    border: 2px solid black;
+    stroke-width: 2px;
+}
+
+#textHolder {
+    text-align: center;
+}
+
+#text1{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#text2{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#text4 {
+    font-weight: 700;
+    font-size: 12px  
+}
+
+#text5 {
+    font-weight: 700;
+    font-size: 14px; 
+}
+
+.axis {
+
+}
+
+.axis line {
+    stroke: #000000;
+}
+
+.axis path {
+    stroke: #000000;
+    fill: none;
+}
+
+.dummyBar1 {
+
+    fill: #ebebeb;
+    stroke: black;
+    stroke-width: 1px;
+    stroke-dasharray: 8 2
+}
+
+
+.dummyBar2 {
+
+    fill: #ebebeb;
+    stroke: black;
+    stroke-width: 1px;
+    stroke-dasharray: 8 2
+}	
+
+.dummy1 {
+
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 2px;
+    cursor: ns-resize;
+}
+
+.dummy2 {
+
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 2px;
+    cursor: ns-resize;
+}
+
+.dummy1:hover {
+    fill: aquamarine
+}
+
+.dummy2:hover {
+    fill: aquamarine
+}
 /*CONTENT HOLDERS*/
 
 .allContent {
@@ -157,7 +247,7 @@ input {
     width: 50px;
     height: 40px;
     margin-top: -50px;
-    border: 2px solid black;
+    border: none;
 }
 
 .dot {
@@ -174,14 +264,14 @@ input {
 .box1 {
     width: 100%;
     height: 40px;
-    background-color: #b1d4ff;
+    background-color: steelblue;
     border: 2px solid black;
 }
 
 .box2 {
     width: 100%;
     height: 40px;
-    background-color: #fffdfd;
+    background-color: orange;
     border: 2px solid black;
 }
 
@@ -209,3 +299,4 @@ input {
     200px;
 
 }
+

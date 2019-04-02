@@ -1,10 +1,11 @@
-                var CHART_WIDTH = 300;
+				
+				
+				
+				
+				var CHART_WIDTH = 300;
 				var CHART_HEIGHT = 300;
 	
-		
-	
-		
-	
+			
 				// create y scale, ranging from 0 to 100
 	
 				var yScale = d3.scale.linear()
@@ -371,24 +372,16 @@
 	
 										d3.select(document).on('mouseup', function() {
 	
-							
+														
+			
+										// and, remove the mousemove event handler (we don't need it)
 	
-		
-	
-							
-	
-		
-	
-											// and, remove the mousemove event handler (we don't need it)
-	
-											d3.select(document).on('mousemove', null);
-											d3.select(document).on('mouseup', null);
+										d3.select(document).on('mousemove', null);
+										d3.select(document).on('mouseup', null);
 	
 										});
 	
 								});	
-	
-								
 	
 								overDummy2.on("mouseup", function() 
 							{
@@ -407,18 +400,8 @@
 						}
 	
 								
-	
 								
-	
-								
-	
-		
-	
-								
-	
-								
-	
-								
+									
 	
 						})
 	

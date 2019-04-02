@@ -22,13 +22,9 @@ input {
     display: flex
 }
 
-
-
 #column3 {
     width: 500px;
 }
-
-
 
 #dragme {
 
@@ -40,14 +36,10 @@ input {
     text-align: center;
 }
 
-
-
 #text1{
     font-weight: 700;
     font-size: 12px;
 }
-
-
 
 #text2{
     font-weight: 700;
@@ -59,13 +51,9 @@ input {
     font-size: 12px  
 }
 
-
-
 .axis {
 
 }
-
-
 
 .axis line {
     stroke: #000000;
@@ -76,8 +64,6 @@ input {
     fill: none;
 }
 
-
-
 .dummyBar1 {
 
     fill: #ebebeb;
@@ -85,7 +71,6 @@ input {
     stroke-width: 1px;
     stroke-dasharray: 8 2
 }
-
 
 
 .dummyBar2 {
