@@ -48,7 +48,10 @@
 					.attr('class', 'dummyBar1')
 	
 		
-	
+				d3.select("#chart").append("text")
+					.attr('y', yScale(76))
+					.attr('x', '132')
+					.html('74' + '%');
 				
 					
 

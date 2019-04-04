@@ -166,7 +166,11 @@
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
 	
-								
+								d3.select("#chart").append("text")
+									.attr('y', yScale(30))
+									.attr('x', '88')
+									.html('30' + '%')
+									.attr('class', 'textBar')
 	
 								//mouse down on dummy 1 within if function
 	
@@ -223,7 +227,11 @@
 											console.log("scaled length " + reScaledLength);
 											
 	
-	
+										reScaledLength = Math.floor(reScaledLength);
+
+										d3.select(".textBar")
+											.attr('y', yBarLength)
+											.html(reScaledLength + '%');	
 																	
 	
 	

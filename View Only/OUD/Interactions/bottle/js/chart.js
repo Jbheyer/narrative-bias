@@ -47,7 +47,11 @@
 					.attr('height', CHART_HEIGHT - yScale(74))
 					.attr('class', 'dummyBar1')
 	
-		
+				d3.select("#chart").append("text")
+					.attr('y', yScale(78))
+					.attr('x', 135)
+					.html('74' + '%')
+					.attr('class', 'barText')
 	
 				
 					

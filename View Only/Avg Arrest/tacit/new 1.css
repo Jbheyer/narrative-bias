@@ -1,4 +1,7 @@
 
+* {
+  font-family: sans-serif;
+}
 
 html {
     background-image: white;
@@ -24,12 +27,7 @@ header {
     margin: 0 auto;
 }
 /* Styles the three column div  */
-.oneCol {
-    position: center;
-    margin-top: 120px;
-    
-    align-content: center;
-}   
+  
 
 .firstCol {
     width: 60%;
@@ -37,10 +35,9 @@ header {
     margin-left: 90px;
 }    
 
-h2 {
-    font: lighter 35px sans-serif;
-    text-align: center;
-}
+
+
+
 #arrowHolder {
   width: 100%;
   height: 20%;

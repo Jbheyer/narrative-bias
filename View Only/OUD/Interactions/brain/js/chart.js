@@ -47,7 +47,11 @@
 					.attr('height', CHART_HEIGHT - yScale(100))
 					.attr('class', 'dummyBar1')
 	
-		
+				d3.select("#chart").append("text")
+					.attr('y' , yScale(102))
+					.attr('x', 130)
+					.html('100' + '%')
+					.attr('class', 'barText')
 	
 				
 					
@@ -185,7 +189,11 @@
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
 	
-								
+								d3.select("#chart").append("text")
+									.attr('y' , yScale(30))
+									.attr('x', 30)
+									.html('30' + '%')
+									.attr('class', 'barText')
 	
 								//mouse down on dummy 1 within if function
 	
@@ -242,7 +250,12 @@
 											console.log("scaled length " + reScaledLength);
 											
 	
-	
+										reScaledLength = Math.floor(reScaledLength);
+
+
+										d3.select(".barText")
+											.attr('y', yBarLength)
+											.html(reScaledLength + '%');
 																	
 	
 	

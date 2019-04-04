@@ -166,7 +166,11 @@
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
 	
-								
+								d3.select("#chart").append("text")
+									.attr('y', yScale(31))
+									.attr('x', '88')
+									.html('30' + '%')
+									.attr('class', 'textBar');
 	
 								//mouse down on dummy 1 within if function
 	
@@ -222,8 +226,12 @@
 										var reScaledLength = yReverse(newBarLength);
 											console.log("scaled length " + reScaledLength);
 											
-	
-	
+										//rounds number to whole
+										reScaledLength = Math.floor(reScaledLength);
+
+										d3.select(".textBar")
+											.attr('y', yBarLength)
+											.html(reScaledLength + '%');
 																	
 	
 	

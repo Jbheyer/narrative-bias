@@ -69,7 +69,10 @@ header {
   }
 /*styles the h1-h3 header sections */
 h1 {
-    position: relative; left: -30px; right: auto; bottom: auto;
+    position: relative; 
+    left: -30px; 
+    right: auto; 
+    bottom: auto;
     font: 30px sans-serif;
     margin-top: 70px;
 }
@@ -97,5 +100,5 @@ h2 {
 
 b {
   font-weight: bold;
-  font-size: 24pt;
+  font-size: 20pt;
 }

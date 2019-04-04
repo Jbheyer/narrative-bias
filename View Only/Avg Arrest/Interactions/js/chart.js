@@ -14,7 +14,7 @@
 				// create y scale, ranging from 0 to 100
 	
 				var yScale = d3.scale.linear()
-					.domain([0, 100])
+					.domain([0, 40])
 					.range([CHART_HEIGHT, 0]);
 	
 				//this reverses the scale from data to pixle to pixels to data. For example, domain and range in the original order do data
@@ -43,24 +43,30 @@
 				// that way, the viewer has an intution of were to drop the bar
 	
 				var dummyBar1 = d3.select("#chart").append("rect")
-	
 					.attr('x', 60)
 					.attr('y', yScale(13))
 					.attr('width', 50)
 					.attr('height', CHART_HEIGHT - yScale(13))
 					.attr('class', 'dummyBar1')
 	
-		
+					d3.select("#chart").append("text")
+						.attr('y', yScale(14))
+						.attr('x', 70)
+						.html('13' + '%')
+						.attr('class', 'barText')
 	
 				var dummyBar2 = d3.select("#chart").append("rect")
-	
 					.attr('x', 200)
 					.attr('y', yScale(16))
 					.attr('width', 50)
 					.attr('height', CHART_HEIGHT - yScale(16))
 					.attr('class', 'dummyBar2')
 					
-
+					d3.select("#chart").append("text")
+						.attr('y', yScale(17))
+						.attr('x', 210)
+						.html('16' + '%')
+						.attr('class', 'barText')
 					
 						
 		
@@ -194,7 +200,11 @@
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
 	
-								
+								d3.select("#chart").append("text")
+									.attr('y', yScale(13))
+									.attr('x', 13)
+									.html('13')
+									.attr('class', 'barText')
 	
 								//mouse down on dummy 1 within if function
 	
@@ -251,7 +261,9 @@
 											console.log("scaled length " + reScaledLength);
 											
 	
-	
+										d3.select(".barText")
+											.attr('y', yBarLength)
+											.html(reScaledLength + '%');
 																	
 	
 	
