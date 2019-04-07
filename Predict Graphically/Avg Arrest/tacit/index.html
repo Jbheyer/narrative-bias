@@ -1,7 +1,246 @@
-              
-               
-            var CHART_WIDTH = 300;
-            var CHART_HEIGHT = 300;
+
+<html>
+
+		<head>
+	
+			<script src="https://d3js.org/d3.v3.min.js"></script>
+	
+			<style>
+	
+				html {
+					background-image: white;
+					width: 100%;
+					height: 100%;
+				}
+				body {
+					width: 100%;
+					height: 100%;
+				}
+				header {
+					margin: 0 auto;
+					font: 38pt sans-serif;
+					text-align: center;
+					margin-top: 40px;
+				}
+				
+				h2 {
+					font: lighter 35px sans-serif;
+					text-align: center;
+				}
+
+				* {
+					font: 8pt sans-serif;
+					text-align: center;
+				}
+	
+				#Container1 {
+					display: flex;
+					align-content:flex-end;
+				}
+	
+		
+	
+				#column1 {
+					width: 500px;
+				}
+	
+				.oneCol {
+					position: center;
+					margin-top: 120px;
+					
+					align-content: center;
+				}   
+
+				.firstCol {
+					width: 60%;
+					margin-top: 100px;
+					margin-left: 90px;
+				} 
+					
+				#dragme {
+	
+					border: 2px solid black;
+					stroke-width: 2px;
+				}
+	
+				#textHolder {
+					text-align: center;
+				}
+	
+				
+	
+				#text1{
+					font-weight: 700;
+				}
+	
+		
+	
+				#text2{
+					font-weight: 700;
+				}
+	
+		
+	
+				.axis {
+	
+				}
+	
+		
+	
+				.axis line {
+					stroke: #000000;
+				}
+	
+				.axis path {
+					stroke: #000000;
+					fill: none;
+				}
+	
+		
+	
+				.dummyBar1 {
+	
+					fill: #ebebeb;
+					stroke: black;
+					stroke-width: 1px;
+					stroke-dasharray: 8 2
+				}
+	
+		
+	
+				.dummyBar2 {
+	
+					fill: #ebebeb;
+					stroke: black;
+					stroke-width: 1px;
+					stroke-dasharray: 8 2
+				}	
+	
+				.dummy1 {
+	
+					fill: steelblue;
+					stroke: black;
+					stroke-width: 2px;
+					cursor: ns-resize;
+				}
+	
+				.dummy2 {
+	
+					fill: steelblue;
+					stroke: black;
+					stroke-width: 2px;
+					cursor: ns-resize;
+				}
+	
+				.dummy1:hover {
+					fill: aquamarine
+				}
+	
+				.dummy2:hover {
+					fill: aquamarine
+				}
+				#text1{
+					font-weight: 700;
+					font-size: 12px;
+				}
+
+				#text2{
+					font-weight: 700;
+					font-size: 12px;
+				}
+				#text4 {
+					font-weight: 700;
+					font-size: 12px  
+				}
+				#arrowHolder {
+					width: 100%;
+					height: 20%;
+					display: flex;
+					justify-content: flex-end;
+				}
+				#arrow {
+					font-size: 1000%;
+					cursor: pointer;
+					margin-top: 0px;
+					margin-left: 150px;
+				}
+			</style>
+	</head>
+	
+	<header>
+        Tacit Tutorial
+    </header>
+    <div class="oneCol">
+        <div class="firstCol"></div>
+            
+                <h2>To interact with this visualization drag and drop the blue rectangle into the visualization space below. Once placed, click on the rectangle and 
+                    drag the bar up or down to adjust it to your preference.</h2>
+	
+		<body style="width: 90%">
+	
+		
+			<div id="Container1">
+				
+	
+				<div id="column1">
+					<div id="textHolder">
+	
+						
+	
+					</div>
+	
+		
+	
+					<div id="visHolder">
+						<svg width="475" height="500" style="fill: black; border: solid 1px black" transform="translate(650,75)">
+	
+							
+							<!-- create text variable to append to line -->
+	
+		
+							<g id="chart" transform="translate(125,75)">
+	
+								<text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
+								<text id="text2" x="175" y="320">HAMILTON COUNTY</text>
+								<line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+	
+		
+	
+								<g id="yAxis" class="axis">
+	
+									
+	
+								</g>
+	
+							</g>
+	
+		
+	
+							<!-- drag me rectangle and label -->
+	
+							<g>
+	
+								<text text id="text4" x="15" y="300">DRAG & DROP</text>
+								<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
+	
+							</g>
+	
+		
+	
+						</svg>
+	
+					</div>
+					
+	
+				</div>
+				
+			</div>
+			<div id="arrowHolder"><div id="arrow">&#10152;</div>
+	
+				<script>
+	
+				var CHART_WIDTH = 300;
+				var CHART_HEIGHT = 300;
 	
 		
 	
@@ -85,7 +324,7 @@
 				var mousestate;
 				var barLength;
 				var yBar;
-		
+				var svg = d3.select("svg");
 	
 				//Am I over dummy2
 	
@@ -186,6 +425,12 @@
 									.attr('height', CHART_HEIGHT - yScale(30))
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
+
+								d3.select("#chart").append("text")
+									.attr('y', yScale(32))
+									.attr('x', 35)
+									.html('30' + '%')
+									.attr('class', 'barText1');
 	
 								
 	
@@ -196,7 +441,10 @@
 									console.log("down on dummy 1");
 									downDummy1 = true;
 	
-									
+									//
+									svg.append("text")
+										.attr('y', yReverse);
+
 										//mouse state for mousedown
 										mousestate = d3.mouse(d3.select("svg").node());
 											console.log("mouse state  " + mousestate)
@@ -211,6 +459,7 @@
 														.attr("y");
 														console.log("length of y in bar " + yBar)
 	
+										
 	
 										//create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
 	
@@ -243,8 +492,13 @@
 										var reScaledLength = yReverse(newBarLength);
 											console.log("scaled length " + reScaledLength);
 											
-	
-	
+										reScaledLength = Math.floor(reScaledLength);
+
+
+										d3.select(".barText1")
+											.attr('y', yBarLength)
+											.html(reScaledLength + '%');
+			
 																	
 	
 	
@@ -297,7 +551,11 @@
 									.attr('fill' , 'steelblue')
 									.attr('class', 'dummy2');
 	
-		
+								d3.select("#chart").append("text")
+									.attr('y', yScale(32))
+									.attr('x', 188)
+									.html('30' + '%')
+									.attr('class', 'barText2');
 	
 								//mouse down on dummy 1 within if function
 	
@@ -354,7 +612,12 @@
 											console.log("scaled length " + reScaledLength);
 																	
 	
-	
+										reScaledLength = Math.floor(reScaledLength);
+
+
+										d3.select(".barText2")
+											.attr('y', yBarLength)
+											.html(reScaledLength + '%');
 	
 											
 	
@@ -426,3 +689,18 @@
 	
 					});
 	
+					
+	
+		
+	
+		
+	
+				
+	
+			</script>
+	
+		
+	
+		</body>
+	
+		</html>

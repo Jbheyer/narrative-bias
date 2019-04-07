@@ -7,15 +7,35 @@
 	
 			<style>
 	
-		
-	
+				html {
+					background-image: white;
+					width: 100%;
+					height: 100%;
+				}
+				body {
+					width: 100%;
+					height: 100%;
+				}
+				header {
+					margin: 0 auto;
+					font: 38pt sans-serif;
+					text-align: center;
+					margin-top: 40px;
+				}
+				
+				h2 {
+					font: lighter 35px sans-serif;
+					text-align: center;
+				}
+
 				* {
 					font: 8pt sans-serif;
 					text-align: center;
 				}
 	
 				#Container1 {
-					display: flex
+					display: flex;
+					align-content:flex-end;
 				}
 	
 		
@@ -24,8 +44,19 @@
 					width: 500px;
 				}
 	
-		
-	
+				.oneCol {
+					position: center;
+					margin-top: 120px;
+					
+					align-content: center;
+				}   
+
+				.firstCol {
+					width: 60%;
+					margin-top: 100px;
+					margin-left: 90px;
+				} 
+					
 				#dragme {
 	
 					border: 2px solid black;
@@ -108,13 +139,44 @@
 				.dummy2:hover {
 					fill: aquamarine
 				}
-	
+				#text1{
+					font-weight: 700;
+					font-size: 12px;
+				}
+
+				#text2{
+					font-weight: 700;
+					font-size: 12px;
+				}
+				#text4 {
+					font-weight: 700;
+					font-size: 12px  
+				}
+				#arrowHolder {
+					width: 100%;
+					height: 20%;
+					display: flex;
+					justify-content: flex-end;
+				}
+				#arrow {
+					font-size: 1000%;
+					cursor: pointer;
+					margin-top: 0px;
+					margin-left: 150px;
+				}
 			</style>
 	</head>
 	
-		
+	<header>
+        Tacit Tutorial
+    </header>
+    <div class="oneCol">
+        <div class="firstCol"></div>
+            
+                <h2>To interact with this visualization drag and drop the blue rectangle into the visualization space below. Once placed, click on the rectangle and 
+                    drag the bar up or down to adjust it to your preference.</h2>
 	
-		<body style="width: 900px">
+		<body style="width: 90%">
 	
 		
 			<div id="Container1">
@@ -130,7 +192,7 @@
 		
 	
 					<div id="visHolder">
-						<svg width="475" height="500" style="fill: black; border: solid 1px black">
+						<svg width="475" height="500" style="fill: black; border: solid 1px black" transform="translate(650,75)">
 	
 							
 							<!-- create text variable to append to line -->
@@ -158,7 +220,7 @@
 	
 							<g>
 	
-								<text x="15" y="300">DRAG & DROP</text>
+								<text text id="text4" x="15" y="300">DRAG & DROP</text>
 								<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
 	
 							</g>
@@ -168,10 +230,12 @@
 						</svg>
 	
 					</div>
+					
 	
 				</div>
-	
-		
+				
+			</div>
+			<div id="arrowHolder"><div id="arrow">&#10152;</div>
 	
 				<script>
 	

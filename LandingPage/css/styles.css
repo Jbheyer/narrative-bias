@@ -55,7 +55,7 @@ body {
 .verticalImageHolder img {
     width: 550px;
     height: 500px;
-    background-color: grey;
+    background-color: none;
 }
 
 #verticalTwo {

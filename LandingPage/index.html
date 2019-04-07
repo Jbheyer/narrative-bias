@@ -113,7 +113,7 @@
 
                     
             
-                    // axis-x
+                    // axis-x years move
                     g.append("g")
                         .attr("class", "axis axis--x")
                         .attr("transform", "translate(0," + height + ")")
@@ -128,8 +128,8 @@
                         //y Axis label        
                     svg.append("text")
                         .attr("transform", "rotate(-90)")
-                        .attr("y", 0 - margin.left)
-                        .attr("x", 0 - (height / 2))
+                        .attr("y", '-15')
+                        .attr("x", '-200')
                         .attr("dy", "1em")
                         .style("text-anchor", "middle")
                         .text("Drug Overdose Deaths");
