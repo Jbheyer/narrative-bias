@@ -103,6 +103,10 @@
 				var mousestate;
 				var barLength;
 				var yBar;
+				var prediction1;
+				var prediction2;
+				var dummyBarText3;
+				var dummyBarText4;
 				
 	
 				//Am I over dummy2
@@ -277,7 +281,10 @@
 											yBarLength = CHART_HEIGHT - newBarLength;
 										}	
 																										
-									
+										//creating the prediction gap for circle 1
+										prediction1 = reScaledLength;
+										console.log("prediction 1 = " + prediction1);
+
 										d3.select('.dummy1')
 											//.attr('x', mouseCoord[0] - 150)
 											//.attr('y', mouseCoord[1] - 80)
@@ -409,6 +416,10 @@
 	
 										reScaledLength = Math.floor(reScaledLength);
 
+										//creates the setup for the gap for prediction 2 or bar 2
+										prediction2 = reScaledLength;
+
+
 										d3.select('.dummy2')
 											//.attr('x', mouseCoord[0] - 150)
 											//.attr('y', mouseCoord[1] - 80)
@@ -449,24 +460,17 @@
 							//onlick funtion to set up click of button and append dummies and text
 								d3.select("#showMe")
 									.on("click", function() {
-										//
-										dummyBar4 = d3.select("#chart").append("rect")
-											.attr("heignt", yScale(1))
-											.attr('x', 245)
-											.attr('y', yScale(2))
-											.attr('width', 50)
-											.attr('height', CHART_HEIGHT - yScale(2))
-											.attr('class', 'dummyBar4')
-											.style('fill' , 'orange')
-											.style('stroke', 'black')
-											.style('stroke-width', '1pt')
-
-										d3.select("#chart").append("text")
-											.attr('y', yScale(12))
-											.attr('x', 255)
-											.html('16' + '%')
-											.attr('class', '.dummyBar4')
-
+										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
+										if(prediction1 === undefined || prediction2 === undefined){
+											alert("PLEASE USE BOTH SCALE BARS TO MAKE A PREDICTION")
+											return;
+										}
+										
+										
+										
+										
+										//start on dummy 3
+										//append dummy 3
 										dummyBar3 = d3.select("#chart").append("rect")
 											.attr("heignt", yScale(1))
 											.attr('x', 95)
@@ -478,23 +482,88 @@
 											.style('stroke', 'black')
 											.style('stroke-width', '1pt')
 
-										d3.select("#chart").append("text")
-											.attr('y', yScale(12))
+										//append text to dummy 3
+										dummyBarText3 = d3.select("#chart").append("text")
+											.attr('y', yScale(2))
 											.attr('x', 105)
 											.html('13' + '%')
-											.attr('class', '.dummyBar3')
+											.attr('class', 'dummyBarText3')
 
-										//transition rect to grow
-										dummyBar4.transition()
-											.attr("height", yScale(13))
-											.attr('y', CHART_HEIGHT - yScale(13))
-											.duration(2000)
-											
+										//append circle to dummy 3 for gap
+										d3.select("#chart").append("circle")
+											.attr('cx', 120)
+											.attr('cy', 30)
+											.attr('r', 25)
+											.attr('class', 'circle1');
+
+										//text anchor to circle1
+										d3.select("#chart").append("text")
+											.attr('x', 120)
+											.attr('y', 35)
+											.html(prediction1 - 13 + '%')
+											.style('fill', 'white')
+											.attr('text-anchor', 'middle');
+
+										//grow text with bar
+										dummyBarText3.transition()
+											.attr('height', CHART_HEIGHT - yScale(13))
+											.attr("y", yScale(13))											
+											.duration(1700);
+
+										//animate bar
 										dummyBar3.transition()
-											.attr("height", yScale(13))
-											.attr('y', CHART_HEIGHT - yScale(13))
-											.duration(1700)
-											.ease(linear)
+											.attr('y', yScale(13))
+											.attr("height", CHART_HEIGHT - yScale(13))
+											.duration(1700);
+											
+
+
+										//start dummy bar 4
+										dummyBar4 = d3.select("#chart").append("rect")
+											.attr("heignt", yScale(1))
+											.attr('x', 245)
+											.attr('y', yScale(2))
+											.attr('width', 50)
+											.attr('height', CHART_HEIGHT - yScale(2))
+											.attr('class', 'dummyBar4')
+											.style('fill' , 'orange')
+											.style('stroke', 'black')
+											.style('stroke-width', '1pt')
+
+										dummyBarText4 = d3.select("#chart").append("text")
+											.attr('y', yScale(12))
+											.attr('x', 255)
+											.html('16' + '%')
+											.attr('class', 'dummyBarText4');
+
+										//append circle to dummy 4 for gap
+										d3.select("#chart").append("circle")
+											.attr('cx', 265)
+											.attr('cy', 30)
+											.attr('r', 25)
+											.attr('class', 'circle2');
+
+										//text anchor to circle2
+										d3.select("#chart").append("text")
+											.attr('x', 265)
+											.attr('y', 35)
+											.html(prediction2 - 16 + '%')
+											.style('fill', 'white')
+											.attr('text-anchor', 'middle');
+
+										//grow text with bar
+										dummyBarText4.transition()
+											.attr('y', yScale(16))
+											.attr("height", CHART_HEIGHT - yScale(16))											
+											.duration(2000);
+
+										//animate bar
+										dummyBar4.transition()
+											.attr("y", yScale(16))
+											.attr('height', CHART_HEIGHT - yScale(16))
+											.duration(2000);
+											
+										
 											
 									});
 								
