@@ -1,0 +1,57 @@
+*{
+    font: lighter 44px sans-serif;
+    margin-top: 100;
+    padding: 0;
+}
+
+html {
+    background-image: radial-gradient white;
+
+}
+body {
+    width: 100%;
+    height: 100;
+}
+/* Styles the larger text at the top of the page */
+header {
+    margin: 0 auto;
+    font: 44px sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
+/* Styles the wrapper div which contains all content */
+.wrapper {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+ul li{ /* Styles for the ul (unordered lists) in the left column */
+    margin-left: 40px;
+    list-style: none;
+    font-size: 32px;
+    padding: 22px;
+    font: sans-serif;
+    text-align: left;
+    
+}
+.textCol {
+    margin-top: 100px;
+}
+
+#arrowHolder {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+#arrow {
+    font-size: 200%;
+    cursor: pointer;
+    margin-top: -1
+    200px;
+}
+
+b {
+    font-weight: bold;
+    font-size:24pt;
+}

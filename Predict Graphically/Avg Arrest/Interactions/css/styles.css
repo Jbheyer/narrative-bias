@@ -87,6 +87,21 @@ input {
     stroke-dasharray: 8 2
 }	
 
+.dummyBar3 {
+    
+    fill: none;
+    stroke: none;
+    stroke-width: none;
+}
+
+
+.dummyBar4 {
+
+    fill: none;
+    stroke: none;
+    stroke-width: none;
+}
+
 .dummy1 {
 
     fill: steelblue;
@@ -233,10 +248,10 @@ input {
     margin-top: -30PX;
 }
 
-#styledButton {
+#showMe {
     background-image: linear-gradient(to bottom right, #6aa36a, #68bc66); /* Green */
-    color: white;
-   border: none;
+    background-color: white;
+    border: black solid 1pt;
     margin-top: 10px;
     padding: 15px 32px;
     text-align: center;

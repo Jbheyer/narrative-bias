@@ -217,23 +217,37 @@
 											console.log("updated ybar length " + yBarLength);
 	
 	
-										d3.select('.dummy1')
-											//.attr('x', mouseCoord[0] - 150)
-											//.attr('y', mouseCoord[1] - 80)
-											.attr('height', newBarLength) 
-											.attr('y', yBarLength);
 										
 										var reScaledLength = yReverse(newBarLength);
 											console.log("scaled length " + reScaledLength);
 											
 										//rounds number to whole
 										reScaledLength = Math.floor(reScaledLength);
+										
+										//limits the scaling of the bar to 100
+										if (reScaledLength > 100) {
+											reScaledLength = 100;
+											newBarLength = CHART_HEIGHT;
+											yBarLength = CHART_HEIGHT - newBarLength;
+										}	
 
+										//limits the bar from being dragged -
+										else if (reScaledLength < 2) {
+											reScaledLength = 2;
+											newBarLength = CHART_HEIGHT - yScale(2);
+											yBarLength = CHART_HEIGHT - newBarLength;
+										}
+										
 										d3.select(".textBar")
 											.attr('y', yBarLength)
 											.html(reScaledLength + '%');
 																	
 	
+										d3.select('.dummy1')
+											//.attr('x', mouseCoord[0] - 150)
+											//.attr('y', mouseCoord[1] - 80)
+											.attr('height', newBarLength) 
+											.attr('y', yBarLength);
 	
 	
 											
