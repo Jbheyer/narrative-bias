@@ -234,7 +234,7 @@ input {
     margin-top: 20px;
 }
 
-#styledButton {
+#showMe {
     background-image: linear-gradient(to bottom right, #6aa36a, #68bc66); /* Green */
     color: white;
    border: none;

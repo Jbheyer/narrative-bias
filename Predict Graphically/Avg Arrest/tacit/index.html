@@ -13,7 +13,7 @@
 					height: 100%;
 				}
 				body {
-					width: 100%;
+					width: 1200px;
 					height: 100%;
 				}
 				header {
@@ -60,7 +60,7 @@
 				#dragme {
 	
 					border: 2px solid black;
-					stroke-width: 2px;
+					stroke-width: 5px;
 				}
 	
 				#textHolder {
@@ -164,6 +164,11 @@
 					margin-top: 0px;
 					margin-left: 150px;
 				}
+
+				#visHolder {
+					
+					align-content: center;
+				}
 			</style>
 	</head>
 	
@@ -192,7 +197,7 @@
 		
 	
 					<div id="visHolder">
-						<svg width="475" height="500" style="fill: black; border: solid 1px black" transform="translate(650,75)">
+						<svg width="475" height="450" style="fill: black; border: solid 2px black" transform="translate(375,75)">
 	
 							
 							<!-- create text variable to append to line -->
@@ -200,8 +205,8 @@
 		
 							<g id="chart" transform="translate(125,75)">
 	
-								<text id="text1" x="25" y="320">ST. JOSEPH COUNTY</text>
-								<text id="text2" x="175" y="320">HAMILTON COUNTY</text>
+								<text id="text1" x="25" y="320">EXAMPLE BAR 1</text>
+								<text id="text2" x="175" y="320">EXAMPLE BAR 2</text>
 								<line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
 	
 		
@@ -221,7 +226,7 @@
 							<g>
 	
 								<text text id="text4" x="15" y="300">DRAG & DROP</text>
-								<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
+								<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:2;stroke:black" x="25" y="310"/>
 	
 							</g>
 	
@@ -483,18 +488,36 @@
 											console.log("updated ybar length " + yBarLength);
 	
 	
+										
+										
+										var reScaledLength = yReverse(newBarLength);
+											console.log("scaled length " + reScaledLength);
+											
+										
+											//limits the scaling of the bar to 100
+											if (reScaledLength > 100) {
+												reScaledLength = 100;
+												newBarLength = CHART_HEIGHT;
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}	
+
+											//limits the bar from being dragged -
+											else if (reScaledLength < 2) {
+												reScaledLength = 2;
+												newBarLength = CHART_HEIGHT - yScale(2);
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}
+
+										reScaledLength = Math.floor(reScaledLength);
+
 										d3.select('.dummy1')
 											//.attr('x', mouseCoord[0] - 150)
 											//.attr('y', mouseCoord[1] - 80)
 											.attr('height', newBarLength) 
 											.attr('y', yBarLength);
 										
-										var reScaledLength = yReverse(newBarLength);
-											console.log("scaled length " + reScaledLength);
-											
-										reScaledLength = Math.floor(reScaledLength);
-
-
+										
+										
 										d3.select(".barText1")
 											.attr('y', yBarLength)
 											.html(reScaledLength + '%');
@@ -601,18 +624,35 @@
 										var yBarLength = offset + yBar;
 											console.log("updated ybar length " + yBarLength);
 	
+										var reScaledLength = yReverse(newBarLength);
+											console.log("scaled length " + reScaledLength);
+																	
 	
+											//limits the scaling of the bar to 100
+											if (reScaledLength > 100) {
+												reScaledLength = 100;
+												newBarLength = CHART_HEIGHT;
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}	
+
+											//limits the bar from being dragged -
+											else if (reScaledLength < 2) {
+												reScaledLength = 2;
+												newBarLength = CHART_HEIGHT - yScale(2);
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}
+
+
+										reScaledLength = Math.floor(reScaledLength);
+
+
 										d3.select('.dummy2')
 											//.attr('x', mouseCoord[0] - 150)
 											//.attr('y', mouseCoord[1] - 80)
 											.attr('height', newBarLength) 
 											.attr('y', yBarLength)
 	
-										var reScaledLength = yReverse(newBarLength);
-											console.log("scaled length " + reScaledLength);
-																	
-	
-										reScaledLength = Math.floor(reScaledLength);
+										
 
 
 										d3.select(".barText2")

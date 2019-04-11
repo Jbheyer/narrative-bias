@@ -9,14 +9,14 @@
 				// create y scale, ranging from 0 to 100
 	
 				var yScale = d3.scale.linear()
-					.domain([0, 100])
+					.domain([0, 120])
 					.range([CHART_HEIGHT, 0]);
 	
 				//this reverses the scale from data to pixle to pixels to data. For example, domain and range in the original order do data
 				//to pixels but when reversed executes pixels (from the dragging bar) to data, which we want
 	
 				var yReverse = d3.scale.linear()
-					.range([0, 100])
+					.range([0, 120])
 					.domain([0, CHART_HEIGHT]);
 	
 				// create y axis. For x axis, we're just using a line
@@ -41,12 +41,22 @@
 	
 					.attr('x', 50)
 					.attr('y', yScale(30))
-					.attr('width', 100)
+					.attr('width', 90)
 					.attr('height', CHART_HEIGHT - yScale(30))
 					.attr('class', 'dummyBar1')
 	
 		
-				
+				//create dummy bar 3 
+
+				var dummyBar3 = d3.select("#chart").append("rect")
+					
+					.attr("height", yScale(1))
+					.attr('x', 200)
+					.attr('y', yScale(2))
+					.attr('width', 100)
+					.attr('height', CHART_HEIGHT - yScale(2))
+					.attr('class', 'dummyBar3')
+					.style('fill' , 'none');
 				
 	
 		
@@ -78,6 +88,8 @@
 				var mousestate;
 				var barLength;
 				var yBar;
+				var prediction1;
+				var dummyBarText3;
 		
 	
 				//Am I over dummy2
@@ -168,9 +180,9 @@
 	
 								d3.select("#chart").append("text")
 									.attr('y', yScale(34))
-									.attr('x', '85')
-									.html('30' + '%')
-									.attr('class', 'textBar');
+									.attr('x', '88')
+									.html('30')
+									.attr('class', 'barText1');
 	
 								//mouse down on dummy 1 within if function
 	
@@ -217,14 +229,18 @@
 											console.log("updated ybar length " + yBarLength);
 	
 
-											var reScaledLength = yReverse(newBarLength);
+										var reScaledLength = yReverse(newBarLength);
 											console.log("scaled length " + reScaledLength);
 											
-											reScaledLength = Math.floor(reScaledLength);
+										reScaledLength = Math.floor(reScaledLength);
+
+										prediction1 = reScaledLength;
+
+										
 
 											//limits the scaling of the bar to 100
-											if (reScaledLength > 100) {
-												reScaledLength = 100;
+											if (reScaledLength > 120) {
+												reScaledLength = 120;
 												newBarLength = CHART_HEIGHT;
 												yBarLength = CHART_HEIGHT - newBarLength;
 											}	
@@ -234,20 +250,19 @@
 												reScaledLength = 2;
 												newBarLength = CHART_HEIGHT - yScale(2);
 												yBarLength = CHART_HEIGHT - newBarLength;
-	}	
+
+											}	
+
 											d3.select('.dummy1')
 												//.attr('x', mouseCoord[0] - 150)
 												//.attr('y', mouseCoord[1] - 80)
 												.attr('height', newBarLength) 
 												.attr('y', yBarLength);
-										
-										
-
-
-											d3.select(".textBar")
+									
+											d3.select(".barText1")
 												.attr('y', yBarLength)
-												.html(reScaledLength + '%');
-	
+												.html(reScaledLength);
+																	
 																	
 	
 	
@@ -288,23 +303,74 @@
 								
 	
 							}
+							//onlick funtion to set up click of button and append dummies and text
+							d3.select("#showMe")
+							.on("click", function() {
+								//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
+								if(prediction1 === undefined){
+									alert("PLEASE USE THE SCALE BAR TO MAKE A PREDICTION")
+									return;
+								}
+								
+								
+								
+								
+								//start on dummy 3
+								//append dummy 3
+								dummyBar3 = d3.select("#chart").append("rect")
+									.attr("heignt", yScale(1))
+									.attr('x', 190)
+									.attr('y', yScale(2))
+									.attr('width', 100)
+									.attr('height', CHART_HEIGHT - yScale(2))
+									.attr('class', 'dummyBar3')
+									.style('fill' , 'orange')
+									.style('stroke', 'black')
+									.style('stroke-width', '1pt')
+
+								//append text to dummy 3
+								dummyBarText3 = d3.select("#chart").append("text")
+									.attr('y', yScale(2))
+									.attr('x', 230)
+									.html('74')
+									.attr('class', 'dummyBarText3')
+
+								//append circle to dummy 3 for gap
+								d3.select("#chart").append("circle")
+									.attr('cx', 240)
+									.attr('cy', 30)
+									.attr('r', 25)
+									.attr('class', 'circle1');
+
+								//text anchor to circle1
+								d3.select("#chart").append("text")
+									.attr('x', 240)
+									.attr('y', 35)
+									.html(prediction1 - 74)
+									.style('fill', 'white')
+									.attr('text-anchor', 'middle');
+
+								//grow text with bar
+								dummyBarText3.transition()
+									.attr('height', CHART_HEIGHT - yScale(74))
+									.attr("y", yScale(74))											
+									.duration(1700);
+
+								//animate bar
+								dummyBar3.transition()
+									.attr('y', yScale(74))
+									.attr("height", CHART_HEIGHT - yScale(74))
+									.duration(1700);
 	
 								});
-	
-							
-	
-							
-	
-						
-	
 								
-								
-									
-	
-						
-	
-					});
-	
+							}
+							
+												
+					
+						);
+
+					})
 					
 	
 		

@@ -11,14 +11,14 @@
 				// create y scale, ranging from 0 to 100
 	
 				var yScale = d3.scale.linear()
-					.domain([0, 100])
+					.domain([0, 120])
 					.range([CHART_HEIGHT, 0]);
 	
 				//this reverses the scale from data to pixle to pixels to data. For example, domain and range in the original order do data
 				//to pixels but when reversed executes pixels (from the dragging bar) to data, which we want
 	
 				var yReverse = d3.scale.linear()
-					.range([0, 100])
+					.range([0, 120])
 					.domain([0, CHART_HEIGHT]);
 	
 				// create y axis. For x axis, we're just using a line
@@ -50,7 +50,7 @@
 				d3.select("#chart").append("text")
 					.attr('y', yScale(78))
 					.attr('x', 135)
-					.html('74' + '%')
+					.html('74')
 					.attr('class', 'barText')
 	
 				

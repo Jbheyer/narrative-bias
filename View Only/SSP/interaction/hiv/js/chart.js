@@ -42,16 +42,16 @@
 				var dummyBar1 = d3.select("#chart").append("rect")
 	
 					.attr('x', 100)
-					.attr('y', yScale(74))
+					.attr('y', yScale(32))
 					.attr('width', 100)
-					.attr('height', CHART_HEIGHT - yScale(74))
+					.attr('height', CHART_HEIGHT - yScale(32))
 					.attr('class', 'dummyBar1')
 	
 		
 				d3.select("#chart").append("text")
-					.attr('y', yScale(76))
+					.attr('y', yScale(34))
 					.attr('x', '132')
-					.html('74' + '%');
+					.html('32' + '%');
 				
 					
 
