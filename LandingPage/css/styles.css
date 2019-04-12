@@ -147,7 +147,7 @@ body {
     cursor: pointer;
 }
 
-.boxArea4 .kybtn {
+.boxArea4 #kybtn {
     position: absolute;
     width: 140px;
     height: 100px;
@@ -164,7 +164,7 @@ body {
     border-radius: 1px;
 }
 
-.boxArea5 .ohbtn {
+.boxArea5 #ohbtn {
     position: absolute;
     width: 140px;
     height: 100px;
@@ -181,7 +181,7 @@ body {
     border-radius: 1px;
 }
 
-.boxArea6 .michbtn {
+.boxArea6 #michbtn {
     position: absolute;
     width: 140px;
     height: 100px;
@@ -198,7 +198,7 @@ body {
     border-radius: 1px;
 }
 
-.boxArea7 .illbtn {
+.boxArea7 #illbtn {
     position: absolute;
     width: 140px;
     height: 100px;
@@ -215,7 +215,7 @@ body {
     border-radius: 1px;
 }
 
-.boxArea8 .westbtn {
+.boxArea8 #westbtn {
     position: absolute;
     width: 140px;
     height: 100px;
@@ -232,7 +232,7 @@ body {
     border-radius: 1px;
 }
 
-.boxArea9 .virbtn {
+.boxArea9 #virbtn {
     position: absolute;
     width: 140px;
     height: 100px;
