@@ -151,7 +151,10 @@ input {
     justify-content: center;
     margin-top: 5%;
     margin-left: 0 auto;
+    overflow: hidden;  
 }
+
+
 
 .column2 p {
     margin-top: 120px;
@@ -164,6 +167,8 @@ input {
 #textContentHolder {
     width: 80%;
     margin-top: 10px;
+    overflow: visible;
+    transform: scale(1);
 }
 
 #textContent {
@@ -198,7 +203,11 @@ input {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    overflow: visible;
+    transform: scale(1);
 }
+
+
 
 #sideBarLeft {
     width: 60px;
@@ -245,7 +254,8 @@ input {
     width: 730px;
     height: 400px;
     border: none;
-    margin-top: -30PX;
+    margin-top: -30PX;    
+    object-fit: contain;
 }
 
 #showMe {

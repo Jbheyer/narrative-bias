@@ -179,18 +179,13 @@ input {
     margin-inline-end: 0px;
 }
 
-.visualizationHolder {
+#visualizationHolder {
     width: 90%;
     height: 70%;
     margin-top: -140px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-}
-
-#textHolderSlider p {
-    text-align: center;
-    width:80%;
 }
 
 #sideBarLeft {
@@ -241,10 +236,10 @@ input {
     margin-top: 80px;
 }
 
-#styledButton {
+#showMe {
     background-image: linear-gradient(to bottom right, #6aa36a, #68bc66); /* Green */
-    color: white;
-   border: none;
+    background-color: white;
+    border: black solid 1pt;
     margin-top: 10px;
     padding: 15px 32px;
     text-align: center;
@@ -311,36 +306,3 @@ input {
     
 }
 
-.slider {
-    position: relative;
-    margin-bottom: 150px;
-    margin-top: 40px;
-  }
-  
-  .slider-tray {
-    position: absolute;
-    width: 100%;
-    height: 10px;
-    border: solid 1px #ccc;
-    border-top-color: #aaa;
-    border-radius: 4px;
-    background-color: #f0f0f0;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
-  }
-  
-  .slider-handle {
-    position: absolute;
-    top: 4px;
-  }
-  
-  .slider-handle-icon {
-    width: 14px;
-    height: 14px;
-    border: solid 1px black;
-    position: absolute;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    top: -7px;
-    left: -7px;
-  }

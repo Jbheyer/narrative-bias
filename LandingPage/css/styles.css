@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-family: sans-serif;
 }
 
 html {
@@ -50,6 +51,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
+    transform: scale(1);
 }
 
 .verticalImageHolder img {
@@ -81,23 +84,43 @@ body {
 #chartDescHolder h2 {
     margin-top: 5px;
     margin-bottom: 4px;
+    overflow: visible;
+    transform: scale(1);
 }
 
-.subTextOne {
+#chartDescHolder .subTextOne {
     font-size: 1.75vh;
     margin-bottom: 5px;
+    overflow: visible;
+    transform: scale(1);
 }
 
-.subTextTwo {
+#chartDescHolder .subTextTwo {
     font-size: 1vh;
+    margin-bottom: 5px;
+    overflow: visible;
+    transform: scale(1);
 }
 
 /*Change to flew-grow 1 if there is no key*/
 #chartHolder {
     width: 90%;
+    height: 100%;
     flex-grow: 1.0;
     background-color: white;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chartHolder svg {
+    overflow: visible;
+    transform: scale(1); 
+}
+    @media only screen and (max-width: 1500px) {
+        #chartHolder svg {
+            transform: scale(0.8);
+    }
 }
 
 
@@ -123,6 +146,109 @@ body {
 .boxHolder img {
     cursor: pointer;
 }
+
+.boxArea4 .kybtn {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    margin-left: -70px;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: transparent;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.boxArea5 .ohbtn {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    margin-left: -70px;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: transparent;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.boxArea6 .michbtn {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    margin-left: -70px;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: transparent;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.boxArea7 .illbtn {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    margin-left: -70px;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: transparent;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.boxArea8 .westbtn {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    margin-left: -70px;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: transparent;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.boxArea9 .virbtn {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    margin-left: -70px;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: transparent;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
 
 .boxHeader {
     font-size: 1.75vh;
@@ -155,9 +281,26 @@ body {
     flex-direction: column;
     border: 2px solid black;
 }
-.boxArea img {
+.boxArea4 img {
     border: 2px solid black;
 }
+
+.boxArea5 img {
+    border: 2px solid black;
+}
+.boxArea6 img {
+    border: 2px solid black;
+}
+.boxArea7 img {
+    border: 2px solid black;
+}
+.boxArea8 img {
+    border: 2px solid black;
+}
+.boxArea9 img {
+    border: 2px solid black;
+}
+
 #contentHolderBottom {
     width: 100%;
     height: 20%;
@@ -178,9 +321,10 @@ body {
 
 .bottomContentParagraphHolder {
     width: 100%;
-    margin-left: 60px;
-    font-size: 1.95vh;
+    margin-left: 65px;
+    font-size: 1.75vh;
     margin-bottom: 15px;
+    flex-wrap: inherit;
 }
 
 #bottomBoxHolder {
@@ -202,11 +346,12 @@ body {
     display: flex;
     justify-content: flex-end;
     margin-left: 150px;
+    margin-top: -100px;
 }
 #arrow {
     font-size: 500%;
     cursor: pointer;
-    margin-top: -10;
+    margin-top: 100;
     display: flex-end;
 }
 
