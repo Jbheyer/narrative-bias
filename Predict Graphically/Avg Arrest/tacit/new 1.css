@@ -20,7 +20,7 @@ header {
 /* Styles the wrapper div which contains all content */
 .wrapper {
     width: 80%;
-    height: 30vh;
+    height: 20vh;
     margin: 0 auto;
 }
 /* Styles the three column div  */
@@ -37,8 +37,8 @@ header {
     margin-left: 90px;
 }    
 
-h2 {
-    font: lighter 35px sans-serif;
+.firstCol h2 {
+    font: lighter 24px sans-serif;
     text-align: center;
 }
 #arrowHolder {
@@ -52,4 +52,5 @@ h2 {
   cursor: pointer;
   margin-top: -10px;
 }
+
 
