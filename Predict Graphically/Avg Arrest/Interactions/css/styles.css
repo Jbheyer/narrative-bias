@@ -168,8 +168,8 @@ input {
     width: 80%;
     margin-top: 10px;
     overflow: visible;
-    
-    height: 10%;
+    transform: scale(1);
+    height: 15%;
 }
 
 #textContent {
@@ -212,7 +212,7 @@ input {
 
 #sideBarLeft {
     width: 60px;
-    height: 70%;
+    height: 90%;
     margin-right: 5px;
     display: flex;
     flex-direction: column;
@@ -227,7 +227,7 @@ input {
 
 #sideBarRight {
     width: 60px;
-    height: 70%;
+    height: 90%;
     margin-left: 5px;
     display: flex;
     flex-direction: column;
