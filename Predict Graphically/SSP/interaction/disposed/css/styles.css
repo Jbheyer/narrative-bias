@@ -149,6 +149,9 @@ input {
 #textContentHolder {
     width: 80%;
     margin-top: 10px;
+    overflow: visible;
+    transform: scale(1);
+    height: 30%;
 }
 
 #textContent {

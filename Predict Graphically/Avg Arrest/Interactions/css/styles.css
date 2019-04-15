@@ -169,6 +169,7 @@ input {
     margin-top: 10px;
     overflow: visible;
     transform: scale(1);
+    height: auto;
 }
 
 #textContent {
