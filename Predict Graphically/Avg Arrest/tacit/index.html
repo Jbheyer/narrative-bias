@@ -25,8 +25,8 @@
 
 				/* Styles the wrapper div which contains all content */
 				.wrapper {
-					width: 80%;
-					height: 30vh;
+					width: 1200px;
+					
 					margin: 0 auto;
 				}
 				
@@ -166,10 +166,18 @@
 					justify-content: flex-end;
 				}
 				#arrow {
-					font-size: 1000%;
+					font-size: 700%;
 					cursor: pointer;
 					margin-top: 0px;
-					margin-left: 150px;
+				}
+
+				#arrowHolder p {
+					margin-top: 80px;
+					margin-left: -65px;
+					display: flex;
+					justify-content: flex-end;
+					font-weight: bold;
+					font-size: 14pt;
 				}
 
 				#visHolder {
@@ -191,7 +199,7 @@
                 <h2>To interact with this visualization drag and drop the blue rectangle into the visualization space below. Once placed, click on the rectangle and 
                     drag the bar up or down to adjust it to your preference.</h2>
 	
-		<body style="width: 90%">
+		<body>
 	
 		
 			<div id="Container1">
@@ -207,7 +215,7 @@
 		
 	
 					<div id="visHolder">
-						<svg width="475" height="450" style="fill: black; border: solid 2px black" transform="translate(250,30)">
+						<svg width="475" height="450" style="fill: black; border: solid 2px black" transform="translate(350,30)">
 	
 							
 							<!-- create text variable to append to line -->
@@ -251,6 +259,7 @@
 				
 			</div>
 			<div id="arrowHolder"><div id="arrow">&#10152;</div>
+			<p>NEXT</p>
 		</div>
 
 			
