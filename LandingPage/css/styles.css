@@ -146,7 +146,7 @@ body {
 }
 
 .boxHolder img {
-    cursor: pointer;
+    
 }
 
 .boxArea4 #kybtn {
@@ -162,7 +162,7 @@ body {
     font-size: 16px;
     padding: 12px 24px;
     border: none;
-    cursor: pointer;
+    
     border-radius: 1px;
 }
 

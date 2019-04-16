@@ -415,7 +415,9 @@
 	
 							
 	
-							
+							//set Timeout feature here, look at w3 schools to load this code. Simple, remove alert part from code and add the d3 code below
+							d3.select('#subject1')
+							.style('visibility', 'visible');
 	
 						}
 	
