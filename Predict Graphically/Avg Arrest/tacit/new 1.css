@@ -46,11 +46,12 @@ header {
   height: 20%;
   display: flex;
   justify-content: flex-end;
+  
 }
 #arrow {
   font-size: 300%;
   cursor: pointer;
-  margin-top: -10px;
+  
 }
 
 #visHolder svg {

@@ -29,8 +29,9 @@ header {
     margin-top: 50px;
     margin-left: 190px;
     position: center;
-}   .image img{
-    width:800px;
+}   
+.image img{
+    width:900px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -62,4 +63,13 @@ h3 {
     font-size: 500%;
     cursor: pointer;
     margin-top: -100px;
+}
+
+#arrowHolder p {
+    margin-top: 0px;
+    margin-left: -70px;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+    font-size: 14pt;
 }

@@ -46,8 +46,8 @@
     <!--Descriptions for Chart-->
     <div id="chartDescHolder">
     <h2><b>1,809 Drug Overdose Deaths in Indiana 2017</b></h2>
-        <p class="subTextOne">As the numbers of overdoses related to opioid use continue to rise, there appears to be no solution in sight.</p>
-        <p class="subTextTwo">Total Drug Overdoses Deaths: Underlying cause of X40-X44, X60-X64, X85 or Y10-Y14</p>
+        <p class="subTextOne">As the numbers of overdoses related to drug use continue to rise, there appears to be no solution in sight.</p>
+        <p class="subTextTwo">Total Drug Overdoses Deaths: Underlying cause of X40-X44, X60-X64, X85 or Y10-Y14. Age adjusted per 100,000 people</p>
     </div>
 
     <!--Place Chart/Populate Chart Here-->
@@ -57,37 +57,115 @@
             <script>
                     //adding datasets for for main chart and updates Indiana
                     var dataset = [
-                    ['2006',170,728],
-                    ['2007',235,771],
-                    ['2008',304,818],
-                    ['2009',323,903],
-                    ['2010',283,923],
-                    ['2011',347,957],
-                    ['2012',361, 999],
-                    ['2013',350, 1049],
-                    ['2014',452, 1152],
-                    ['2015',529, 1236],
-                    ['2016',785, 1518],
-                    ['2017',1138, 1809],
+                    ['2006',3,12],
+                    ['2007',4,13],
+                    ['2008',5,14],
+                    ['2009',5,15],
+                    ['2010',5,15],
+                    ['2011',6,16],
+                    ['2012',6, 17],
+                    ['2013',6, 17],
+                    ['2014',7, 19],
+                    ['2015',9, 21],
+                    ['2016',13, 25],
+                    ['2017',14, 30],
                 ];
 
                 //KY
                 var datasetKy = [
-                    ['2006',8,728],
-                    ['2007',8,708],
-                    ['2008',304,764],
-                    ['2009',323,769],
-                    ['2010',283,1007],
-                    ['2011',347,1058],
-                    ['2012',361, 1078],
-                    ['2013',350, 1019],
-                    ['2014',452, 1077],
-                    ['2015',529, 1273],
-                    ['2016',785, 1419],
-                    ['2017',1138, 1566],
+                    ['2006',8,17],
+                    ['2007',8,17],
+                    ['2008',9,18],
+                    ['2009',10,18],
+                    ['2010',14,24],
+                    ['2011',16,25],
+                    ['2012',16, 25],
+                    ['2013',15, 24],
+                    ['2014',17, 25],
+                    ['2015',21, 30],
+                    ['2016',24, 34],
+                    ['2017',24, 37],
+                ];
+
+                //OH
+                var datasetOh = [
+                    ['2006',6,13],
+                    ['2007',6,14],
+                    ['2008',7,15],
+                    ['2009',6,11],
+                    ['2010',10,16],
+                    ['2011',11,18],
+                    ['2012',12, 19],
+                    ['2013',15, 21],
+                    ['2014',19, 25],
+                    ['2015',25, 30],
+                    ['2016',33, 39],
+                    ['2017',33, 46],
                 ];
             
-            
+                //MI
+                var datasetMi = [
+                    ['2006',6,12],
+                    ['2007',5,12],
+                    ['2008',7,13],
+                    ['2009',8,15],
+                    ['2010',7,14],
+                    ['2011',8,14],
+                    ['2012',7, 14],
+                    ['2013',9, 16],
+                    ['2014',11, 18],
+                    ['2015',14, 20],
+                    ['2016',19, 24],
+                    ['2017',21, 28],
+                ];
+
+                //IL
+                var datasetIl = [
+                    ['2006',7,11],
+                    ['2007',6,9],
+                    ['2008',7,11],
+                    ['2009',7,11],
+                    ['2010',7,10],
+                    ['2011',7,11],
+                    ['2012',9, 13],
+                    ['2013',8, 12],
+                    ['2014',9, 13],
+                    ['2015',11, 14],
+                    ['2016',15, 19],
+                    ['2017',17, 21],
+                ];
+
+                //WV
+                var datasetWv = [
+                    ['2006',16,20],
+                    ['2007',19,22],
+                    ['2008',21,26],
+                    ['2009',10,12],
+                    ['2010',26,29],
+                    ['2011',32,36],
+                    ['2012',27, 32],
+                    ['2013',28, 32],
+                    ['2014',32, 36],
+                    ['2015',36, 42],
+                    ['2016',43, 52],
+                    ['2017',50, 58],
+                ];
+
+                //Vi
+                var datasetVi = [
+                    ['2006',5,8],
+                    ['2007',6,9],
+                    ['2008',6,9],
+                    ['2009',6,9],
+                    ['2010',5,7],
+                    ['2011',7,10],
+                    ['2012',7, 9],
+                    ['2013',8, 10],
+                    ['2014',9, 12],
+                    ['2015',10, 12],
+                    ['2016',14, 17],
+                    ['2017',14, 18],
+                ];
                     var margin = {top: 20, right: 20, bottom: 30, left: 40},
                         width = 960,
                         height = 500;
@@ -200,7 +278,17 @@
                         .attr("cy", function(d) { return yScale(d[1]); })
                         .attr("r", 5);
 
+                    var legend = svg.append("rect")
+                        .attr("class", "legend")
+                        .attr("x", 65)
+                        .attr("y", 25)
+                        .attr("height", 100)
+                        .attr("width", 100);
                     
+                    
+                    legend.selectAll('#chartHolder')
+                        .data(dataset)
+                        .enter();
                     
                     
                         //onlick funtion to set up click of button and append dummies and text
@@ -255,42 +343,42 @@
     <div class="bottomContentBoxHolder">
     <div id="bottomBoxHolder">
     <div class="boxHolder">
-        <h1 class="boxHeader">Kentucky 2006-2016</h1>
+        <h1 class="boxHeader">Kentucky 2006-2017</h1>
         <div class="boxArea4">
             <img src="ky.PNG"/>
             <button id="kybtn"></button>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">Ohio 2006-2016</h1>
+        <h1 class="boxHeader">Ohio 2006-2017</h1>
         <div class="boxArea5">
             <img src="ohio.PNG"/>
             <button id="ohbtn"></button>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">Michigan 2006-2016</h1>
+        <h1 class="boxHeader">Michigan 2006-2017</h1>
         <div class="boxArea6">
             <img src="mich.PNG"/>
             <button id="michbtn"></button>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">Illinois 2006-2016</h1>
+        <h1 class="boxHeader">Illinois 2006-2017</h1>
         <div class="boxArea7">
             <img src="ill.PNG"/>
             <button id="illbtn"></button>
         </div>
     </div>
     <div class="boxHolder">
-        <h1 class="boxHeader">West Virginia 2006-2016</h1>
+        <h1 class="boxHeader">West Virginia 2006-2017</h1>
         <div class="boxArea8">
             <img src="westv.PNG"/>
             <button id="westbtn"></button>
         </div>
     </div>
         <div class="boxHolder">
-        <h1 class="boxHeader">Virginia 2006-2016</h1>
+        <h1 class="boxHeader">Virginia 2006-2017</h1>
             <div class="boxArea9">
             <img src="vir.PNG"/>
             <button id="virbtn"></button>
