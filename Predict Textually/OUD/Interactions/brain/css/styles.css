@@ -119,11 +119,13 @@ input {
 }
 
 .column2 p {
-    margin-top: 120px;
-    margin-bottom: 20px;
+    margin-top: -15px;
+    margin-bottom: -50px;
     text-align: center;
     justify-content: center;
-
+    font-weight: bold;
+    font-size: 14pt;
+    margin-left: 70px;
 }
 
 #textContentHolder {
@@ -284,6 +286,7 @@ input {
     font-size: 500%;
     cursor: pointer;
     margin-top: 100px;
+    margin-left: 80px;
 
     
 

@@ -13,7 +13,7 @@
 					height: 100%;
 				}
 				body {
-					width: 1200px;
+					width: 100%;
 					height: 100%;
 				}
 				header {
@@ -22,9 +22,16 @@
 					text-align: center;
 					margin-top: 40px;
 				}
+
+				/* Styles the wrapper div which contains all content */
+				.wrapper {
+					width: 1200px;
+					
+					margin: 0 auto;
+				}
 				
 				h2 {
-					font: lighter 35px sans-serif;
+					font:  22px sans-serif;
 					text-align: center;
 				}
 
@@ -159,29 +166,40 @@
 					justify-content: flex-end;
 				}
 				#arrow {
-					font-size: 1000%;
+					font-size: 700%;
 					cursor: pointer;
-					margin-top: 0px;
-					margin-left: 150px;
+					margin-top: -45px;
+				}
+
+				#arrowHolder p {
+					margin-top: 30px;
+					margin-left: -65px;
+					display: flex;
+					justify-content: flex-end;
+					font-weight: bold;
+					font-size: 14pt;
 				}
 
 				#visHolder {
-					
+					justify-content:center;
 					align-content: center;
+					transform: scale(1);
 				}
 			</style>
 	</head>
 	
 	<header>
         Tacit Tutorial
-    </header>
+	</header>
+	<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
+<div class="wrapper">
     <div class="oneCol">
         <div class="firstCol"></div>
             
                 <h2>To interact with this visualization drag and drop the blue rectangle into the visualization space below. Once placed, click on the rectangle and 
                     drag the bar up or down to adjust it to your preference.</h2>
 	
-		<body style="width: 90%">
+		<body>
 	
 		
 			<div id="Container1">
@@ -197,7 +215,7 @@
 		
 	
 					<div id="visHolder">
-						<svg width="475" height="450" style="fill: black; border: solid 2px black" transform="translate(375,75)">
+						<svg width="475" height="450" style="fill: black; border: solid 2px black" transform="translate(350,30)">
 	
 							
 							<!-- create text variable to append to line -->
@@ -241,6 +259,12 @@
 				
 			</div>
 			<div id="arrowHolder"><div id="arrow">&#10152;</div>
+			<p>NEXT</p>
+		</div>
+
+			
+			</div>
+		</div>
 	
 				<script>
 	

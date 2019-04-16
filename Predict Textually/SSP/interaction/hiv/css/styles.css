@@ -119,11 +119,13 @@ input {
 }
 
 .column2 p {
-    margin-top: 120px;
-    margin-bottom: 20px;
+    margin-top: -15px;
+    margin-bottom: -50px;
     text-align: center;
     justify-content: center;
-
+    font-weight: bold;
+    font-size: 14pt;
+    margin-left: -5px;
 }
 
 #textContentHolder {

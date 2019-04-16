@@ -1,5 +1,5 @@
 *{
-    font: lighter 40px sans-serif;
+    
     margin-top: 100;
     padding: 0;
     margin-left: -20px;
@@ -88,11 +88,25 @@ h2 {
   justify-content: flex-end;
 }
 #arrow {
-  font-size: 250%;
+  font-size: 600%;
   cursor: pointer;
-  margin-top: -1
-  200px;
-  margin-left: -120px;
+  margin-top: -50px;
+  
+}
+#arrow p {
+  font-size: 600%;
+  cursor: pointer;
+  margin-top: -150px;
+  
+}
+#arrowHolder p {
+  margin-top: 50px;
+  margin-left: -80px;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-size: 14pt;
+  font-family: sans-serif;
 }
 
 b {

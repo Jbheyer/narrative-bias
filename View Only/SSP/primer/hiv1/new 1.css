@@ -51,8 +51,16 @@ ul li .lastLine  { /* Styles for the ul (unordered lists) in the left column */
 #arrow {
     font-size: 200%;
     cursor: pointer;
-    margin-top: -1
-    200px;
+    margin-top: -50px;
+}
+
+#arrowHolder p {
+    margin-top: 40px;
+    margin-left: -75px;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+    font-size: 14pt;
 }
 
 b {
