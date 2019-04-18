@@ -360,6 +360,8 @@
 								d3.select('#subject1')
 									.style('visibility', 'visible');
 
+								d3.select('#textContentTwo')
+									.style('visibility', 'visible');
 								});
 								
 							}

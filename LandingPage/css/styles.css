@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    width: 100%;
+    width: 1400px;
     height: 100%;
 }
 #contentHolderOne {
@@ -21,7 +21,7 @@ body {
 
 #verticalOne {
     width: 20%;
-    height: 100%;
+    /*height: 100%;*/
     /*background-color: grey;*/
     border-bottom: 1px dashed black;
     display: flex;
@@ -31,7 +31,7 @@ body {
 #horizontalTitle {
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 50px;;
     margin-left: 45px;
 }
 
@@ -39,10 +39,11 @@ body {
     font-size: 1.5vh;
     margin-left: 7px;
     margin-top: 45px;
+    
 }
 
 #horizontalTitle h1 {
-    font-size: 7vh;
+    font-size: 6vh;
     margin-top: 45px;
 }
 
@@ -88,6 +89,7 @@ body {
     margin-bottom: 4px;
     overflow: visible;
     transform: scale(1);
+    font-size: 28pt;
 }
 
 #chartDescHolder .subTextOne {
@@ -119,9 +121,9 @@ body {
     overflow: visible;
     transform: scale(1); 
 }
-    @media only screen and (max-width: 1500px) {
+    @media only screen and (max-width: 2000px) {
         #chartHolder svg {
-            transform: scale(0.8);
+            transform: scale(0.85);
     }
 }
 
@@ -142,11 +144,16 @@ body {
 
 .boxHolder {
     width: 200px;
-    height: 100px;
+    height: 200px;
 }
 
 .boxHolder img {
     
+}
+
+#wrapper {
+    width:100%;
+    margin: auto;
 }
 
 .boxArea4 #kybtn {
@@ -162,7 +169,7 @@ body {
     font-size: 16px;
     padding: 12px 24px;
     border: none;
-    
+    cursor: pointer;
     border-radius: 1px;
 }
 
@@ -260,7 +267,7 @@ body {
 }
 
 .boxArea {
-    width: 105px;
+    width: 134px;
     height: 100px;
     display: flex;
 }
@@ -270,21 +277,25 @@ body {
     height: 150px;
     flex-direction: column;
     border: 2px solid black;
+    cursor: pointer;
 }
 .boxArea2 img {
     width: 225px;
     height: 150px;
     flex-direction: column;
     border: 2px solid black;
+    cursor: pointer;
 }
 .boxArea3 img {
     width: 225px;
     height: 150px;
     flex-direction: column;
     border: 2px solid black;
+    cursor: pointer;
 }
 .boxArea4 img {
     border: 2px solid black;
+    width: 135px;
 }
 
 .boxArea5 img {
@@ -314,7 +325,7 @@ body {
 
 #contentHolderBottom .boxArea {
     width: 110px;
-    height: 90px;
+    height: 100px;
 }
 
 #ContentHolderBottom .boxHeader h1 {
@@ -325,12 +336,18 @@ body {
     width: 100%;
     margin-left: 65px;
     font-size: 1.75vh;
-    margin-bottom: 15px;
+    margin-bottom: 45px;
     flex-wrap: inherit;
+    margin-top: 10px;
+}
+
+
+#bottomContentBoxHolder {
+    margin-top: 150px;
 }
 
 #bottomBoxHolder {
-    width: 80%;
+    width: 100%;
     height: 125px;
     display: flex;
     justify-content: space-around;

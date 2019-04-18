@@ -28,7 +28,7 @@
 
 <body>
     
-
+<div id="wrapper">
 <div id="contentHolderOne">
 <div id="verticalOne">
     <div id="horizontalTitle">
@@ -55,6 +55,9 @@
             
            
             <script>
+
+                var line;
+
                     //adding datasets for for main chart and updates Indiana
                     var dataset = [
                     ['2006',3,12],
@@ -179,18 +182,22 @@
 
                     yScale = d3.scaleLinear()
                             .rangeRound([height, 0])
+                            .domain([0, 60]);
+                            /*
                             .domain([0, d3.max(dataset, (function (d) {
                               return d[2];
                             }))]);
-            
+                            */
+
                     var svg = d3.select("#chartHolder").append("svg")
                         .attr("width", width + margin.left + margin.right)
                         .attr("height", height + margin.top + margin.bottom)
                         .attr('id', 'theSVG');
             
                     var g = svg.append("g")
-                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+                        .attr("width", '900')
+                        .attr('height', '400');
                     
             
                     // axis-x years move
@@ -265,7 +272,7 @@
                     
                     
                     // line chart
-                    var line = d3.line()
+                    line = d3.line()
                         .x(function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
                         .y(function(d) { return yScale(d[1]); })
                         .curve(d3.curveMonotoneX);
@@ -280,12 +287,14 @@
                         .attr("cy", function(d) { return yScale(d[1]); })
                         .attr("r", 5);
 
+                    /*    
                     var legend = svg.append("rect")
                         .attr("class", "legend")
                         .attr("x", 65)
                         .attr("y", 25)
                         .attr("height", 100)
                         .attr("width", 100);
+                    */
                     
                     function updateBarChart(myData)
                     {
@@ -294,7 +303,7 @@
                             .data(myData)
 
                             // bar chart
-                        bar.append("rect").transition()
+                        bar.select("rect").transition()
                             .attr("x", function(d) { return xScale(d[0]); })
                             .attr("y", function(d) { return yScale(d[2]); })
                             .attr("width", xScale.bandwidth())
@@ -311,7 +320,7 @@
                             });
                         
                         // labels on the bar chart
-                        bar.append("text").transition()
+                        bar.select("text").transition()
                             .attr("dy", "1.3em")
                             .attr("x", function(d) { return xScale(d[0]) + xScale.bandwidth() / 2; })
                             .attr("y", function(d) { return yScale(d[2]); })
@@ -323,19 +332,135 @@
                             .text(function(d) {
                             return d[2];
                             });
-                    }
+                    
                          
+                         // line chart
+                        line = d3.line()
+                            .x(function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
+                            .y(function(d) { return yScale(d[1]); })
+                            .curve(d3.curveMonotoneX);
+                        
+                        bar.select("path")
+                            .attr("class", "line") // Assign a class for styling
+                            .attr("d", line(dataset)); // 11. Calls the line generator
+                        
+                        bar.select("circle") // Uses the enter().append() method
+                            .attr("cx", function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
+                            .attr("cy", function(d) { return yScale(d[1]); })
+                            .attr("r", 5);
 
+                    }
+                        
+                        /*var legend = svg.append("rect")
+                            .attr("class", "legend")
+                            .attr("x", 65)
+                            .attr("y", 25)
+                            .attr("height", 100)
+                            .attr("width", 100);
 
 
                     
-                    legend.selectAll('#chartHolder')
-                        .data(dataset)
-                        .enter();
+                        legend.selectAll('#chartHolder')
+                            .data(dataset)
+                            .enter();
                     
                     
-                        //onlick funtion to set up click of button and append dummies and text
-								d3.select("#KY")
+                        */
+            </script>
+        
+    </div>
+</div>
+    
+
+    <!---->
+    <!--Right Side box-->
+<div id="verticalThree">
+    <div class="boxHolder">
+        <h1 class="boxHeader">Arrest Rates</h1>
+        <div class="boxArea1">
+            <a href="../Predict Graphically/Avg Arrest/tacit/index.html"><img src="cuffs.png" class="arrestRates1"/></a>
+            <!--<img src="arrestRates.PNG" class="arrestRates1"/>-->
+            
+            
+        </div>
+    </div>
+     <div class="boxHolder">
+        <h1 class="boxHeader">Opioid Use Disorder</h1>
+        <div class="boxArea2">
+            <a href="../Predict Graphically/OUD/tacit/index.html"> <img src="brain1.PNG"/></a>
+            
+        </div>
+    </div>
+     <div class="boxHolder">
+        <h1 class="boxHeader">Syringe Services Programs</h1>
+        <div class="boxArea3">
+            <a href="../Predict Graphically/SSP/tacit/index.html"><img src="syringe.jpg"/></a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--Bottom Section Content-->
+<div id="contentHolderBottom">
+    <p class="bottomContentParagraphHolder"><b>Indiana is not the only state in the grip of a drug overdose crisis</b> – this data ranges from 2006-2017 
+        </p>
+    <div class="bottomContentBoxHolder">
+    <div id="bottomBoxHolder">
+    <div class="boxHolder">
+        <h1 class="boxHeader">Kentucky 2006-2017</h1>
+        <div class="boxArea4">
+            <img class="KY" src="ky.PNG"/>
+            <button id="kybtn" onmouseover="updateBarChart(datasetKy)"></button>
+            
+        </div>
+    </div>
+    <div class="boxHolder">
+        <h1 class="boxHeader">Ohio 2006-2017</h1>
+        <div class="boxArea5">
+            <img src="ohio.PNG"/>
+            <button id="ohbtn"  onmouseover="updateBarChart(datasetOh);"></button>
+        </div>
+    </div>
+    <div class="boxHolder">
+        <h1 class="boxHeader">Michigan 2006-2017</h1>
+        <div class="boxArea6">
+            <img src="mich.PNG"/>
+            <button id="michbtn"  onmouseover="updateBarChart(datasetMi);"></button>
+        </div>
+    </div>
+    <div class="boxHolder">
+        <h1 class="boxHeader">Illinois 2006-2017</h1>
+        <div class="boxArea7">
+            <img src="ill.PNG"/>
+            <button id="illbtn"  onmouseover="updateBarChart(datasetIl);"></button>
+        </div>
+    </div>
+    <div class="boxHolder">
+        <h1 class="boxHeader">West Virginia 2006-2017</h1>
+        <div class="boxArea8">
+            <img src="westv.PNG"/>
+            <button id="westbtn"  onmouseover="updateBarChart(datasetWv);"></button>
+        </div>
+    </div>
+        <div class="boxHolder">
+        <h1 class="boxHeader">Virginia 2006-2017</h1>
+            <div class="boxArea9">
+            <img src="vir.PNG"/>
+            <button id="virbtn"  onmouseover="updateBarChart(datasetVi);"></button>
+            
+        </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+
+//onlick funtion to set up click of button and append dummies and text
+                                /*
+								d3.select("#kybtn")
 									.on("click", function() {
 										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
                                         console.log("updating to KY data")
@@ -347,95 +472,10 @@
 										
                                             
                                     })
-            </script>
-        
-    </div>
-        
- 
-    
-</div>
 
-    <!---->
-    <!--Right Side box-->
-<div id="verticalThree">
-    <div class="boxHolder">
-        <h1 class="boxHeader">Arrest Rates</h1>
-        <div class="boxArea1">
-            <img src="arrestRates.PNG" class="arrestRates1"/>
-            
-        </div>
-    </div>
-     <div class="boxHolder">
-        <h1 class="boxHeader">Opioid Use Disorder</h1>
-        <div class="boxArea2">
-            <img src="brain1.PNG"/>
-        </div>
-    </div>
-     <div class="boxHolder">
-        <h1 class="boxHeader">Syringe Services Programs</h1>
-        <div class="boxArea3">
-            <img src="SSP.PNG"/>
-        </div>
-    </div>
+                                */
+  </script>
 
-</div>
-</div>
-<!--Bottom Section Content-->
-<div id="contentHolderBottom">
-    <p class="bottomContentParagraphHolder"><b>Indiana is not the only state in the grip of a drug overdose crisis</b> – this data ranges from 2006-2017 
-        </p>
-    <div class="bottomContentBoxHolder">
-    <div id="bottomBoxHolder">
-    <div class="boxHolder">
-        <h1 class="boxHeader">Kentucky 2006-2017</h1>
-        <div class="boxArea4">
-            <img class="KY" src="ky.PNG"/>
-            <!--<button id="kybtn"></button>-->
-        </div>
-    </div>
-    <div class="boxHolder">
-        <h1 class="boxHeader">Ohio 2006-2017</h1>
-        <div class="boxArea5">
-            <img src="ohio.PNG"/>
-            <button id="ohbtn"></button>
-        </div>
-    </div>
-    <div class="boxHolder">
-        <h1 class="boxHeader">Michigan 2006-2017</h1>
-        <div class="boxArea6">
-            <img src="mich.PNG"/>
-            <button id="michbtn"></button>
-        </div>
-    </div>
-    <div class="boxHolder">
-        <h1 class="boxHeader">Illinois 2006-2017</h1>
-        <div class="boxArea7">
-            <img src="ill.PNG"/>
-            <button id="illbtn"></button>
-        </div>
-    </div>
-    <div class="boxHolder">
-        <h1 class="boxHeader">West Virginia 2006-2017</h1>
-        <div class="boxArea8">
-            <img src="westv.PNG"/>
-            <button id="westbtn"></button>
-        </div>
-    </div>
-        <div class="boxHolder">
-        <h1 class="boxHeader">Virginia 2006-2017</h1>
-            <div class="boxArea9">
-            <img src="vir.PNG"/>
-            <button id="virbtn"></button>
-            
-        </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-</div>
-
-
-
+  </div>
 </body>
 </html>

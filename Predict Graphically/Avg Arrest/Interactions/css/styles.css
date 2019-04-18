@@ -127,6 +127,8 @@ input {
 }
 /*CONTENT HOLDERS*/
 
+
+
 .allContent {
     display: flex;
     width: 100%;
@@ -154,7 +156,10 @@ input {
     overflow: hidden;  
 }
 
-
+a {
+    text-decoration: none;
+    color: black;
+}
 
 .column2 p {
     margin-top: -15px;

@@ -1,7 +1,9 @@
 *{
-    font: lighter 16px sans-serif;
+    
     margin-top: 100;
     padding: 0;
+    font-family: sans-serif;
+    font: lighter;
 }
 
 html {
@@ -10,7 +12,8 @@ html {
 }
 
 body {
-    width: 100%;
+    width: 1400px;
+    height: 100%;
 }
 /* Styles the larger text at the top of the page */
 header {
@@ -21,9 +24,17 @@ header {
 }
 /* Styles the wrapper div which contains all content */
 .wrapper {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+
+}
+
 /* Styles the three column div  */ 
    .image {
     margin-top: 50px;
@@ -31,7 +42,7 @@ header {
     position: center;
 }   
 .image img{
-    width:900px;
+    width: 800px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -51,6 +62,8 @@ h3 {
     margin-left: -190px;
     margin-top: 100px;
     text-align: left;
+    font-family: sans-serif;
+    font-weight: normal;
 }
 
 #arrowHolder {
@@ -63,13 +76,18 @@ h3 {
     font-size: 500%;
     cursor: pointer;
     margin-top: -100px;
+    font: 18pt;
+    margin-left: -30px;
 }
 
 #arrowHolder p {
     margin-top: -20px;
-    margin-left: -70px;
+    margin-left: -50px;
     display: flex;
     justify-content: flex-end;
     font-weight: bold;
     font-size: 14pt;
+    font-family: sans-serif;
+    margin-right: 20px;
+    
 }

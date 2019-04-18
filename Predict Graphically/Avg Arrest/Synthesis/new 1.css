@@ -25,6 +25,12 @@ header {
     height: 30vh;
     margin: 0 auto;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Styles the three column div  */
 .oneCol {
     position: center;
