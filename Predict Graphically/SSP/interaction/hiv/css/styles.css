@@ -307,11 +307,12 @@ a {
     height: 20%;
     display: flex;
     justify-content: flex-end;
+    margin-top: 50px;
 }
 #arrow {
     font-size: 500%;
     cursor: pointer;
-    margin-top: 100px;
+    margin-top: 120px;
     
 
 }
