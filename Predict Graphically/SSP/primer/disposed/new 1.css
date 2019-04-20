@@ -1,5 +1,7 @@
 
-
+* {
+    padding: 0 auto;
+}
 html {
     background-image: radial-gradient white;
     width: 100%;
@@ -15,12 +17,12 @@ header {
 }
 body {
     width: 100%;
-    height: 100;
+    height: 100%;
 }
 /* Styles the wrapper div which contains all content */
 .wrapper {
     width: 80vw;
-    height: 100%;
+    
     margin: 0 auto;
 }
  ul {
@@ -40,12 +42,12 @@ h1 {
 h2 {
     position: center; left: -20px; right: auto; bottom: -50px;
     font: 28px sans-serif;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 h3 {
     position: center; left: -20px; right: auto; bottom: -22px;
     font: 28px sans-serif;
-    margin-top: 105px;
+    margin-top: 60px;
     text-align: left;
 }
 h4 {

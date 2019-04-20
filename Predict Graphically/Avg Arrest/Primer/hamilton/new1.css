@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    width: 1400px;
+    width: 1200px;
     height: 100%;
 }
 /* Styles the larger text at the top of the page */
@@ -32,7 +32,7 @@ a {
     text-decoration: none;
     color: black;
     margin-left: 30px;
-
+    
 }
 
 /* Styles the three column div  */ 
@@ -58,7 +58,7 @@ h2 {
 }
 h3 {
     position: left;
-    font-size: 6px sans-serif;
+    font-size: 5px sans-serif;
     margin-left: -190px;
     margin-top: 100px;
     text-align: left;
@@ -75,7 +75,7 @@ h3 {
 #arrow {
     font-size: 500%;
     cursor: pointer;
-    margin-top: -100px;
+    margin-top: -130px;
     font: 18pt;
     margin-left: -30px;
 }
@@ -90,4 +90,7 @@ h3 {
     font-family: sans-serif;
     margin-right: 20px;
     
+}
+.ulfooter {
+    margin-top: -50px;
 }
