@@ -33,6 +33,8 @@ header {
     right: -150px; 
     bottom: -50px;
     width: 50%;
+    margin: 0 auto;
+    margin-left: -150px;
   }
   
   .image {

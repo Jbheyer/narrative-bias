@@ -21,7 +21,7 @@ body {
 }
 /* Styles the wrapper div which contains all content */
 .wrapper {
-    width: 80vw;
+    width: 90%;
     
     margin: 0 auto;
 }
