@@ -1,22 +1,306 @@
-				
-				
-				
-				
-				var CHART_WIDTH = 300;
-				var CHART_HEIGHT = 400;
+
+<html>
+
+		<head>
 	
+			<script src="https://d3js.org/d3.v3.min.js"></script>
+	
+			<style>
+	
+				html {
+					background-image: white;
+					width: 100%;
+					height: 100%;
+				}
+				body {
+					width: 1200px;
+					height: 100%;
+				}
+				header {
+					margin: 0 auto;
+					font: 38pt sans-serif;
+					text-align: center;
+					margin-top: 40px;
+				}
+
+				/* Styles the wrapper div which contains all content */
+				.wrapper {
+					width: 100%x;
+					
+					margin: 0 auto;
+				}
+				
+				a {
+					text-decoration: none;
+					color: black;
+					font-size: 58pt;
+					
+				}
+
+				h2 {
+					font:  22px sans-serif;
+					text-align: center;
+				}
+
+				* {
+					font: 8pt sans-serif;
+					text-align: center;
+				}
+	
+				#Container1 {
+					display: flex;
+					align-content:flex-end;
+				}
+	
+		
+	
+				#column1 {
+					width: 500px;
+				}
+	
+				.oneCol {
+					position: center;
+					margin-top: 120px;
+					
+					align-content: center;
+				}   
+
+				.firstCol {
+					width: 60%;
+					margin-top: 100px;
+					margin-left: 90px;
+				} 
+					
+				#dragme {
+	
+					border: 2px solid black;
+					stroke-width: 5px;
+				}
+	
+				#textHolder {
+					text-align: center;
+				}
+	
+				
+	
+				#text1{
+					font-weight: 700;
+				}
+	
+		
+	
+				#text2{
+					font-weight: 700;
+				}
+	
+		
+	
+				.axis {
+	
+				}
+	
+		
+	
+				.axis line {
+					stroke: #000000;
+				}
+	
+				.axis path {
+					stroke: #000000;
+					fill: none;
+				}
+	
+		
+	
+				.dummyBar1 {
+	
+					fill: #ebebeb;
+					stroke: black;
+					stroke-width: 1px;
+					stroke-dasharray: 8 2
+				}
+	
+		
+	
+				.dummyBar2 {
+	
+					fill: #ebebeb;
+					stroke: black;
+					stroke-width: 1px;
+					stroke-dasharray: 8 2
+				}	
+	
+				.dummy1 {
+	
+					fill: steelblue;
+					stroke: black;
+					stroke-width: 2px;
+					cursor: ns-resize;
+				}
+	
+				.dummy2 {
+	
+					fill: steelblue;
+					stroke: black;
+					stroke-width: 2px;
+					cursor: ns-resize;
+				}
+	
+				.dummy1:hover {
+					fill: aquamarine
+				}
+	
+				.dummy2:hover {
+					fill: aquamarine
+				}
+				#text1{
+					font-weight: 700;
+					font-size: 12px;
+				}
+
+				#text2{
+					font-weight: 700;
+					font-size: 12px;
+				}
+				#text4 {
+					font-weight: 700;
+					font-size: 12px  
+				}
+				#arrowHolder {
+					width: 100%;
+					height: 20%;
+					display: flex;
+					justify-content: flex-end;
+				}
+				#arrow {
+					font-size: 800%;
+					cursor: pointer;
+					margin-top: -45px;
+				}
+
+				#arrowHolder p {
+					margin-top: -20px;
+					margin-left: -45px;
+					display: flex;
+					justify-content: flex-end;
+					font-weight: bold;
+					font-size: 14pt;
+					margin-right: 20px;
+				}
+
+				#visHolder {
+					justify-content:center;
+					align-content: center;
+					transform: scale(1);
+				}
+
+				a {
+					text-decoration: none;
+					color: black;
+				}
+			</style>
+	</head>
+	
+	<header>
+        Tacit Tutorial
+	</header>
+	<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
+<div class="wrapper">
+    <div class="oneCol">
+        <div class="firstCol"></div>
+            
+                <h2>To interact with this visualization drag and drop the blue rectangle into the visualization space below. Once placed, click on the rectangle and 
+                    drag the bar up or down to adjust it to your preference.</h2>
+	
+		<body>
+	
+		
+			<div id="Container1">
+				
+	
+				<div id="column1">
+					<div id="textHolder">
+	
+						
+	
+					</div>
+	
+		
+	
+					<div id="visHolder">
+						<svg width="475" height="450" style="fill: black; border: solid 2px black" transform="translate(350,30)">
+	
+							
+							<!-- create text variable to append to line -->
+	
+		
+							<g id="chart" transform="translate(125,75)">
+	
+								<text id="text1" x="25" y="320">EXAMPLE BAR 1</text>
+								<text id="text2" x="175" y="320">EXAMPLE BAR 2</text>
+								<line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+	
+		
+	
+								<g id="yAxis" class="axis">
+	
+									
+	
+								</g>
+	
+							</g>
+	
+		
+	
+							<!-- drag me rectangle and label -->
+	
+							<g>
+	
+								<text text id="text4" x="15" y="300">DRAG & DROP</text>
+								<rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:2;stroke:black" x="25" y="310"/>
+	
+							</g>
+	
+		
+	
+						</svg>
+	
+					</div>
+					
+	
+				</div>
+				
+			</div>
+			<div id="arrowHolder"><div id="arrow">
+					<a href="../Primer/hamilton/index.html">&#10152;</a>
+					<div></div>
+			<p>NEXT</p>
+		</div>
+
 			
+			</div>
+		</div>
+	
+				<script>
+	
+				var CHART_WIDTH = 300;
+				var CHART_HEIGHT = 300;
+	
+		
+	
+		
+	
 				// create y scale, ranging from 0 to 100
 	
 				var yScale = d3.scale.linear()
-					.domain([0, 40])
+					.domain([0, 100])
 					.range([CHART_HEIGHT, 0]);
 	
 				//this reverses the scale from data to pixle to pixels to data. For example, domain and range in the original order do data
 				//to pixels but when reversed executes pixels (from the dragging bar) to data, which we want
 	
 				var yReverse = d3.scale.linear()
-					.range([0, 40])
+					.range([0, 100])
 					.domain([0, CHART_HEIGHT]);
 	
 				// create y axis. For x axis, we're just using a line
@@ -29,31 +313,9 @@
 	
 				d3.select("#yAxis").call(yAxis);
 	
-				var texts = ['St. Joseph County reported ___% of drug related arrests', 'Hamilton County reported ___% of drug related arrests'];
-
-				var container1 = d3.select('g');
-				container1.selectAll('text')
-					.data(texts)
-					.enter()
-					.append('text')
-					.text(function(d) { return d; })
-					.attr('y', function(d,i) { return 100 * i })
-					.on('click', function(d,i) {
-						container1
-							.append("foreignObject")
-							.attr("x", 50)
-							.attr("y", function() { return 105 * i })
-							.attr("width", 240)
-							.attr("height", 50)
-							.html(function(d) {
-								return '<input type="text" value="Prediction goes here" />'
-							})
-
-							d3.select("text:nth-child(1)").attr("stroke","green");
-							d3.select("text:nth-child(2)").attr("stroke","green");
-							
-						});
-					
+		
+	
+				
 	
 				// create two dummy bars as place holders to drag onto
 	
@@ -62,9 +324,9 @@
 				var dummyBar1 = d3.select("#chart").append("rect")
 	
 					.attr('x', 25)
-					.attr('y', yScale(10))
+					.attr('y', yScale(30))
 					.attr('width', 50)
-					.attr('height', CHART_HEIGHT - yScale(10))
+					.attr('height', CHART_HEIGHT - yScale(30))
 					.attr('class', 'dummyBar1')
 	
 		
@@ -72,34 +334,13 @@
 				var dummyBar2 = d3.select("#chart").append("rect")
 	
 					.attr('x', 175)
-					.attr('y', yScale(10))
+					.attr('y', yScale(30))
 					.attr('width', 50)
-					.attr('height', CHART_HEIGHT - yScale(10))
+					.attr('height', CHART_HEIGHT - yScale(30))
 					.attr('class', 'dummyBar2')
-	
-				//create dummy bar 3 and 4 for animation
-
-				var dummyBar3 = d3.select("#chart").append("rect")
-					
-					.attr("height", yScale(1))
-					.attr('x', 95)
-					.attr('y', yScale(2))
-					.attr('width', 50)
-					.attr('height', CHART_HEIGHT - yScale(2))
-					.attr('class', 'dummyBar3')
-					.style('fill' , 'none')
 	
 		
 	
-				var dummyBar4 = d3.select("#chart").append("rect")
-	
-					.attr('x', 245)
-					.attr('y', yScale(2))
-					.attr('width', 50)
-					.attr('height', CHART_HEIGHT - yScale(2))
-					.attr('class', 'dummyBar4')
-					//.style('fill' , 'none')
-
 				// Am I over dummy1? 
 	
 				var overDummyBar1 = false;
@@ -117,7 +358,9 @@
 					console.log("no longer over dummyBar 1");
 					overDummyBar1 = false;
 				})
-
+	
+	
+	
 				//set global var for down dummy on mouse down click
 	
 				var downDummy1 = false;
@@ -125,11 +368,7 @@
 				var mousestate;
 				var barLength;
 				var yBar;
-				var prediction1;
-				var prediction2;
-				var dummyBarText3;
-				var dummyBarText4;
-				
+				var svg = d3.select("svg");
 	
 				//Am I over dummy2
 	
@@ -225,17 +464,18 @@
 								console.log("**** Released square over dummy 1**** "); 
 								var overDummy1 = d3.select("#chart").append("rect")
 									.attr('x', 25)
-									.attr('y', yScale(10))
+									.attr('y', yScale(30))
 									.attr('width', 50)
-									.attr('height', CHART_HEIGHT - yScale(10))
+									.attr('height', CHART_HEIGHT - yScale(30))
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
-								
+
 								d3.select("#chart").append("text")
-									.attr('y', yScale(12))
+									.attr('y', yScale(32))
 									.attr('x', 35)
-									.html('10' + '%')
+									.html('30' + '%')
 									.attr('class', 'barText1');
+	
 								
 	
 								//mouse down on dummy 1 within if function
@@ -245,7 +485,10 @@
 									console.log("down on dummy 1");
 									downDummy1 = true;
 	
-									
+									//
+									svg.append("text")
+										.attr('y', yReverse);
+
 										//mouse state for mousedown
 										mousestate = d3.mouse(d3.select("svg").node());
 											console.log("mouse state  " + mousestate)
@@ -260,6 +503,7 @@
 														.attr("y");
 														console.log("length of y in bar " + yBar)
 	
+										
 	
 										//create a new event handler that's tied to the document (i.e., the whole page), and that will be called whenever the mouse is moved
 	
@@ -282,30 +526,28 @@
 										var yBarLength = offset + yBar;
 											console.log("updated ybar length " + yBarLength);
 	
-												
+	
+										
+										
 										var reScaledLength = yReverse(newBarLength);
 											console.log("scaled length " + reScaledLength);
 											
-	
-										reScaledLength = Math.floor(reScaledLength);
 										
-										//limits the scaling of the bar to 100
-										if (reScaledLength > 40) {
-											reScaledLength = 40;
-											newBarLength = CHART_HEIGHT;
-											yBarLength = CHART_HEIGHT - newBarLength;
-										}	
+											//limits the scaling of the bar to 100
+											if (reScaledLength > 100) {
+												reScaledLength = 100;
+												newBarLength = CHART_HEIGHT;
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}	
 
-										//limits the bar from being dragged -
-										else if (reScaledLength < 2) {
-											reScaledLength = 2;
-											newBarLength = CHART_HEIGHT - yScale(2);
-											yBarLength = CHART_HEIGHT - newBarLength;
-										}	
-																										
-										//creating the prediction gap for circle 1
-										prediction1 = reScaledLength;
-										console.log("prediction 1 = " + prediction1);
+											//limits the bar from being dragged -
+											else if (reScaledLength < 2) {
+												reScaledLength = 2;
+												newBarLength = CHART_HEIGHT - yScale(2);
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}
+
+										reScaledLength = Math.floor(reScaledLength);
 
 										d3.select('.dummy1')
 											//.attr('x', mouseCoord[0] - 150)
@@ -313,16 +555,18 @@
 											.attr('height', newBarLength) 
 											.attr('y', yBarLength);
 										
-																														
+										
+										
 										d3.select(".barText1")
-												.attr('y', yBarLength)
-												.html(reScaledLength + '%');
+											.attr('y', yBarLength)
+											.html(reScaledLength + '%');
+			
 																	
-											
 	
 	
+	
 											
-											
+	
 										
 	
 										
@@ -363,18 +607,18 @@
 								console.log("**** Released square over dummy 2 **** "); 
 								var overDummy2 = d3.select("#chart").append("rect")
 									.attr('x', 175)
-									.attr('y', yScale(10))
+									.attr('y', yScale(30))
 									.attr('width', 50)
-									.attr('height', CHART_HEIGHT - yScale(10))
+									.attr('height', CHART_HEIGHT - yScale(30))
 									.attr('fill' , 'steelblue')
 									.attr('class', 'dummy2');
 	
 								d3.select("#chart").append("text")
-									.attr('y', yScale(12))
-									.attr('x', 185)
-									.html('10' + '%')
+									.attr('y', yScale(32))
+									.attr('x', 188)
+									.html('30' + '%')
 									.attr('class', 'barText2');
-								
+	
 								//mouse down on dummy 1 within if function
 	
 								overDummy2.on("mousedown", function() 
@@ -418,28 +662,27 @@
 					
 										var yBarLength = offset + yBar;
 											console.log("updated ybar length " + yBarLength);
-										
+	
 										var reScaledLength = yReverse(newBarLength);
 											console.log("scaled length " + reScaledLength);
 																	
-										//limits the scaling of the bar to 100
-										if (reScaledLength > 40) {
-											reScaledLength = 40;
-											newBarLength = CHART_HEIGHT;
-											yBarLength = CHART_HEIGHT - newBarLength;
-										}	
-
-										//limits the bar from being dragged -
-										else if (reScaledLength < 2) {
-											reScaledLength = 2;
-											newBarLength = CHART_HEIGHT - yScale(2);
-											yBarLength = CHART_HEIGHT - newBarLength;
-										}	
 	
-										reScaledLength = Math.floor(reScaledLength);
+											//limits the scaling of the bar to 100
+											if (reScaledLength > 100) {
+												reScaledLength = 100;
+												newBarLength = CHART_HEIGHT;
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}	
 
-										//creates the setup for the gap for prediction 2 or bar 2
-										prediction2 = reScaledLength;
+											//limits the bar from being dragged -
+											else if (reScaledLength < 2) {
+												reScaledLength = 2;
+												newBarLength = CHART_HEIGHT - yScale(2);
+												yBarLength = CHART_HEIGHT - newBarLength;
+											}
+
+
+										reScaledLength = Math.floor(reScaledLength);
 
 
 										d3.select('.dummy2')
@@ -447,26 +690,49 @@
 											//.attr('y', mouseCoord[1] - 80)
 											.attr('height', newBarLength) 
 											.attr('y', yBarLength)
+	
+										
+
 
 										d3.select(".barText2")
 											.attr('y', yBarLength)
 											.html(reScaledLength + '%');
+	
 											
-									
+	
+										
+	
+										
+	
 										});
+	
+	
+					
+	
+		
 	
 										// create another event handler when the mouse is released
 	
 										d3.select(document).on('mouseup', function() {
-		
-										// and, remove the mousemove event handler (we don't need it)
 	
-										d3.select(document).on('mousemove', null);
-										d3.select(document).on('mouseup', null);
+							
+	
+		
+	
+							
+	
+		
+	
+											// and, remove the mousemove event handler (we don't need it)
+	
+											d3.select(document).on('mousemove', null);
+											d3.select(document).on('mouseup', null);
 	
 										});
 	
 								});	
+	
+								
 	
 								overDummy2.on("mouseup", function() 
 							{
@@ -475,137 +741,45 @@
 									downDummy2 = true;
 	
 								
-								
+	
 								});
-
-							}
-							//onlick funtion to set up click of button and append dummies and text
-								d3.select("#showMe")
-									.on("click", function() {
-										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
-										if(prediction1 === undefined || prediction2 === undefined){
-											alert("PLEASE USE BOTH SCALE BARS TO MAKE A PREDICTION")
-											return;
-										}
-										
-										
-										
-										
-										//start on dummy 3
-										//append dummy 3
-										dummyBar3 = d3.select("#chart").append("rect")
-											.attr("heignt", yScale(1))
-											.attr('x', 95)
-											.attr('y', yScale(2))
-											.attr('width', 50)
-											.attr('height', CHART_HEIGHT - yScale(2))
-											.attr('class', 'dummyBar3')
-											.style('fill' , 'orange')
-											.style('stroke', 'black')
-											.style('stroke-width', '1pt')
-
-										//append text to dummy 3
-										dummyBarText3 = d3.select("#chart").append("text")
-											.attr('y', yScale(2))
-											.attr('x', 105)
-											.html('13' + '%')
-											.attr('class', 'dummyBarText3')
-
-										//append circle to dummy 3 for gap
-										d3.select("#chart").append("circle")
-											.attr('cx', 120)
-											.attr('cy', 30)
-											.attr('r', 25)
-											.attr('class', 'circle1');
-
-										//text anchor to circle1
-										d3.select("#chart").append("text")
-											.attr('x', 120)
-											.attr('y', 35)
-											.html(prediction1 - 13 + '%')
-											.style('fill', 'white')
-											.attr('text-anchor', 'middle');
-
-										//grow text with bar
-										dummyBarText3.transition()
-											.attr('height', CHART_HEIGHT - yScale(13))
-											.attr("y", yScale(13))											
-											.duration(1700);
-
-										//animate bar
-										dummyBar3.transition()
-											.attr('y', yScale(13))
-											.attr("height", CHART_HEIGHT - yScale(13))
-											.duration(1700);
-											
-
-
-										//start dummy bar 4
-										dummyBar4 = d3.select("#chart").append("rect")
-											.attr("heignt", yScale(1))
-											.attr('x', 245)
-											.attr('y', yScale(2))
-											.attr('width', 50)
-											.attr('height', CHART_HEIGHT - yScale(2))
-											.attr('class', 'dummyBar4')
-											.style('fill' , 'orange')
-											.style('stroke', 'black')
-											.style('stroke-width', '1pt')
-
-										dummyBarText4 = d3.select("#chart").append("text")
-											.attr('y', yScale(12))
-											.attr('x', 255)
-											.html('16' + '%')
-											.attr('class', 'dummyBarText4');
-
-										//append circle to dummy 4 for gap
-										d3.select("#chart").append("circle")
-											.attr('cx', 265)
-											.attr('cy', 30)
-											.attr('r', 25)
-											.attr('class', 'circle2');
-
-										//text anchor to circle2
-										d3.select("#chart").append("text")
-											.attr('x', 265)
-											.attr('y', 35)
-											.html(prediction2 - 16 + '%')
-											.style('fill', 'white')
-											.attr('text-anchor', 'middle');
-
-										//grow text with bar
-										dummyBarText4.transition()
-											.attr('y', yScale(16))
-											.attr("height", CHART_HEIGHT - yScale(16))											
-											.duration(2000);
-
-										//animate bar
-										dummyBar4.transition()
-											.attr("y", yScale(16))
-											.attr('height', CHART_HEIGHT - yScale(16))
-											.duration(2000);
-											
-										//set Timeout feature here, look at w3 schools to load this code. Simple, remove alert part from code and add the d3 code below
-										d3.select('#subject1')
-											.style('visibility', 'visible');
-
-										d3.select('#textContentTwo')
-											.style('visibility', 'visible');
-										
-											
-									});
+	
+							
+	
+							
+	
+						}
+	
 								
-								}
+	
 								
-													
-						
-							);
-
+	
+								
+	
+		
+	
+								
+	
+								
+	
+								
+	
 						})
-						
+	
+					});
 	
 					
 	
 		
 	
-					
+		
+	
+				
+	
+			</script>
+	
+		
+	
+		</body>
+	
+		</html>

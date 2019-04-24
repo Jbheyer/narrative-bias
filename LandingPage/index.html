@@ -7,6 +7,7 @@
     .bar2 { fill: lightsteelblue; stroke: black;}
     .bar3 { fill: steelblue; stroke: black;}
     .bar:hover {fill: orange; }
+    .dot:hover {fill: black; }
     .axis--x path { display: none; }
     .line {
         fill: none;
@@ -45,13 +46,18 @@
 
     <!--Descriptions for Chart-->
     <div id="chartDescHolder">
+        <div class="mainHeaderText">
     <h2><b>1,852 Drug Overdose Deaths in Indiana 2017</b></h2>
         <p class="subTextOne">As the numbers of overdoses related to drug use continue to rise, there appears to be no solution in sight.</p>
         <p class="subTextTwo">Total Drug Overdoses Deaths: Underlying cause of X40-X44, X60-X64, X85 or Y10-Y14. Age adjusted per 100,000 people</p>
     </div>
+    </div>
+
+    
 
     <!--Place Chart/Populate Chart Here-->
     <div id="chartHolder">
+        
             
            
             <script>
@@ -60,7 +66,7 @@
 
                     //adding datasets for for main chart and updates Indiana 1852
                     var dataset = [
-                    ['2006',3,12],
+                    ["2006",3, 12],
                     ['2007',4,13],
                     ['2008',5,14],
                     ['2009',5,15],
@@ -72,6 +78,22 @@
                     ['2015',9, 21],
                     ['2016',13, 25],
                     ['2017',14, 30],
+                ];
+
+                //adding datasets for for main chart and updates Indiana 1852
+                var datasetOpIN = [
+                    [3],
+                    [4],
+                    [5],
+                    [5],
+                    [5],
+                    [6],
+                    [6],
+                    [6],
+                    [7],
+                    [9],
+                    [13],
+                    [14],
                 ];
 
                 //KY 1566
@@ -89,6 +111,9 @@
                     ['2016',24, 34],
                     ['2017',24, 37],
                 ];
+
+                var kybtn;
+                var textKy = "1,566 Drug Overdose Deaths in Indiana 2017";
 
                 //OH 5111
                 var datasetOh = [
@@ -169,6 +194,7 @@
                     ['2016',14, 17],
                     ['2017',14, 18],
                 ];
+
                     var margin = {top: 20, right: 20, bottom: 30, left: 40},
                         width = 960,
                         height = 500;
@@ -189,6 +215,12 @@
                             }))]);
                             */
 
+                                       
+                    // Define the div for the tooltip
+                    var div = d3.select("body").append("div")	
+                        .attr("class", "tooltip")				
+                        .style("opacity", 0);
+
                     var svg = d3.select("#chartHolder").append("svg")
                         .attr("width", width + margin.left + margin.right)
                         .attr("height", height + margin.top + margin.bottom)
@@ -204,15 +236,17 @@
                     g.append("g")
                         .attr("class", "axis axis--x")
                         .attr("transform", "translate(0," + height + ")")
+                        .style('font-weight', 'bold')
                         .call(d3.axisBottom(xScale));
 
                     
                     // axis-y
                     g.append("g")
                         .attr("class", "axis axis--y")
+                        .style('font-weight', 'bold')
                         .call(d3.axisLeft(yScale));
                     
-                        //y Axis label        
+                    //y Axis label        
                     svg.append("text")
                         .attr("transform", "rotate(-90)")
                         .attr("y", '-45')
@@ -231,7 +265,57 @@
                         .style("text-anchor", "middle")
                         .attr("font-size", "18pt")
                         .text("Years");
+                    
+                    //legend 
+                    //y legend       
+                    svg.append("text")
+                        .attr("transform", "rotate(-0)")
+                        .attr("y", '18')
+                        .attr("x", '90')
+                        .attr("dy", "1em")
+                        .style("text-anchor", "middle")
+                        .attr("font-size", "12pt")
+                        .text("All Drugs")
+                        
+                        
+                    var rect1 = svg.append("rect")
+                        .attr('x', 140)
+                        .attr('y', 20)
+                        .attr('width', 15)
+                        .attr('height', 15)
+                        .style('fill', "lightblue")
+                        .style('stroke', 'black')
+                        .style('stroke-width', '1.5px');
 
+                    //x legend       
+                      svg.append("text")
+                        .attr("transform", "rotate(-0)")
+                        .attr("y", '45')
+                        .attr("x", '90')
+                        .attr("dy", "1em")
+                        .style("text-anchor", "middle")
+                        .attr("font-size", "12pt")
+                        .text("Opioids")
+                        
+                        
+                    var rect1 = svg.append("rect")
+                        .attr('x', 140)
+                        .attr('y', 50)
+                        .attr('width', 15)
+                        .attr('height', 15)
+                        .style('fill', "red")
+                        .style('stroke', 'black')
+                        .style('stroke-width', '1.5px');      
+
+                    //x Axis label        
+                    svg.append("text")
+                        .attr("transform", "rotate(-360)")
+                        .attr("y", '550')
+                        .attr("x", '550')
+                        .attr("dy", "1em")
+                        .style("text-anchor", "middle")
+                        .attr("font-size", "18pt")
+                        .text("Years");
 
                     var bar = g.selectAll("g.barChartGroup")
                         .data(dataset)
@@ -285,17 +369,24 @@
                         .attr("class", "dot") // Assign a class for styling
                         .attr("cx", function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
                         .attr("cy", function(d) { return yScale(d[1]); })
-                        .attr("r", 5);
+                        .attr("r", 5)
+                        //this is how I am creating the annonation for the circles BUT how do I get just the opioids to show?
+                        .on("mouseover", function(d) {		
+                            div.transition()		
+                                .duration(200)		
+                                .style("opacity", 1.5)    
+                            div.html(dataset)                        		
+                                .style("left", (d3.event.pageX + -32) + "px")		
+                                .style("top", (d3.event.pageY - 120) + "px");	
+                            })					
+                        .on("mouseout", function(d) {		
+                            div.transition()		
+                                .duration(200)		
+                                .style("opacity", 0);	
+                        });
 
-                    /*    
-                    var legend = svg.append("rect")
-                        .attr("class", "legend")
-                        .attr("x", 65)
-                        .attr("y", 25)
-                        .attr("height", 100)
-                        .attr("width", 100);
-                    */
-                    
+                                      
+                     //udpates to data on hover       
                     function updateBarChart(myData)
                     {
 
@@ -335,37 +426,53 @@
                     
                          
                          // line chart
-                        line = d3.line()
+                        var line = d3.line()
                             .x(function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
                             .y(function(d) { return yScale(d[1]); })
                             .curve(d3.curveMonotoneX);
                         
                         bar.select("path")
                             .attr("class", "line") // Assign a class for styling
-                            .attr("d", line(dataset)); // 11. Calls the line generator
+                            .attr("d", line(myData)); // 11. Calls the line generator
                         
                         bar.select("circle") // Uses the enter().append() method
                             .attr("cx", function(d, i) { return xScale(d[0]) + xScale.bandwidth() / 2; })
                             .attr("cy", function(d) { return yScale(d[1]); })
-                            .attr("r", 5);
+                            .attr("r", 5)
+                            //this is how I am creating the annonation for the cirles BUT how do I get just the opioids to show?
+                        .on("mouseover", function(d) {		
+                            div.transition()		
+                                .duration(200)		
+                                .style("opacity", 1.5)    
+                            div.html(myData)                        		
+                                .style("left", (d3.event.pageX + -32) + "px")		
+                                .style("top", (d3.event.pageY - 120) + "px");	
+                            })					
+                        .on("mouseout", function(d) {		
+                            div.transition()		
+                                .duration(200)		
+                                .style("opacity", 0);	
+                        });
 
                     }
+
+                    //on bar the top title changes in relation to textKy... how do I get it to stay uniform and then change?
+                    bar.on('mouseover', mouseoverfunc);
+
+                    function mouseoverfunc(d, i) {
+
+                        d3.select(".mainHeaderText").text(function (d) 
+                            { return (textKy)})
+
+                            
+                    };
                         
-                        /*var legend = svg.append("rect")
-                            .attr("class", "legend")
-                            .attr("x", 65)
-                            .attr("y", 25)
-                            .attr("height", 100)
-                            .attr("width", 100);
 
-
-                    
-                        legend.selectAll('#chartHolder')
-                            .data(dataset)
-                            .enter();
+                        
+                       
                     
                     
-                        */
+                        
             </script>
         
     </div>
@@ -398,6 +505,7 @@
         </div>
     </div>
 </div>
+
 </div>
 
 <!--Bottom Section Content-->
@@ -410,7 +518,7 @@
         <h1 class="boxHeader">Kentucky 2006-2017</h1>
         <div class="boxArea4">
             <img class="KY" src="ky.PNG"/>
-            <button id="kybtn" onmouseover="updateBarChart(datasetKy)"></button>
+            <button id="kybtn" onmouseover="updateBarChart(datasetKy)" onmouseover="mouseoverfunc(textKy)"></button>
             
         </div>
     </div>
