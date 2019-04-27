@@ -23,6 +23,13 @@ input {
     display: flex
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
+}
+
 #column3 {
     width: 500px;
 }

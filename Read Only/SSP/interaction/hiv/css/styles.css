@@ -118,6 +118,13 @@ input {
     margin-left: 0 auto;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
+}
+
 .column2 p {
     margin-top: -15px;
     margin-bottom: -50px;

@@ -39,7 +39,7 @@ input {
 
 #text1{
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #text2{
@@ -72,13 +72,30 @@ input {
 
 .dummyBar1 {
 
-    fill: steelblue;
+    fill: #ebebeb;
     stroke: black;
     stroke-width: 1px;
-    
+    stroke-dasharray: 8 2
 }
 
+
+.dummyBar2 {
+
+    fill: #ebebeb;
+    stroke: black;
+    stroke-width: 1px;
+    stroke-dasharray: 8 2
+}	
+
 .dummy1 {
+
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 2px;
+    cursor: ns-resize;
+}
+
+.dummy2 {
 
     fill: steelblue;
     stroke: black;
@@ -90,7 +107,22 @@ input {
     fill: aquamarine
 }
 
+.dummy2:hover {
+    fill: aquamarine
+}
 /*CONTENT HOLDERS*/
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
+}
+
+#textPred1 p {
+    margin-top: 95px;
+    text-align: center;
+}
 
 .allContent {
     display: flex;
@@ -116,6 +148,7 @@ input {
     justify-content: center;
     margin-top: 2%;
     margin-left: 0 auto;
+    
 }
 
 .column2 p {
@@ -125,13 +158,12 @@ input {
     justify-content: center;
     font-weight: bold;
     font-size: 14pt;
-    margin-left: 90px;
+    margin-left: -5px;
 }
 
 #textContentHolder {
     width: 80%;
     margin-top: 10px;
-    display: flex;
     overflow: visible;
     transform: scale(1);
     height: 15%;
@@ -146,7 +178,7 @@ input {
 #textContentTwo {
     margin-top: 20px;
     margin-bottom: 20px;
-    WIDTH: 80%;
+    width: 80%;
     text-align: center;
 }
 
@@ -214,13 +246,13 @@ input {
 }
 
 #indianaMap {
-    width: 740px;
+    width: 680px;
     height: 400px;
     border: none;
-    MARGIN-top: 20px;
+    margin-top: 0px;
 }
 
-#styledButton {
+#showMe {
     background-image: linear-gradient(to bottom right, #6aa36a, #68bc66); /* Green */
     color: white;
    border: none;
@@ -254,14 +286,14 @@ input {
 .box1 {
     width: 100%;
     height: 40px;
-    background-color: #b1d4ff;
+    background-color: steelblue;
     border: 2px solid black;
 }
 
 .box2 {
     width: 100%;
     height: 40px;
-    background-color: #fffdfd;
+    background-color: ORANGE;
     border: 2px solid black;
 }
 
@@ -281,13 +313,12 @@ input {
     height: 20%;
     display: flex;
     justify-content: flex-end;
+    margin-top: 100px;
 }
-
 #arrow {
     font-size: 500%;
     cursor: pointer;
     margin-top: 100px;
-    margin-left: 100px;
     
 }
 

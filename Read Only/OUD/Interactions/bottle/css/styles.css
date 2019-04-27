@@ -128,6 +128,13 @@ input {
     margin-left: 90px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
+}
+
 
 #textContentHolder {
     width: 80%;

@@ -1,7 +1,7 @@
 				
 				
 				
-				
+				/*
 				var CHART_WIDTH = 300;
 				var CHART_HEIGHT = 400;
 	
@@ -28,7 +28,8 @@
 		
 	
 				d3.select("#yAxis").call(yAxis);
-	
+				
+				/*
 				var texts = ['St. Joseph County reported ___% of drug related arrests', 'Hamilton County reported ___% of drug related arrests'];
 
 				var container1 = d3.select('g');
@@ -479,112 +480,58 @@
 								});
 
 							}
+
+							*/
+
 							//onlick funtion to set up click of button and append dummies and text
 								d3.select("#showMe")
 									.on("click", function() {
 										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
-										if(prediction1 === undefined || prediction2 === undefined){
-											alert("PLEASE USE BOTH SCALE BARS TO MAKE A PREDICTION")
+										console.log("being clicked");
+
+										if(textPred1 === undefined || textPred2 === undefined){
+											alert("PLEASE A TYPE PREDICTION FOR BOTH SPACES")
 											return;
 										}
 										
 										
 										
 										
-										//start on dummy 3
-										//append dummy 3
-										dummyBar3 = d3.select("#chart").append("rect")
-											.attr("heignt", yScale(1))
-											.attr('x', 95)
-											.attr('y', yScale(2))
-											.attr('width', 50)
-											.attr('height', CHART_HEIGHT - yScale(2))
-											.attr('class', 'dummyBar3')
-											.style('fill' , 'orange')
-											.style('stroke', 'black')
-											.style('stroke-width', '1pt')
+										
 
-										//append text to dummy 3
-										dummyBarText3 = d3.select("#chart").append("text")
-											.attr('y', yScale(2))
-											.attr('x', 105)
-											.html('13' + '%')
-											.attr('class', 'dummyBarText3')
-
-										//append circle to dummy 3 for gap
-										d3.select("#chart").append("circle")
-											.attr('cx', 120)
-											.attr('cy', 30)
+										//append circle to dummy 4 for gap
+										dummycircle = d3.select("#visualizationHolder").append("circle")
+											.attr('cx', 150)
+											.attr('cy', 130)
 											.attr('r', 25)
 											.attr('class', 'circle1');
 
-										//text anchor to circle1
-										d3.select("#chart").append("text")
-											.attr('x', 120)
+										//text anchor to circle2
+										dummycircleText = d3.select("#visualizationHolder").append("text")
+											.attr('x', 265)
 											.attr('y', 35)
-											.html(prediction1 - 13 + '%')
+											.html(textPred1 - 16 + '%')
 											.style('fill', 'white')
 											.attr('text-anchor', 'middle');
 
-										//grow text with bar
-										dummyBarText3.transition()
-											.attr('height', CHART_HEIGHT - yScale(13))
-											.attr("y", yScale(13))											
-											.duration(1700);
-
-										//animate bar
-										dummyBar3.transition()
-											.attr('y', yScale(13))
-											.attr("height", CHART_HEIGHT - yScale(13))
-											.duration(1700);
-											
-
-
-										//start dummy bar 4
-										dummyBar4 = d3.select("#chart").append("rect")
-											.attr("heignt", yScale(1))
-											.attr('x', 245)
-											.attr('y', yScale(2))
-											.attr('width', 50)
-											.attr('height', CHART_HEIGHT - yScale(2))
-											.attr('class', 'dummyBar4')
-											.style('fill' , 'orange')
-											.style('stroke', 'black')
-											.style('stroke-width', '1pt')
-
-										dummyBarText4 = d3.select("#chart").append("text")
-											.attr('y', yScale(12))
-											.attr('x', 255)
-											.html('16' + '%')
-											.attr('class', 'dummyBarText4');
 
 										//append circle to dummy 4 for gap
-										d3.select("#chart").append("circle")
+										d3.select("#visualizationHolder").append("circle")
 											.attr('cx', 265)
 											.attr('cy', 30)
 											.attr('r', 25)
-											.attr('class', 'circle2');
+											.attr('class', 'circle2')
+											.style('fill', 'black');
 
 										//text anchor to circle2
-										d3.select("#chart").append("text")
-											.attr('x', 265)
+										d3.select("#visualizationHolder").append("text")
+											.attr('x', 165)
 											.attr('y', 35)
-											.html(prediction2 - 16 + '%')
+											.html(textPred2 - 13 + '%')
 											.style('fill', 'white')
 											.attr('text-anchor', 'middle');
 
-										//grow text with bar
-										dummyBarText4.transition()
-											.attr('y', yScale(16))
-											.attr("height", CHART_HEIGHT - yScale(16))											
-											.duration(2000);
-
-										//animate bar
-										dummyBar4.transition()
-											.attr("y", yScale(16))
-											.attr('height', CHART_HEIGHT - yScale(16))
-											.duration(2000);
-											
+																					
 										//set Timeout feature here, look at w3 schools to load this code. Simple, remove alert part from code and add the d3 code below
 										d3.select('#subject1')
 											.style('visibility', 'visible');
@@ -593,15 +540,15 @@
 											.style('visibility', 'visible');
 										
 											
-									});
 								
-								}
+								
+								
 								
 													
 						
-							);
+									});
 
-						})
+						
 						
 	
 					

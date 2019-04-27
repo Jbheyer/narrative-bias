@@ -107,6 +107,13 @@ input {
     align-items: center;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
+}
+
 .column2 {
     width: 50%;
     height: 100%;

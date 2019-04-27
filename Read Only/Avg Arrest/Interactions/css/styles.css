@@ -233,9 +233,9 @@ input {
 
 #indianaMap {
     width: 780px;
-    height: 400px;
+    height: 430px;
     border: none;
-    margin-top: 80px;
+    margin-top: -50px;
 }
 
 #textPic {
@@ -317,3 +317,9 @@ input {
     
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
+}

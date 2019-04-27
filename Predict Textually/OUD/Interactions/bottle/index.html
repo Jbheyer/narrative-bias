@@ -11,7 +11,7 @@
 <div class="column1">
 <div id="textContentHolder">
     <p id="textContent">
-        <strong>VIEW</strong> THE <strong>NUMBER OF PAINKILLER PRESCRIPTIONS PER 100</strong> PEOPLE IN INDIANA FOR 2017 IN THE VISUALIZATION SPACE BELOW
+        <strong>PREDICT</strong> THE <strong>NUMBER OF ACTIVE PAINKILLER PRESCRIPTIONS</strong> PER <strong>100 PEOPLE</strong> IN INDIANA IN 2017 IN THE TEXT SPACE PROVIDED BELOW
     </p>
 </div>
 
@@ -23,50 +23,60 @@
             <id class="icon1" src =""/></div>     
             
           
-                  <div id="visHolder">
-                    <svg width="500" height="400" style="fill: black; border: solid 2px black">
-          
-                      
-                      <!-- create text variable to append to line -->
-          
-            
-                      <g id="chart" transform="translate(120,50)">
-          
-                        <text id="text1" x="70" y="320">PAINKILLER PRESCRIPTIONS</text>
-                        
-                        <text id="text5" x="-225" y="-55" transform="rotate(-90)">PEOPLE PRESCRIBED</text>
+            <div id="visHolder">
+                    
 
-                        <line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
-          
-            
-          
-                        <g id="yAxis" class="axis">
-          
-                          
-          
-                        </g>
-          
-                      </g>
-          
-            
-          
-                      <!-- drag me rectangle and label -->
-          
-                     
-          
-            
-          
-                    </svg>
+                <div id="textPred1">
+                <p style="font-size: 20px">
+                  Indiana reported <input class="pred1" length='2' style="width: 30px; font-size: 20px"></input> number of active painkiller prescriptions per 100 people in 2017
+                  
+                </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                
+
+
+                </div>
+
+
+                <!--
+                <svg width="500" height="400">
+                  <g style="font-size: 14pt"; transform="translate(0, 100)">
+                    </g>
+      
+                  
+                 
+      
+        
+                  
+      
+                      
+      
+      
+        
+      
+                 
+        
+      
+                </svg>
+              -->
         
                        
         </div>
           <div id="sideBarRight">
+              <p><strong>GAP</strong></p>
+              <div class="dot">
+            
               
+
+             
+              </div>
         </div>
     </div>
 
-    <div id="textContentTwo">
-        <p><strong>EXPLAIN</strong> WHY YOU THINK THE DATA SHOWS THIS <strong>AND</strong> WHY IT'S DIFFERENT THEN WHAT YOU THOUGHT IT WOULD SHOW</p>
+    <div id="textContentTwo" style="visibility:hidden;">
+        <p><strong>EXPLAIN</strong> WHY YOU PREDICTED THIS</p><strong>AND</strong> WHAT YOU THINK THE GAP (IF ANY) BETWEEN <strong>YOUR PREDICITION AND THE DATA SUGGESTS</strong>
+
     </div>
 
     <div class="container">
@@ -75,7 +85,7 @@
               <div class="col-25">            
               </div>
               <div class="col-75">
-                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px; visibility: hidden;"></textarea>
               </div>
             </div>
             <div class="row">
@@ -84,7 +94,7 @@
             </form>
           </div> 
 
-    
+    <button id="showMe" >SHOW ME THE DATA</button>
 </div>
 
 
@@ -107,7 +117,9 @@
               </div>
             </div>
             </form>
-            <div id="arrowHolder"><div id="arrow">&#10152;</div></div>
+            <div id="arrowHolder"><div id="arrow">
+                <a href="../../Synthesis/index.html">&#10152;</a>
+                <div></div>
           <p>NEXT</p>
           </div> 
           

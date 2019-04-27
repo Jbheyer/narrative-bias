@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Syringe Services Programs</title>
+    <title>Syringe Services Program</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -11,7 +11,7 @@
 <div class="column1">
 <div id="textContentHolder">
     <p id="textContent">
-        <strong>VIEW</strong> THE PERCENTAGE OUT OF THE <strong>621 NEWLY DIAGNOSED CASES </strong>OF<strong> HIV IN INDIANA</strong> THAT WERE RELATED TO INJECTION DRUG USE
+        <strong>PREDICT</strong> THE <strong>PERCENTAGE OUT OF 621 NEWLY DIAGNOSED CASES</strong> OF HIV IN INDIANA THAT WERE RELATED TO <strong>INJECTION DRUG USE</strong> 
     </p>
 </div>
 
@@ -24,51 +24,62 @@
             
           
                   <div id="visHolder">
-                    <svg width="500" height="400" style="fill: black; border: solid 2px black">
-          
                       
-                      <!-- create text variable to append to line -->
-          
-            
-                      <g id="chart" transform="translate(120,50)">
-          
-                        <text id="text1" x="85" y="320">INJECTION DRUG USE</text>
-                        
-                        <text id="text5" x="-215" y="-55" transform="rotate(-90)">NEW CASES OF HIV</text>
+                    
 
-                        <line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
-          
-            
-          
-                        <g id="yAxis" class="axis">
-          
+                          <div id="textPred1">
+                          <p style="font-size: 20px">
+                            Indiana reported that <input class="pred1" length='2' style="width: 30px; font-size: 20px"></input> % out of the 621 newly diagnosed cases of HIV
+                            resulted from injection drug use
+                            
+                          </p>
+                          <p>&nbsp;</p>
+                          <p>&nbsp;</p>
                           
-          
-                        </g>
-          
-                      </g>
-          
+      
+      
+                          </div>
+      
+      
+                          <!--
+                          <svg width="500" height="400">
+                            <g style="font-size: 14pt"; transform="translate(0, 100)">
+                              </g>
+                
+                            
+                  
+                  
             
-          
-                      <!-- drag me rectangle and label -->
-          
-                     
-          
-            
-          
-                    </svg>
+                           
+                
+                  
+                            
+                
+                                
+                
+                
+                  
+                
+                           
+                  
+                
+                          </svg>
+                        -->
         
                        
         </div>
           <div id="sideBarRight">
+              <p><strong>GAP</strong></p>
+              <div class="dot">
+            
+              </div>   
               
         </div>
     </div>
 
-    <div id="textContentTwo">
-        <p><strong>EXPLAIN</strong> WHY YOU THINK THE DATA SHOWS THIS <strong>AND</strong> IF IT IS DIFFERENT THEN WHAT YOU THOUGHT IT WOULD SHOW</p>
-
-    </div>
+    <div id="textContentTwo" style="visibility:hidden;">
+        <p><strong>EXPLAIN</strong> WHY YOU PREDICTED THIS</p><strong>AND</strong> WHAT YOU THINK THE GAP (IF ANY) BETWEEN <strong>YOUR PREDICITION AND THE DATA SUGGESTS</strong>
+      </div>
 
     <div class="container">
             <form action="/action_page.php">
@@ -76,7 +87,7 @@
               <div class="col-25">            
               </div>
               <div class="col-75">
-                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px; visibility: hidden;"></textarea>
               </div>
             </div>
             <div class="row">
@@ -85,7 +96,7 @@
             </form>
           </div> 
 
-    
+    <button id="showMe" >SHOW ME THE DATA</button>
 </div>
 
 
@@ -108,7 +119,8 @@
               </div>
             </div>
             </form>
-            <div id="arrowHolder"><div id="arrow">&#10152;</div></div>
+            <div id="arrowHolder"><div id="arrow">
+                <a href="../../primer/disposed/index.html">&#10152;</a>
           <p>NEXT</p>
           </div> 
           

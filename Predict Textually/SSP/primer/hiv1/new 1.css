@@ -55,15 +55,22 @@ ul li .lastLine  { /* Styles for the ul (unordered lists) in the left column */
 }
 
 #arrowHolder p {
-    margin-top: 40px;
+    margin-top: -20px;
     margin-left: -75px;
     display: flex;
     justify-content: flex-end;
     font-weight: bold;
     font-size: 14pt;
+    margin-right: 20px;
 }
 
 b {
     font-weight: bold;
     font-size:24pt;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
 }
