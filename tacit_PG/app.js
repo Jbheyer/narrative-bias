@@ -111,8 +111,8 @@
 				d3.select("#dragme")
 					.on('mousedown', function() 
 					{
-	
-		
+						//we need to kill the pointer events out, of the weird hover
+						d3.select('#dragme').style('pointer-events', 'none');
 	
 						// remember the coordinates of the rectangle
 	
@@ -136,8 +136,8 @@
 							// move the rectangle to those new coordinates, added +5
 	
 							d3.select("#dragme")
-								.attr('x', mouseCoord[0] + 5)
-								.attr('y', mouseCoord[1] + 5)
+								.attr('x', mouseCoord[0] - +d3.select("#dragme").attr('width')/2)
+								.attr('y', mouseCoord[1] - +d3.select("#dragme").attr('height')/2);
 	
 							
 	
@@ -152,7 +152,8 @@
 						d3.select(document).on('mouseup', function() {
 	
 							
-	
+							//killed the pointer event so it will still release 
+							d3.select('#dragme').style('pointer-events', null);
 		
 	
 							// return the 'dragme' rectnagle to the original position (since we've probably moved it since)
