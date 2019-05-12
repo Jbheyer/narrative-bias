@@ -24,6 +24,10 @@
     </style>
     <title>Drug Overdose Deaths</title>
     <link type="text/css" rel="stylesheet" href="css/styles.css"/>
+    <!--added link for pop up test-->
+    <link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
     <script src="http://d3js.org/d3.v4.min.js"></script>
 </head>
 
@@ -62,6 +66,23 @@
             <script>
 
                 var line;
+                
+                function openColorBox(){
+                    
+                    $.colorbox({iframe:true, width:"30%", height:"30%"});
+                }
+                
+                function countDown(){
+                    seconds--
+                    $("#seconds").text(seconds);
+                    if (seconds === 0){
+                    openColorBox();
+                    clearInterval(i);
+                    }
+                }
+
+                var seconds = 5,
+                    i = setInterval(countDown, 500);
 
                     //adding datasets for for main chart and updates Indiana 1852
                     var dataset = [
@@ -431,22 +452,37 @@
                         	
                         };
 
-                    
+                        //append circles for check list
+                        d3.select("#theSVG").append("circle")
+                            .attr('cx', 1078)
+							.attr('cy', -52)
+                            .attr('r', 15)
+                            .style('fill', 'none')
+                            .style('stroke', 'black')
+                            .style('stroke-width','2pt black')
+							.attr('class', 'circle4');
 
-                    //on bar the top title changes in relation to textKy... how do I get it to stay uniform and then change?
-                    /*
-                    bar.on('mouseover', mouseoverfunc);
-
-                    function mouseoverfunc(d, i) {
-
-                        d3.select(".mainHeaderText").text(function (d) 
-                            { return (textKy)})
-
+                        d3.select("#theSVG").append("circle")
+                            .attr('cx', 1078)
+							.attr('cy', 182)
+                            .attr('r', 15)
+                            .style('fill', 'none')
+                            .style('stroke', 'black')
+                            .style('stroke-width','2pt black')
+                            .attr('class', 'circle5');
                             
-                    };
-                        
+                        d3.select("#theSVG").append("circle")
+                            .attr('cx', 1078)
+							.attr('cy', 442)
+                            .attr('r', 15)
+                            .style('fill', 'none')
+                            .style('stroke', 'black')
+                            .style('stroke-width','2pt black')
+                            .attr('class', 'circle6');
+                            
+                        //write the code to append a check mark to the circle once the page has been completed
 
-                    */
+                    
                        
                     
                     
@@ -477,7 +513,7 @@
         </div>
     </div>
      <div class="boxHolder">
-        <h1 class="boxHeader">Syringe Services Programs</h1>
+        <h1 class="boxHeader">Syringe Exchange Programs</h1>
         <div class="boxArea3">
             <a href="../Predict Textually/SSP/primer/hiv1/index.html"><img src="syringe.jpg"/></a>
         </div>
@@ -496,7 +532,7 @@
         <h1 class="boxHeader">Kentucky 2006-2017</h1>
         <div class="boxArea4">
             <img class="KY" src="ky.PNG"/>
-            <button id="kybtn" onmouseover="updateBarChart(datasetKy, 'Kentucky ', '1,566')"></button>
+            <button id="kybtn" onmouseover="updateBarChart(datasetKy, 'Kentucky ', '1,566')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
             
         </div>
     </div>
@@ -504,35 +540,35 @@
         <h1 class="boxHeader">Ohio 2006-2017</h1>
         <div class="boxArea5">
             <img src="ohio.PNG"/>
-            <button id="ohbtn"  onmouseover="updateBarChart(datasetOh, 'Ohio ', '5,111');"></button>
+            <button id="ohbtn"  onmouseover="updateBarChart(datasetOh, 'Ohio ', '5,111')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
         </div>
     </div>
     <div class="boxHolder">
         <h1 class="boxHeader">Michigan 2006-2017</h1>
         <div class="boxArea6">
             <img src="mich.PNG"/>
-            <button id="michbtn"  onmouseover="updateBarChart(datasetMi, 'Michigan ' , '2,694');"></button>
+            <button id="michbtn"  onmouseover="updateBarChart(datasetMi, 'Michigan ' , '2,694')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
         </div>
     </div>
     <div class="boxHolder">
         <h1 class="boxHeader">Illinois 2006-2017</h1>
         <div class="boxArea7">
             <img src="ill.PNG"/>
-            <button id="illbtn"  onmouseover="updateBarChart(datasetIl, 'Illinois ', '2,778');"></button>
+            <button id="illbtn"  onmouseover="updateBarChart(datasetIl, 'Illinois ', '2,778')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
         </div>
     </div>
     <div class="boxHolder">
         <h1 class="boxHeader">West Virginia 2006-2017</h1>
         <div class="boxArea8">
             <img src="westv.PNG"/>
-            <button id="westbtn"  onmouseover="updateBarChart(datasetWv, 'West Virginia ', '974');"></button>
+            <button id="westbtn"  onmouseover="updateBarChart(datasetWv, 'West Virginia ', '974')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
         </div>
     </div>
         <div class="boxHolder">
         <h1 class="boxHeader">Virginia 2006-2017</h1>
             <div class="boxArea9">
             <img src="vir.PNG"/>
-            <button id="virbtn"  onmouseover="updateBarChart(datasetVi, 'Virginia ', '1,507');"></button>
+            <button id="virbtn"  onmouseover="updateBarChart(datasetVi, 'Virginia ', '1,507')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
             
         </div>
             </div>
