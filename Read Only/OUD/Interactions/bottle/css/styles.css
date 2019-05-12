@@ -222,7 +222,7 @@ a {
     width: 680px;
     height: 400px;
     border: none;
-    MARGIN-top: 20px;
+    MARGIN-top: -50px;
 }
 
 #textPic {
@@ -300,7 +300,7 @@ a {
 #arrow {
     font-size: 500%;
     cursor: pointer;
-    margin-top: 100px;
+    margin-top: 150px;
     margin-left: 100px;
     
 }
