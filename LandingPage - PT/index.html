@@ -66,7 +66,7 @@
             <script>
 
                 var line;
-                
+                /*
                 function openColorBox(){
                     
                     $.colorbox({iframe:true, width:"30%", height:"30%"});
@@ -83,9 +83,27 @@
 
                 var seconds = 5,
                     i = setInterval(countDown, 500);
+                */
+
 
                     //adding datasets for for main chart and updates Indiana 1852
                     var dataset = [
+                    ["2006",3, 12],
+                    ['2007',4,13],
+                    ['2008',5,14],
+                    ['2009',5,15],
+                    ['2010',5,15],
+                    ['2011',6,16],
+                    ['2012',6, 17],
+                    ['2013',6, 17],
+                    ['2014',7, 19],
+                    ['2015',9, 21],
+                    ['2016',13, 25],
+                    ['2017',14, 30],
+                ];
+
+
+                var datasetIN = [
                     ["2006",3, 12],
                     ['2007',4,13],
                     ['2008',5,14],
@@ -499,7 +517,7 @@
     <div class="boxHolder">
         <h1 class="boxHeader">Arrest Rates</h1>
         <div class="boxArea1">
-            <a href="../Predict Textually/Avg Arrest/Primer/hamilton/index.html"> <img src="cuffs.png" class="arrestRates1"/></a>
+            <a href="../Predict Textually/Avg Arrest/Primer/hamilton/index.html"><img src="cuffs.png" class="arrestRates1"/></a>
             <!--<img src="arrestRates.PNG" class="arrestRates1"/>-->
             
             
@@ -532,7 +550,7 @@
         <h1 class="boxHeader">Kentucky 2006-2017</h1>
         <div class="boxArea4">
             <img class="KY" src="ky.PNG"/>
-            <button id="kybtn" onmouseover="updateBarChart(datasetKy, 'Kentucky ', '1,566')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
+            <button id="kybtn" onmouseover="updateBarChart(datasetKy, 'Kentucky ', '1,566')"></button>
             
         </div>
     </div>
@@ -540,35 +558,35 @@
         <h1 class="boxHeader">Ohio 2006-2017</h1>
         <div class="boxArea5">
             <img src="ohio.PNG"/>
-            <button id="ohbtn"  onmouseover="updateBarChart(datasetOh, 'Ohio ', '5,111')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
+            <button id="ohbtn"  onmouseover="updateBarChart(datasetOh, 'Ohio ', '5,111')"></button>
         </div>
     </div>
     <div class="boxHolder">
         <h1 class="boxHeader">Michigan 2006-2017</h1>
         <div class="boxArea6">
             <img src="mich.PNG"/>
-            <button id="michbtn"  onmouseover="updateBarChart(datasetMi, 'Michigan ' , '2,694')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
+            <button id="michbtn"  onmouseover="updateBarChart(datasetMi, 'Michigan ' , '2,694')"></button>
         </div>
     </div>
     <div class="boxHolder">
         <h1 class="boxHeader">Illinois 2006-2017</h1>
         <div class="boxArea7">
             <img src="ill.PNG"/>
-            <button id="illbtn"  onmouseover="updateBarChart(datasetIl, 'Illinois ', '2,778')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
+            <button id="illbtn"  onmouseover="updateBarChart(datasetIl, 'Illinois ', '2,778')"></button>
         </div>
     </div>
     <div class="boxHolder">
         <h1 class="boxHeader">West Virginia 2006-2017</h1>
         <div class="boxArea8">
             <img src="westv.PNG"/>
-            <button id="westbtn"  onmouseover="updateBarChart(datasetWv, 'West Virginia ', '974')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
+            <button id="westbtn"  onmouseover="updateBarChart(datasetWv, 'West Virginia ', '974')"></button>
         </div>
     </div>
         <div class="boxHolder">
-        <h1 class="boxHeader">Virginia 2006-2017</h1>
+        <h1 class="boxHeader">Indiana 2006-2017</h1>
             <div class="boxArea9">
             <img src="vir.PNG"/>
-            <button id="virbtn"  onmouseover="updateBarChart(datasetVi, 'Virginia ', '1,507')" onmouseout="updateBarChart(dataset, 'Indiana ', '1,852');"></button>
+            <button id="virbtn"  onmouseover="updateBarChart(datasetIN, 'Indiana ', '1,852')"></button>
             
         </div>
             </div>
@@ -578,7 +596,18 @@
 </div>
 </div>
 
+<div id="hover"; style="position: absolute; left: 49px; top: 610px; width: 130px; height: 50px; font-size: 12.5pt;
+text-align: center; background-color: lightgoldenrodyellow; border-style: solid; border-width: 1px; visibility: hidden;"> Hover over the states below</div>
+
 <script>
+
+    setTimeout (function() {
+        d3.select("#hover").style("visibility", "visible");
+        }, 2000);
+
+        setTimeout (function() {
+        d3.select("#hover").style("visibility", "hidden");
+        }, 8000);
 
 //onlick funtion to set up click of button and append dummies and text
                                 /*
