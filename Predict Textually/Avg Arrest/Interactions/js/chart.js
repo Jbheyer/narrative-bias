@@ -540,7 +540,8 @@
 											.style('visibility', 'visible');
 										
 											
-								
+										d3.select('#showMe')
+											.style('visibility', 'hidden');
 								
 								
 								

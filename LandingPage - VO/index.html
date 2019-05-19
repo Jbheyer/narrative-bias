@@ -596,18 +596,19 @@
 </div>
 </div>
 
-<div id="hover"; style="position: absolute; left: 49px; top: 610px; width: 130px; height: 50px; font-size: 12.5pt;
-text-align: center; background-color: lightgoldenrodyellow; border-style: solid; border-width: 1px; visibility: hidden;"> Hover over the states below</div>
+<div class="arrow_box"; style="position: absolute; left: 535px; top: 565px; width: 130px; height: 70px; font-size: 12.75pt;
+text-align: center; visibility: hidden;"> Hover over the states below for  more information</div>
 
 <script>
 
     setTimeout (function() {
-        d3.select("#hover").style("visibility", "visible");
+        d3.select(".arrow_box").style("visibility", "visible");
         }, 2000);
 
         setTimeout (function() {
-        d3.select("#hover").style("visibility", "hidden");
+        d3.select(".arrow_box").style("visibility", "hidden");
         }, 8000);
+		
 
 //onlick funtion to set up click of button and append dummies and text
                                 /*
