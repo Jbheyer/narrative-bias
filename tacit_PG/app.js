@@ -133,7 +133,7 @@
 	
 		
 	
-							// move the rectangle to those new coordinates, added +5
+							// move the rectangle to those new coordinates
 	
 							d3.select("#dragme")
 								.attr('x', mouseCoord[0] - +d3.select("#dragme").attr('width')/2)
@@ -187,6 +187,9 @@
 									.attr('height', CHART_HEIGHT - yScale(30))
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
+
+								d3.select('.dummyBar1')
+									.style('visibility', 'hidden');
 	
 								
 	
@@ -298,7 +301,8 @@
 									.attr('fill' , 'steelblue')
 									.attr('class', 'dummy2');
 	
-		
+								d3.select('.dummyBar2')
+									.style('visibility', 'hidden');
 	
 								//mouse down on dummy 1 within if function
 	

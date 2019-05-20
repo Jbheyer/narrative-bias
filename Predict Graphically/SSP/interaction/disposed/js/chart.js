@@ -176,6 +176,9 @@
 									.attr('height', CHART_HEIGHT - yScale(30))
 									.attr('fill', 'steelblue')
 									.attr('class', 'dummy1');
+
+								d3.select('.dummyBar1')
+									.style('visibility', 'hidden');
 	
 								d3.select("#chart").append("text")
 									.attr('y', yScale(30))
@@ -367,6 +370,9 @@
 								
 								d3.select('#showMe')
 									.style('visibility', 'hidden');
+
+								d3.select('#arrowHolder')
+									.style('visibility', 'visible');
 	
 						});
 								

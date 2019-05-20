@@ -11,45 +11,30 @@ d3.select("#showMe")
 	
 	
 	
-	
-	
-
-	//append circle to dummy 4 for gap
-	dummycircle = d3.select("#visualizationHolder").append("circle")
-		.attr('cx', 150)
-		.attr('cy', 130)
-		.attr('r', 25)
-		.attr('class', 'circle1');
-
-	//text anchor to circle2
-	dummycircleText = d3.select("#visualizationHolder").append("text")
-		.attr('x', 265)
-		.attr('y', 35)
-		.html(textPred1 - 16 + '%')
-		.style('fill', 'white')
-		.attr('text-anchor', 'middle');
-
-
-	//append circle to dummy 4 for gap
-	d3.select("#visualizationHolder").append("circle")
-		.attr('cx', 265)
-		.attr('cy', 30)
-		.attr('r', 25)
-		.attr('class', 'circle2')
-		.style('fill', 'black');
-
-	
-
-												
-	//set Timeout feature here, look at w3 schools to load this code. Simple, remove alert part from code and add the d3 code below
 	d3.select('#subject1')
 		.style('visibility', 'visible');
 
 	d3.select('#textContentTwo')
 		.style('visibility', 'visible');
-	
+
 	d3.select('#showMe')
-		.style('visibility', 'hidden');	
+		.style('visibility', 'hidden');
+
+	d3.select('#arrowHolder')
+		.style('visibility', 'visible');
+
+	d3.select('#textPred1').append('text')
+		.attr('x', 550)
+		.attr('y', 550)
+		.html('Hamilton County reported ');
+						
+	d3.select("#textPred1").append("text")
+		.attr('x', 265)
+		.attr('y', 35)
+		.html(Pred1 - 16 + '%');		
+
+
+	
 
 
 
