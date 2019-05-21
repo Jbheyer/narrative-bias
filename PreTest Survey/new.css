@@ -1,11 +1,12 @@
 html,body {padding:0;margin:0;}
 .wrap {
-  font:122px;
+  font:12px;
   
 }
 * {
   font-family: sans-serif;
-}
+  font-weight: normal; 
+} 
 ul.likert {
   list-style-type: none;
 }
@@ -21,6 +22,18 @@ form .statement {
   padding: 30px 0 0 4.25%;
   margin-bottom:10px;
 }
+
+
+form .statement i {
+  font-style: normal;
+  font-weight: normal;
+}
+
+form .statement p {
+  font-style: normal;
+  font-weight: normal;
+}
+
 form .likert {
   list-style:none;
   width:100%;
@@ -28,8 +41,10 @@ form .likert {
   padding:0 0 35px;
   display:block;
   border-bottom:2px solid #efefef;
+  font-weight: normal;
 }
 form .likert:last-of-type {border-bottom:0;}
+
 form .likert:before {
   content: '';
   position:relative;
@@ -59,6 +74,7 @@ form .buttons {
   margin:30px 0;
   padding:0 4.25%;
   text-align:right
+  
 } 
 form .buttons button {
   padding: 5px 10px;
@@ -72,6 +88,6 @@ form .buttons .clear:hover {background-color: #ccc;}
 form .buttons .submit:hover {background-color: #14892c;} 
 
 .myButton {
-  width: 200px;
-  height: 200px;
+  width: 600px;
+  height: 600px;
 }
