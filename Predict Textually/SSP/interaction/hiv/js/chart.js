@@ -5,7 +5,7 @@ d3.select("#showMe")
 	console.log("being clicked");
 
 	if(textPred1 === undefined) {
-		alert("PLEASE A TYPE PREDICTION FOR BOTH SPACES")
+		alert("Please use the bars below to make a prediction")
 		return;
 	}
 	
@@ -26,12 +26,9 @@ d3.select("#showMe")
 	d3.select('#textPred1').append('text')
 		.attr('x', 550)
 		.attr('y', 550)
-		.html('Hamilton County reported ');
+		.html('Indiana reported that 32% of the 621 newly diagnosed cases of HIV in 2015 resulted from injection drug use');
 						
-	d3.select("#textPred1").append("text")
-		.attr('x', 265)
-		.attr('y', 35)
-		.html(Pred1 - 16 + '%');		
+			
 
 
 	

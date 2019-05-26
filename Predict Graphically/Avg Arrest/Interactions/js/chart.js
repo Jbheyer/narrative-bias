@@ -470,7 +470,7 @@
 									.on("click", function() {
 										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
 										if(prediction1 === undefined || prediction2 === undefined){
-											alert("PLEASE USE BOTH SCALE BARS TO MAKE A PREDICTION")
+											alert("Please use the bars below to make a prediction")
 											return;
 										}
 										

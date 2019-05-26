@@ -5,7 +5,7 @@ d3.select("#showMe")
 	console.log("being clicked");
 
 	if(textPred1 === undefined) {
-		alert("PLEASE A TYPE PREDICTION FOR BOTH SPACES")
+		alert("Please use the bars below to make a prediction")
 		return;
 	}
 	
@@ -25,12 +25,8 @@ d3.select("#showMe")
 	d3.select('#textPred1').append('text')
 		.attr('x', 50)
 		.attr('y', 50)
-		.html('Indiana reported that  ');
+		.html('82% of used syringes were properly disposed of after a syringe exchange program began in Austin Indiana for 2017');
 						
-	d3.select("#textPred1").append("text")
-		.attr('x', 265)
-		.attr('y', 35)
-		.html(Pred1 - 16 + '%');
 	
 	
 

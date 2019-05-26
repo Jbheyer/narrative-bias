@@ -151,6 +151,11 @@ a {
     
 }
 
+#textPred2 p {
+    margin-top: 95px;
+    align-content: center;
+    text-align: center;
+}
 .column2 p {
     margin-top: -15px;
     margin-bottom: -50px;

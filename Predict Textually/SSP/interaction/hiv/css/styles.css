@@ -54,9 +54,18 @@ input {
 
 #text5 {
     font-weight: 700;
-    font-size: 14px 
+    font-size: 14px; 
 }
-
+#textPred1 p {
+    margin-top: 95px;
+    align-content: center;
+    text-align: center;
+}
+#textPred2 p {
+    margin-top: 95px;
+    align-content: center;
+    text-align: center;
+}
 .axis {
 
 }

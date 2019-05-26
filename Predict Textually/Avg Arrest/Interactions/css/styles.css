@@ -23,12 +23,23 @@ input[type=text] {
 }
 
 #textPred1 p {
-    margin-top: -150px;
+    margin-top: -50px;
+    margin-bottom: 130px;
 }
 
 #textPred2 p {
     margin-top: 150px;
     margin-bottom: 130px;
+}
+
+#textPred3 p {
+    margin-top: 150px;
+    margin-bottom: 130px;
+}
+
+#textPred4 p {
+    margin-top: 100px;
+    margin-bottom: 120px;
 }
 
 #Container1 {

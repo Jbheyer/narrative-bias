@@ -5,7 +5,7 @@ d3.select("#showMe")
 	console.log("being clicked");
 
 	if(textPred1 === undefined) {
-		alert("PLEASE A TYPE PREDICTION FOR BOTH SPACES")
+		alert("Please use the bars below to make a prediction")
 		return;
 	}
 	
@@ -24,15 +24,12 @@ d3.select("#showMe")
 	d3.select('#arrowHolder')
 		.style('visibility', 'visible');
 
-	d3.select('#textPred1').append('text')
+	d3.select('#textPred2').append('text')
 		.attr('x', 550)
 		.attr('y', 550)
-		.html('Hamilton County reported ');
+		.html('100% of people receiving treatment at an opioid treatment program have been diagnosed with an opioid use disorder');
 						
-	d3.select("#textPred1").append("text")
-		.attr('x', 265)
-		.attr('y', 35)
-		.html(Pred1 - 16 + '%');
+	
 /*
 	//append circle to dummy 4 for gap
 	dummycircle = d3.select("#visualizationHolder").append("circle")

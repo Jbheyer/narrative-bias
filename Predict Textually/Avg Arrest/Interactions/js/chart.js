@@ -490,7 +490,7 @@
 										console.log("being clicked");
 
 										if(textPred1 === undefined || textPred2 === undefined){
-											alert("PLEASE A TYPE PREDICTION FOR BOTH SPACES")
+											alert("Please use the bars below to make a prediction")
 											return;
 										}
 										
@@ -508,15 +508,20 @@
 									d3.select('#arrowHolder')
 										.style('visibility', 'visible');
 									
-										d3.select('#textPred2').append('text')
-											.attr('x', 550)
-											.attr('y', 550)
-											.html('Hamilton County reported ');
+									d3.select('#textPred1').append('text')
+										.attr('x', "0")
+										.attr('y', "0")
+										.html('St. Joseph County reported 13% of drug related arrests');
 									
-										d3.select("#textPred2").append("text")
-											.attr('x', 265)
-											.attr('y', 35)
-											.html(Pred1 - 16 + '%');
+									d3.select('#textPred2').append('text')
+										.attr('dx', "-50")
+										.attr('dy', "-100")
+										.html('Hamilton County reported 16% of drug related arrests');
+									/*
+									d3.select("#textPred2").append("text")
+										.attr('x', 265)
+										.attr('y', 35)
+										.html(Pred1 - 16 + '%');
 											
 										
 										/*
