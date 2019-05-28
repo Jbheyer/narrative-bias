@@ -33,13 +33,20 @@ input[type=text] {
 }
 
 #textPred3 p {
-    margin-top: 150px;
-    margin-bottom: 130px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#afterPredict1 {
+    font-size: 20px;
+}
+
+#afterPredict2 {
+    font-size: 20px;
 }
 
 #textPred4 p {
-    margin-top: 100px;
-    margin-bottom: 120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #Container1 {

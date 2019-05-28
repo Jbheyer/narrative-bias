@@ -24,13 +24,17 @@ d3.select("#showMe")
 	d3.select('#arrowHolder')
 		.style('visibility', 'visible');
 
+	d3.select('#afterPredict1')
+		.style('visibility', 'visible');
+
+/*
 	d3.select('#textPred2').append('text')
 		.attr('x', 550)
 		.attr('y', 550)
 		.html('100% of people receiving treatment at an opioid treatment program have been diagnosed with an opioid use disorder');
 						
 	
-/*
+
 	//append circle to dummy 4 for gap
 	dummycircle = d3.select("#visualizationHolder").append("circle")
 		.attr('cx', 150)

@@ -57,17 +57,21 @@ input {
     font-size: 14px; 
 }
 #textPred1 p {
-    margin-top: 95px;
+    margin-top: 80px;
     align-content: center;
     text-align: center;
 }
 #textPred2 p {
-    margin-top: 95px;
+    margin-top: 55px;
     align-content: center;
     text-align: center;
 }
 .axis {
 
+}
+
+#afterPredict1 {
+    font-size: 20px;
 }
 
 .axis line {

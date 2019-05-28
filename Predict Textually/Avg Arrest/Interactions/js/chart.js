@@ -508,6 +508,14 @@
 									d3.select('#arrowHolder')
 										.style('visibility', 'visible');
 									
+									d3.select('#afterPredict1')
+										.style('visibility', 'visible');
+										
+									d3.select('#afterPredict2')
+										.style('visibility', 'visible');
+
+										/*
+
 									d3.select('#textPred1').append('text')
 										.attr('x', "0")
 										.attr('y', "0")

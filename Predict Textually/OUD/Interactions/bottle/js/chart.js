@@ -23,10 +23,9 @@ d3.select("#showMe")
 	d3.select('#arrowHolder')
 		.style('visibility', 'visible');
 
-	d3.select('#textPred1').append('text')
-		.attr('x', 550)
-		.attr('y', 550)
-		.html('Indiana reported 74 active painkiller prescritptions per 100 people in 2017');
+	d3.select("#afterPredict1")
+		.style('visibility', 'visible');
+		
 						
 	
 

@@ -301,7 +301,9 @@ a {
     background-color: ORANGE;
     border: 2px solid black;
 }
-
+#afterPredict1 {
+    font-size: 20px;
+}
 #subject1 {
     width: 500px;
     height: 100px;

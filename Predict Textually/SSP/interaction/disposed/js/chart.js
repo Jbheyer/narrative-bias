@@ -22,10 +22,9 @@ d3.select("#showMe")
 	d3.select('#arrowHolder')
 		.style('visibility', 'visible');
 
-	d3.select('#textPred1').append('text')
-		.attr('x', 50)
-		.attr('y', 50)
-		.html('82% of used syringes were properly disposed of after a syringe exchange program began in Austin Indiana for 2017');
+	d3.select('#afterPredict1')
+		.style('visibility', 'visible');
+	
 						
 	
 	

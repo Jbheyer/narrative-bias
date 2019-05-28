@@ -23,10 +23,8 @@ d3.select("#showMe")
 	d3.select('#arrowHolder')
 		.style('visibility', 'visible');
 
-	d3.select('#textPred1').append('text')
-		.attr('x', 550)
-		.attr('y', 550)
-		.html('Indiana reported that 32% of the 621 newly diagnosed cases of HIV in 2015 resulted from injection drug use');
+	d3.select('#afterPredict1')
+		.style('visibility', 'visible');
 						
 			
 
