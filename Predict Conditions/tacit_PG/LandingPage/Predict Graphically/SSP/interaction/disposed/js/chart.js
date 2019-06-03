@@ -237,6 +237,7 @@
 										reScaledLength = Math.floor(reScaledLength);
 
 										prediction1 = reScaledLength;
+										console.log("prediction 1 = " + prediction1);
 										
 										//limits the scaling of the bar to 100
 										if (reScaledLength > 100) {

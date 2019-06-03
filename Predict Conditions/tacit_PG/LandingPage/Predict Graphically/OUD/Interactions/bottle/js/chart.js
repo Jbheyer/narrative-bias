@@ -238,6 +238,7 @@
 										reScaledLength = Math.floor(reScaledLength);
 
 										prediction1 = reScaledLength;
+										console.log("prediction 1 = " + prediction1);
 
 										
 

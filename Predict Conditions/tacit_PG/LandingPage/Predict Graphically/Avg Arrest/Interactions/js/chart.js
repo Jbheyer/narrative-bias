@@ -426,6 +426,7 @@
 
 										//creates the setup for the gap for prediction 2 or bar 2
 										prediction2 = reScaledLength;
+										console.log("prediction 2 = " + prediction2);
 
 
 										d3.select('.dummy2')

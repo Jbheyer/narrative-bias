@@ -252,6 +252,7 @@
 										}	
 											
 										prediction1 = reScaledLength;
+										console.log("prediction 1 = " + prediction1);
 
 										d3.select('.dummy1')
 											//.attr('x', mouseCoord[0] - 150)
