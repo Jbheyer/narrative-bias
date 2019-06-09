@@ -1,0 +1,327 @@
+
+<html>
+
+		<head>
+	
+			<script src="https://d3js.org/d3.v3.min.js"></script>
+	
+			<style>
+	
+				html {
+					background-image: white;
+					width: 100%;
+					height: 100%;
+				}
+				body {
+					width: 1200px;
+					height: 100%;
+				}
+				header {
+					margin: 0 auto;
+					font: 38pt sans-serif;
+					text-align: center;
+					margin-top: 40px;
+				}
+
+				/* Styles the wrapper div which contains all content */
+				.wrapper {
+					width: 100%x;
+					
+					margin: 0 auto;
+				}
+				
+				a {
+					text-decoration: none;
+					color: black;
+					font-size: 58pt;
+					
+				}
+
+				h2 {
+					font:  22px sans-serif;
+					text-align: center;
+				}
+
+				* {
+					font: 8pt sans-serif;
+					text-align: center;
+					margin-top: 30px;
+				}
+	
+				#Container1 {
+					display: flex;
+					align-content:flex-end;
+				}
+	
+		
+	
+				#column1 {
+					width: 500px;
+				}
+	
+				.oneCol {
+					position: center;
+					margin-top: 120px;
+					
+					align-content: center;
+				}   
+
+				.firstCol {
+					width: 60%;
+					margin-top: 100px;
+					margin-left: 90px;
+				} 
+					
+				#dragme {
+	
+					border: 2px solid black;
+					stroke-width: 5px;
+				}
+	
+				#textHolder {
+					text-align: center;
+				}
+	
+				
+	
+				#text1{
+					font-weight: 700;
+				}
+	
+		
+	
+				#text2{
+					font-weight: 700;
+				}
+	
+		
+	
+				.axis {
+	
+				}
+	
+		
+	
+				.axis line {
+					stroke: #000000;
+				}
+	
+				.axis path {
+					stroke: #000000;
+					fill: none;
+				}
+	
+		
+	
+				.dummyBar1 {
+	
+					fill: #ebebeb;
+					stroke: black;
+					stroke-width: 1px;
+					stroke-dasharray: 8 2
+				}
+	
+		
+	
+				.dummyBar2 {
+	
+					fill: #ebebeb;
+					stroke: black;
+					stroke-width: 1px;
+					stroke-dasharray: 8 2
+				}	
+	
+				.dummy1 {
+	
+					fill: steelblue;
+					stroke: black;
+					stroke-width: 2px;
+					cursor: ns-resize;
+				}
+	
+				.dummy2 {
+	
+					fill: steelblue;
+					stroke: black;
+					stroke-width: 2px;
+					cursor: ns-resize;
+				}
+	
+				.dummy1:hover {
+					fill: aquamarine
+				}
+	
+				.dummy2:hover {
+					fill: aquamarine
+				}
+				#text1{
+					font-weight: 700;
+					font-size: 12px;
+				}
+
+				#text2{
+					font-weight: 700;
+					font-size: 12px;
+				}
+				#text4 {
+					font-weight: 700;
+					font-size: 12px  
+				}
+				#arrowHolder {
+					width: 100%;
+					height: 20%;
+					display: flex;
+					justify-content: flex-end;
+				}
+				#arrow {
+					font-size: 800%;
+					cursor: pointer;
+					margin-top: 55px;
+				}
+
+				#arrowHolder p {
+					margin-top: -50px;
+					margin-left: -45px;
+					display: flex;
+					justify-content: flex-end;
+					font-weight: bold;
+					font-size: 14pt;
+					margin-right: 20px;
+				}
+
+				#visHolder {
+					justify-content:center;
+					align-content: center;
+					transform: scale(1);
+				}
+
+				a {
+					text-decoration: none;
+					color: black;
+				}
+			</style>
+	</head>
+	
+	<header>
+        Tacit Tutorial
+	</header>
+	<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
+<div class="wrapper">
+    <div class="oneCol">
+        <div class="firstCol"></div>
+            
+                <h2>To interact, type the number that best represents your prediction regarding the question in the text box below.</h2>
+	
+		<body>
+	
+		
+			
+	
+		
+	
+					<div id="visHolder">
+							<div id="visHolder">
+                    
+									<p>&nbsp;</p>
+									
+									<p>&nbsp;</p>
+									<div id="textPred1">
+									<p style="font-size: 20px">
+										Unknown county reported <input class="pred1" type="text" min="01" max="99" maxlength="2" style="width: 50px; font-size: 20px"></input> % of arrests in 2017
+									  
+									</p>
+									
+									
+									<div id="textPred2">
+									<p style="font-size: 20px">
+									  Unknown county reported <input class="pred2" type="text" min="01" max="99" maxlength="2" style="width: 50px; font-size: 20px"></input> % of drug overdose deaths in 2017
+										  </p>
+										  <p>&nbsp;</p>
+									</div>
+				
+				
+									</div>
+				
+				
+									<!--
+									<svg width="500" height="400">
+									  <g style="font-size: 14pt"; transform="translate(0, 100)">
+										</g>
+						  
+									  
+									  
+									  
+							
+									 
+						  
+							
+									  
+						  
+										  
+						  
+						  
+							
+						  
+									 
+							
+						  
+									</svg>
+								  -->
+	
+					</div>
+					
+	
+				</div>
+				<div id="arrowHolder"><div id="arrow">
+						<a href="predict_text_only_condition.php">&#10152;</a>
+						<div></div>
+				<p>NEXT</p>
+			</div>
+			
+		</div>
+
+			
+			</div>
+		</div>
+	
+				<script>
+	
+		
+	
+		
+	
+				
+	
+								
+	
+								
+	
+								
+	
+		
+	
+								
+	
+								
+	
+								
+	
+					
+	
+				
+	
+					
+	
+		
+	
+		
+	
+				
+	
+			</script>
+	
+		
+	
+		</body>
+	
+		</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Syringe Exchange Program</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <script type="application/javascript" src="../../../../httprequests.js"></script>
+</head>
+<body>
+
+<div class="allContent">
+<div class="column1">
+<div id="textContentHolder">
+    <p id="textContent">
+        <strong>View</strong> the <strong>percentage of used syringes</strong> that were <strong>properly disposed of after</strong> the 
+        implementation of a syringe services program in Austin Indiana for 2017
+    </p>
+</div>
+
+    <div id="visualizationHolder">
+        <!--place image here-->
+        <div id="sideBarLeft">
+        <!-- why does the the text over icon1 not follow the #sideBarLeft in the css?-->
+            <p></p>
+            <id class="icon1" src =""/></div>     
+            
+          
+                  <div id="visHolder">
+                    <svg width="500" height="400" style="fill: black; border: solid 2px black">
+          
+                      
+                      <!-- create text variable to append to line -->
+          
+            
+                      <g id="chart" transform="translate(120,50)">
+          
+                        <text id="text1" x="100" y="320">USED SYRINGES</text>
+                        
+                        <text id="text5" x="-225" y="-55" transform="rotate(-90)">PROPERLY DISPOSED</text>
+
+                        <line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+          
+            
+          
+                        <g id="yAxis" class="axis">
+          
+                          
+          
+                        </g>
+          
+                      </g>
+          
+            
+          
+                      <!-- drag me rectangle and label -->
+          
+                     
+          
+            
+          
+                    </svg>
+        
+                       
+        </div>
+          <div id="sideBarRight">
+              
+        </div>
+    </div>
+
+    <div id="textContentTwo">
+        <p><strong>Explain</strong> why you think the data shows this <strong>and</strong> if it is different then what you thought it would show</p>
+
+    </div>
+
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">            
+              </div>
+              <div class="col-75">
+                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              
+            </div>
+            </form>
+          </div> 
+
+    
+</div>
+
+
+<div class="column2">
+    <img id="indianaMap" src="disposed.PNG"/>
+    <div id="textContentThree">
+    
+    </div>
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">
+              
+            <div class="row">
+              <div class="col-25">
+                <label for="response"></label>
+              </div>
+              <div class="col-75">
+                
+              </div>
+            </div>
+            </form>
+            <div id="arrowHolder"><div id="arrow">
+                <a onclick="ajaxRequest($('#subject1').val(),'disposed_interactionText','SSP','../../synthesis/index.html','../../../../update_vo.php')">&#10152;</a>
+              </div></div>
+              <p>NEXT</p>
+          </div> 
+          
+          
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/chart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

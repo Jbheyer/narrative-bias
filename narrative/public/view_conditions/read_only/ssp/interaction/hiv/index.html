@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Syringe Exchange Programs</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <script type="application/javascript" src="../../../../httprequests.js"></script>
+</head>
+<body>
+
+<div class="allContent">
+<div class="column1">
+<div id="textContentHolder">
+    <p id="textContent">
+        <strong>Read</strong> the information below regarding the percentage of <strong> newly diagnosed cases </strong>of<strong> hiv out of 621 in indiana</strong> that were related to injection drug use
+    </p>
+</div>
+
+    <div id="visualizationHolder">
+        <img id="textPic" src="textPic.PNG"/>
+        <div id="sideBarLeft">
+        <!-- why does the the text over icon1 not follow the #sideBarLeft in the css?-->
+            <p></p>
+            <id class="icon1" src =""/></div>     
+            
+          
+                  <div id="visHolder">
+                    
+        
+                       
+        </div>
+          <div id="sideBarRight">
+              
+        </div>
+    </div>
+
+    <div id="textContentTwo">
+        <p><strong>Explain</strong> why you think the data shows this <strong>and</strong> if it is different then what you thought it would be</p>
+
+    </div>
+
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">            
+              </div>
+              <div class="col-75">
+                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              
+            </div>
+            </form>
+          </div> 
+
+    
+</div>
+
+
+<div class="column2">
+    <img id="indianaMap" src="HIV.PNG"/>
+    <div id="textContentThree">
+    
+    </div>
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">
+              
+            <div class="row">
+              <div class="col-25">
+                <label for="response"></label>
+              </div>
+              <div class="col-75">
+                
+              </div>
+            </div>
+            </form>
+            <div id="arrowHolder"><div id="arrow">
+                <a onclick="ajaxRequest($('#subject1').val(),'hiv_interactionText','SSP','../../primer/disposed/index.html','../../../../update_vo.php')">&#10152;</a>
+              </div></div>
+              <p>NEXT</p> 
+          
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/chart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

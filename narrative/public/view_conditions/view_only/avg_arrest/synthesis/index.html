@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Change the title for each page, this is what appears on the browser tab -->
+<title>Synthesis</title>
+<link rel="stylesheet" href="new 1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript">
+        function myAjax() {
+
+            console.log("hello");
+            var textValue = $("#subject").val().trim();
+            if(textValue.length > 0){
+
+                $.ajax({
+                    type: "POST",
+                    url: '../../../update_vo.php',
+                    data:{
+                        'interactionText': textValue,
+                        'type':'synText',
+                        'theme':'ARREST'},
+                    success: function(data, textStatus, xhr) {
+                        console.log(data);
+                        if(data.indexOf('success') >= 0) { // if true (1)
+                            setTimeout(function(){// wait for 5 secs(2)
+                                location.href = '../../../view_only_condtion.php'; // then reload the page.(3)
+                            }, 100);
+                        }
+                        else{
+                            alert("Database Error")
+                            //location.href = 'user.php';
+
+                        }
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        console.log(textStatus.reponseText);
+                    }
+                });
+            }
+            else{
+                alert("Please enter your MTruk ID to continue");
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
+<div class="wrapper">
+    <!-- The header is going to be the large, centered text at the top. 
+         You can change it to whatever you need for each page. -->
+    <header>
+        Synthesis
+    </header>
+    <div class="oneCol">
+        <div class="firstCol"></div>
+            <ul>
+                <li>There is no direct relationship between an opioid treatment program being in a county and crime</li>
+                <li>There is no direct relationship between an opioid treatment program and an increase in arrest rates within a county</li>
+                <!--The follow two will be repeated static vis of what they selected and not text-->
+                
+            </ul>
+
+
+    <!-- static vis will need to go here, two side by side. On no slides should they be dynamic, so an img may suffice-->
+    <div class="container">
+            <form action="../../../view_only_condtion.php">
+            <div class="row">
+              <div class="col-25">
+              
+            <div class="row">
+              <div class="col-25">
+                <label for="response">What did you learn from this interaction?</label>
+              </div>
+              <div class="col-75">
+                <textarea id="subject" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <input type="button" value="Submit" onclick="myAjax()">
+            </div>
+            </form>
+          </div>   
+             
+</body>
+</html>

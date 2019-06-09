@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 20;
+    font-family: sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+   width: 100%;
+    height: 100%;
+}
+
+input {
+    width: 400px;
+    height: 50px;
+}
+
+#Container1 {
+    display: flex
+}
+
+#column3 {
+    width: 500px;
+}
+
+#dragme {
+
+    border: 2px solid black;
+    stroke-width: 2px;
+}
+
+#textHolder {
+    text-align: center;
+}
+
+#text1{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#text2{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#text4 {
+    font-weight: 700;
+    font-size: 12px  
+}
+
+#text5 {
+    font-weight: 700;
+    font-size: 14px; 
+}
+
+.axis {
+
+}
+
+.axis line {
+    stroke: #000000;
+}
+
+.axis path {
+    stroke: #000000;
+    fill: none;
+}
+
+.dummyBar1 {
+
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 1px;
+    
+}
+
+.dummy1 {
+
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 2px;
+    cursor: ns-resize;
+}
+
+.dummy1:hover {
+    fill: aquamarine
+}
+
+/*CONTENT HOLDERS*/
+
+.allContent {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.column1 {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0%;
+    margin-left: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 58pt;
+    
+}
+
+.column2 p {
+    margin-top: -15px;
+    margin-bottom: -50px;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14pt;
+    margin-left: 90px;
+}
+
+#textContentHolder {
+    width: 80%;
+    margin-top: 10px;
+    display: flex;
+}
+
+#textContent {
+    font-size: 1.20vw;
+    text-align: center;
+    
+
+}
+
+#textContentTwo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+#textContentThree {
+    margin-top: 0 auto;
+    margin-bottom: 0 auto;
+}
+
+#textContentThree p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#visualizationHolder {
+    width: 90%;
+    height: 70%;
+    margin-top: -140px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#sideBarLeft {
+    width: 60px;
+    height: 90%;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+#sideBarLeft p {
+    text-align: center;
+    font-size: 1vh;
+    margin-top: 10px;
+}
+
+#sideBarRight {
+    width: 60px;
+    height: 90%;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#sideBarRight p {
+    text-align: center;
+    font-size: 1vh;
+    margin-top: 10px;
+}
+
+#tableHolder {
+    width: 500px;
+    height: 65%;
+    margin-top: -100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border: 2px solid black;
+
+}
+
+#indianaMap {
+    width: 680px;
+    height: 400px;
+    border: none;
+}
+
+#textPic {
+    width: 400px;
+    height: 150px;
+    border: none;
+    margin-top: 0 auto;
+    margin-bottom: 130px;
+    margin-left: 140px;
+    display: flex;
+}
+
+#styledButton {
+    background-image: linear-gradient(to bottom right, #6aa36a, #68bc66); /* Green */
+    color: white;
+   border: none;
+    margin-top: 10px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.icon1 {
+    width: 50px;
+    height: 40px;
+    margin-top: -50px;
+    border: none;
+}
+
+.dot {
+    display: block;
+    height: 8%;
+    width: 45px;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+
+.box1 {
+    width: 100%;
+    height: 40px;
+    background-color: #b1d4ff;
+    border: 2px solid black;
+}
+
+.box2 {
+    width: 100%;
+    height: 40px;
+    background-color: #fffdfd;
+    border: 2px solid black;
+}
+
+#subject1 {
+    width: 500px;
+    height: 100px;
+    border: 1px solid black;
+    font-size: 13pt;
+}
+#subject2 {
+    width: 500px;
+    height: 100px;
+    border: 1px solid black;
+    margin-top: 0px;
+}
+#arrowHolder {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+#arrow {
+    font-size: 500%;
+    cursor: pointer;
+    margin-top: 100px;
+    margin-left: -50px;
+    margin-right: -20px;
+
+}
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opioid Use Disorder</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <script type="application/javascript" src="../../../../httprequests.js"></script>
+</head>
+<body>
+
+<div class="allContent">
+<div class="column1">
+<div id="textContentHolder">
+    <p id="textContent">
+        <strong>Predict</strong> the <strong>number of active painkiller prescriptions</strong> per <strong>100 people</strong> in Indiana in <strong>2017</strong> in the visualization space below
+    </p>
+</div>
+
+    <div id="visualizationHolder">
+        <!--place image here-->
+        <div id="sideBarLeft">
+        <!-- why does the the text over icon1 not follow the #sideBarLeft in the css?-->
+            <p></p>
+            <id class="icon1" src =""/></div>     
+            
+          
+                  <div id="visHolder">
+                    <svg width="500" height="400" style="fill: black; border: solid 2px black">
+          
+                      
+                      <!-- create text variable to append to line -->
+          
+            
+                      <g id="chart" transform="translate(135,50)">
+          
+                        <text id="text1" x="60" y="330">PAINKILLER PRESCRIPTIONS</text>
+                        <text id="text5" x="-190" y="-45" transform="rotate(-90)">PEOPLE PRESCRIBED</text>
+
+                        
+                        <line id="axis" stroke="black" x1="0" y1="300" x2="300" y2="300" style=""></line>
+          
+            
+          
+                        <g id="yAxis" class="axis">
+          
+                          
+          
+                        </g>
+          
+                      </g>
+          
+            
+          
+                      <!-- drag me rectangle and label -->
+          
+                      <g>
+          
+                        <text id="text4" x="15" y="300">DRAG & DROP</text>
+                        <rect id="dragme" fill="steelblue" width="50" height="50" style="stroke-width:1;stroke:black" x="25" y="310"/>
+          
+                      </g>
+          
+            
+          
+                    </svg>
+        
+                       
+        </div>
+          <div id="sideBarRight">
+              <p><strong>GAP</strong></p>
+              <div class="dot">
+            
+              </div>   
+              <p><strong>PREDICTED</strong></p>
+              <div class="box1">
+
+              </div>
+              <p><strong>ACTUAL DATA</strong></p>
+              <div class="box2">
+
+             
+              </div>
+        </div>
+    </div>
+
+    <div id="textContentTwo" style="visibility:hidden;">
+        <p><strong>Explain</strong> why you predicted this</p><strong>and</strong> what you think the gap (if any) between <strong>your predicition and the data suggests</strong>
+
+    </div>
+
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">            
+              </div>
+              <div class="col-75">
+                <textarea id="subject1" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px; visibility: hidden;"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              
+            </div>
+            </form>
+          </div> 
+
+          <button id="showMe" style="visibility: visible">SHOW ME THE DATA</button>
+</div>
+
+
+<div class="column2">
+    <img id="indianaMap" src="text.PNG"/>
+    <div id="textContentThree">
+    
+    </div>
+    <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">
+              
+            <div class="row">
+              <div class="col-25">
+                <label for="response"></label>
+              </div>
+              <div class="col-75">
+                
+              </div>
+            </div>
+            </form>
+            <div id="arrowHolder" style="visibility: hidden"><div id="arrow">
+                <a onclick="ajaxRequestPredict($('#subject1').val(),-1,$('#prediction1')[0].textContent,'bottle_interactionText','OUD','../../synthesis/index.html','../../../../update_vo.php')">&#10152;</a>
+                <div></div>
+          <p>NEXT</p>
+          </div> 
+          
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/chart_ap1.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

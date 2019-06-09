@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posttest Survey</title>
+    <link href="post_survey.css" rel="stylesheet" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    function myAjax() {
+
+      console.log("hello");
+      var radioValues = []
+      for (i = 17; i < 33; i++) {
+        if(!$("input[name='q"+i+"']:checked").val())
+        {
+          radioValues.push('NA')
+        }
+        else
+        {
+          radioValues.push($("input[name='q"+i+"']:checked").val());
+        }
+
+      }
+      console.log(radioValues);
+      if(radioValues.length > 0){
+        $.ajax({
+          type: "POST",
+          url: '../php/post_survey.php',
+          data:{
+            'post_survey_values': radioValues},
+          success: function(data, textStatus, xhr) {
+            console.log("res"+data);
+            if(data.indexOf('success') >= 0)
+              {
+              setTimeout(function(){// wait for 5 secs(2)
+                console.log('gg')
+                location.href = 'comments_dem.html'; // then reload the page.(3)
+              }, 100);
+            }
+
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            console.log(textStatus.reponseText);
+          }
+        });
+      }
+      else{
+        alert("Please enter your MTruk ID to continue");
+      }
+    }
+
+  </script>
+
+</head>
+    <body>
+<div class="wrap" style="width: 800px"; font-family: sans-serif; font-size: 14pt;>
+  <h1 class="likert-header">Posttest Survey</h1>
+  <form onsubmit="return false;">
+    <label class="statement"><i>Posttest survey: (16 total) </i><br>
+      <p></p>
+
+        For each of the items below, select the response that best characterizes the extent to which you agree with each item<br>
+        <p></p>
+              
+        <p></p>
+        <label class="statement">1. Arrest rates are higher around treatment centers for drug addiction</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q17" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">2.	People who are addicted to drugs are more likely to commit crimes.</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q18" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">3.	Areas surrounding addiction treatment centers are safe areas</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q19" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">4. Drug addiction is a chronic disease</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q20" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">5. Opioid use disorder is a diagnosable disease</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q21" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">6.	Progress is possible after a drug addiction relapse</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q22" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">7.	Syringe exchange programs enable the use of drugs</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q23" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">8. Syringe exchange programs decrease the spread of diseases</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q24" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q24" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q24" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q24" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q24" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">9.	I can accept a syringe exchange program in my community</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q25" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">10.	I would support an increase in the number of treatment centers for drug addiction in my area</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q26" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q26" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q26" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q26" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q26" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">11.	I would vote in support of more syringe exchange programs</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q27" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q27" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q27" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q27" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q27" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">12.	I would support laws and legislation written to support those with drug addictions</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q28" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q28" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q28" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q28" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q28" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">13.	Opioid use disorder and addiction is a social problem that needs government support</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q29" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q29" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q29" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q29" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q29" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">14.	Increased treatment centers for addiction would help decrease the drug overdose crisis</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q30" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q30" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q30" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q30" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q30" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">15.	Public funding should be increased to reduce drug addiction</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q31" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q31" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q31" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q31" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q31" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">16.	Addressing drug addiction should be a goal of the criminal justice system</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q32" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q32" value="strong_agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q32" value="strong_agree">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q32" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q32" value="strong_agree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+
+
+    <div class="buttons">
+      
+      <button id="myButton" class="submit" onclick="myAjax()">SUBMIT</button>
+    </div>
+  </form>
+</div>
+    </body>
+        </html>

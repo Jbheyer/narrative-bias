@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Change the title for each page, this is what appears on the browser tab -->
+<title>Synthesis</title>
+<link rel="stylesheet" href="new 1.css">
+<script type="text/javascript" src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="application/javascript" src="../../../httprequests.js"></script>
+</head>
+<body>
+<!-- This wrapper div wraps the page, making content easy to contain and manipulate -->
+<div class="wrapper">
+    <!-- The header is going to be the large, centered text at the top. 
+         You can change it to whatever you need for each page. -->
+    <header>
+        Synthesis
+    </header>
+    <div class="oneCol">
+        <div class="firstCol"></div>
+            <ul>
+                <li>There is a legal requirement for people enrolled in opioid treatment programs to have a diagnosis of an opioid use disorder</li>
+                <li>In 2012 there were 109 active opioid prescriptions per 100 people, over 7 years it has dropped 26% </li>
+                <!--The follow two will be repeated static vis of what they selected and not text-->
+                
+            </ul>
+
+
+    <!-- static vis will need to go here, two side by side. On no slides should they be dynamic, so an img may suffice-->
+    <div class="container">
+            <form action="../../../index.html">
+            <div class="row">
+              <div class="col-25">
+              
+            <div class="row">
+              <div class="col-25">
+                <label for="response">What did you learn from this interaction?</label>
+              </div>
+              <div class="col-75">
+               <textarea id="subject" name="response" placeholder="ENTER TEXT/CLICK HERE" style="height:100px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <input type="button" value="Submit"  onclick="ajaxRequest($('#subject').val(),'synText','OUD','../../../predict_graph_only_condition.php','../../../update_vo.php')">
+            </div>
+            </form>
+          </div>   
+            
+</body>
+</html>
