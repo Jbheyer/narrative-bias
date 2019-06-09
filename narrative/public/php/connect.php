@@ -2,11 +2,11 @@
 
 $servername = "localhost";
 
-$username = "nirmal";
+$username = "oldamasc_vis";
 
-$password = "nirmal1989";
+$password = "visresearch@!UPU!";
 
-$dbname = "narrative_bias";
+$dbname = "oldamasc_scalarjnd_pilot";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$dbname);

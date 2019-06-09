@@ -14,7 +14,7 @@
 	{
 		$_SESSION['condition'] = $_GET['conditionOrder'];
 	}
-    $_SESSION['condition'] ="predict_graph_only";
+    #$_SESSION['condition'] ="predict_graph_only";
     unset($_SESSION['user']);
     unset($_SESSION['status']);
     unset($_SESSION['error']);

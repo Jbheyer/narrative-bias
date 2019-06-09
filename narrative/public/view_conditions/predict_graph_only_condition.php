@@ -30,10 +30,10 @@ session_start();
     <title>Drug Overdose Deaths</title>
     <link type="text/css" rel="stylesheet" href="css/styles.css"/>
     <!--added link for pop up test-->
-    <link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
-    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="https://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript">
         function checkTasks() {
 

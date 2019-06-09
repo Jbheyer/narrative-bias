@@ -35,7 +35,7 @@ if (!isset($_POST['pre_survey_values'])) {
     }
     if(mysqli_query($conn,'INSERT INTO survey_response (question_response, user_id, question_id) VALUES '.implode(',', $query)))
     {
-
+        $expcondition = mysqli_real_escape_string($conn, $_SESSION['condition']);
         if(($_SESSION['condition']) == "vis_only")
         {
             $_SESSION['status'] = 'VO';
