@@ -487,10 +487,8 @@
 								d3.select("#showMe")
 									.on("click", function() {
 										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
-										console.log("being clicked");
-
-										if(textPred1 === undefined || textPred2 === undefined){
-											alert("Please use the bars below to make a prediction")
+											if(pred1.pred1 === undefined || pred2.pred2 === undefined){
+											alert("Please make a prediction in the input fields below")
 											return;
 										}
 										

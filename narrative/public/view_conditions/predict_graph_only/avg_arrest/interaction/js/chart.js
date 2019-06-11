@@ -468,7 +468,7 @@
 								});
 
 							}
-							//onlick funtion to set up click of button and append dummies and text
+							//onclick funtion to set up click of button and append dummies and text
 								d3.select("#showMe")
 									.on("click", function() {
 										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
