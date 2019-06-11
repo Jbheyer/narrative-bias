@@ -1,12 +1,16 @@
+
+
+
+
 d3.select("#showMe")
 	.on("click", function() {
 	//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
-	if(pred1.pred1 === undefined){
+	if(pred1 === undefined || pred1 === undefined){
 	alert("Please make a prediction in the input fields below")
 	return;
 	}
 	
-	
+
 	
 	
 	d3.select('#subject1')
@@ -77,4 +81,4 @@ d3.select("#showMe")
 
 				
 
-});
+	});
