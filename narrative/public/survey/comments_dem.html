@@ -30,10 +30,10 @@
             'age':age},
           success: function(data, textStatus, xhr) {
             console.log("res"+data);
-            if(data=="demographics")
+            if(data.indexOf('success') >= 0)
             {
               setTimeout(function(){// wait for 5 secs(2)
-                location.href = 'comments_dem.html'; // then reload the page.(3)
+                location.href = '../php/keygen.php'; // then reload the page.(3)
               }, 100);
             }
 

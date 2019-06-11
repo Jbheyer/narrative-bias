@@ -18,7 +18,7 @@
     unset($_SESSION['user']);
     unset($_SESSION['status']);
     unset($_SESSION['error']);
-
+    unset($_SESSION['key']);
 	include 'checkmobile.php';
 
 ?><!DOCTYPE html>

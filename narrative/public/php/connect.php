@@ -6,7 +6,7 @@ $username = "oldamasc_vis";
 
 $password = "visresearch@!UPU!";
 
-$dbname = "oldamasc_scalarjnd_pilot";
+$dbname = "oldamasc_narrative_bias";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$dbname);
