@@ -149,7 +149,7 @@
 
 <p class="terms">You are invited to participate in a study on the effects of narrative visualization on bias and decision making.  You were selected as a possible subject because you expressed interest in this study.
 
-<p class="terms">To be eligible for the study you must be at least 18 years of age and over.  The entire study will take approximately 45 minutes to complete.  For your participation, we will compensate you with $3.  The payment will be routed and approved through Amazon Mechanical Turk.
+<p class="terms">To be eligible for the study you must be at least 18 years of age and over.  The entire study will take approximately 30 minutes to complete.  For your participation, we will compensate you with $3.  The payment will be routed and approved through Amazon Mechanical Turk.
 
 <p class="terms">
 
@@ -161,7 +161,7 @@
 
 <p class="terms"><b>PROCEDURES FOR THE STUDY</b>
 
-<p class="terms">This study can be completed in one 45-minute session.  First, there will be a brief tutorial to introduce you to the interface.  You will then complete a pre-survey asking you general knowledge questions about a specific topic.  You will then see and interact with a narrative visualization to learn more about the topic. Throughout, you will see a number of data charts and you will be prompted to answer questions about the data presented.
+<p class="terms">This study can be completed in one 30-minute session.  First, there will be a brief tutorial to introduce you to the interface.  You will then complete a pre-survey asking you general knowledge questions about a specific topic.  You will then see and interact with a narrative visualization to learn more about the topic. Throughout, you will see a number of data charts and you will be prompted to answer questions about the data presented.
 
 <p class="terms">
 
@@ -169,7 +169,7 @@
 
 <p class="terms">We are interested in how you interact with the visualization and data charts, and how you answer the questions.
 
-<p class="terms">The entire study should take 45 minutes to complete. You may take a break at any point during the study. However, you will need to complete all questions in order to receive the compensation.
+<p class="terms">The entire study should take 30 minutes to complete. You may take a break at any point during the study. However, you will need to complete all questions in order to receive the compensation.
 
 <p class="terms"><b>RISKS AND BENEFITS</b>
 
