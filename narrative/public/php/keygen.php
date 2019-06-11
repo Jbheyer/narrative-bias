@@ -3,7 +3,7 @@
 include 'connect.php';
 
 session_start();
-unset($_SESSION['key']);
+
 $keyid = isset($_SESSION['key']) ? $_SESSION['key'] : keygen();
 
 function keygen($length=10)
