@@ -24,7 +24,7 @@ include 'connect.php';
     if (mysqli_query($conn, $sql))
     {
         $last_id = mysqli_insert_id($conn);
-	$_SESSION['status'] = 'success';
+	    $_SESSION['status'] = 'success';
         echo "success";
 
     }
