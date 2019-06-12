@@ -82,3 +82,24 @@ function ajaxRequestPredict(textValue, predictValue1, predictValue2, type, theme
         alert("Please enter your MTruk ID to continue");
     }
 }
+
+(function($) {
+    $.fn.inputFilter = function(inputFilter) {
+        return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+            if (inputFilter(this.value)) {
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            }
+        });
+    };
+}(jQuery));
+
+setInputFilter(document.getElementById("pred2"), function(value) {
+    return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 99); });
+
+setInputFilter(document.getElementById("pred1"), function(value) {
+    return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 99); });
