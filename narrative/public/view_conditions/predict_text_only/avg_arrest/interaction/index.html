@@ -31,7 +31,7 @@
 
                     <div id="joepred">
                       <p id="textPred1" style="font-size: 20px">
-                      St. Joseph County reported <input id="pred1"  min="01" max="99" maxlength="2" style="width: 70px; height: 30px; font-size: 20px"></input>
+                      St. Joseph County reported <input id="pred1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' min="01" max="99" maxlength="2" style="width: 70px; height: 30px; font-size: 20px"></input>
                        % of drug related arrests
                       
                     </p>
@@ -44,7 +44,7 @@
                     <p></p>
                     <div>
                     <p id="textPred2" style="font-size: 20px">
-                      Hamilton County reported <input id="pred2"  min="01" max="99" maxlength="2" style="width: 70px; height: 30px; font-size: 20px"></input> % of drug
+                      Hamilton County reported <input id="pred2" onkeypress='return charCode >= 48 && event.charCode <= 57' min="01" max="99" maxlength="2" style="width: 70px; height: 30px; font-size: 20px"></input> % of drug
                       related arrests
                           </p>
                       <p id="afterPredict2" style="visibility: hidden">Hamilton County reported <b>16%</b> of drug related arrests</p>
