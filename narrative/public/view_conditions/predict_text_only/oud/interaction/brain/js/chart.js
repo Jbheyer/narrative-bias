@@ -9,6 +9,7 @@ d3.select("#showMe")
 		if (!pred1Value.match(/\S/))
 		{
 			alert("Please make a prediction in the input fields below")
+			return;
 		}
 
 	d3.select('#subject1')
