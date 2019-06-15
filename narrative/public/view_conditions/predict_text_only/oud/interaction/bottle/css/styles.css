@@ -27,6 +27,10 @@ input {
     width: 500px;
 }
 
+.pred1 {
+    align-content: center;
+    text-align: center;
+}
 #dragme {
 
     border: 2px solid black;
@@ -34,6 +38,12 @@ input {
 }
 
 #textHolder {
+    text-align: center;
+}
+
+#textPred1 p {
+    margin-top: 30px;
+    align-content: center;
     text-align: center;
 }
 
@@ -119,11 +129,6 @@ a {
     
 }
 
-#textPred1 p {
-    margin-top: 95px;
-    text-align: center;
-}
-
 .allContent {
     display: flex;
     width: 100%;
@@ -151,11 +156,7 @@ a {
     
 }
 
-#textPred2 p {
-    margin-top: 95px;
-    align-content: center;
-    text-align: center;
-}
+
 .column2 p {
     margin-top: -15px;
     margin-bottom: -50px;
