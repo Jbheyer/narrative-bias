@@ -29,7 +29,7 @@ function ajaxRequest(textValue, type, theme, resultURL, updateURL) {
         });
     }
     else{
-        alert("Please enter your MTruk ID to continue");
+        alert("Please make a prediction in the input fields below");
     }
 }
 
@@ -79,7 +79,7 @@ function ajaxRequestPredict(textValue, predictValue1, predictValue2, type, theme
         });
     }
     else{
-        alert("Please enter your MTruk ID to continue");
+        alert("Please make a prediction in the input fields below");
     }
 }
 
