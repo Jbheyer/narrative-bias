@@ -487,7 +487,10 @@
 								d3.select("#showMe")
 									.on("click", function() {
 										//requires the users to make selections by scaling, bc if not the interaction errors out, with NaN for no action
-											if(pred1.pred1 === undefined || pred2.pred2 === undefined){
+										var pred1Value = document.getElementById('pred1').value
+										var pred2Value = document.getElementById('pred2').value
+										if (!pred1Value.match(/\S/) || !pred2Value.match(/\S/))
+										{
 											alert("Please make a prediction in the input fields below")
 											return;
 										}
