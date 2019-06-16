@@ -29,7 +29,7 @@ function ajaxRequest(textValue, type, theme, resultURL, updateURL) {
         });
     }
     else{
-        alert("Please make a prediction in the input fields below");
+        alert("Please respond to the question in the input field");
     }
 }
 
@@ -79,7 +79,7 @@ function ajaxRequestPredict(textValue, predictValue1, predictValue2, type, theme
         });
     }
     else{
-        alert("Please make a prediction in the input fields below");
+        alert("Please respond to the question in the input field");
     }
 }
 
