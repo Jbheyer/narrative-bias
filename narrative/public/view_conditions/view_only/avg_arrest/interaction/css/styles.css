@@ -169,6 +169,7 @@ input {
     Width: 60%;
     display: flex;
     text-align: center;
+    font-size: 18px;
 }
 
 #textContentThree {
