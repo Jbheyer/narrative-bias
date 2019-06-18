@@ -270,13 +270,13 @@ a {
 
 .dot {
     display: block;
-    height: 8%;
+    height: 10%;
     width: 45px;
-    background-color: black;
+    background-color: transparent;
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
+    border: none;
 }
 
 .box1 {

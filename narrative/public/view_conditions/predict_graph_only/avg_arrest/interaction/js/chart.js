@@ -500,6 +500,7 @@
 											.html('13' + '%')
 											.attr('class', 'dummyBarText3')
 
+											/*
 										//append circle to dummy 3 for gap
 										d3.select("#chart").append("circle")
 											.attr('cx', 120)
@@ -514,6 +515,8 @@
 											.html(prediction1 - 13 + '%')
 											.style('fill', 'white')
 											.attr('text-anchor', 'middle');
+										
+											*/
 
 										//grow text with bar
 										dummyBarText3.transition()
@@ -547,6 +550,7 @@
 											.html('16' + '%')
 											.attr('class', 'dummyBarText4');
 
+											/*
 										//append circle to dummy 4 for gap
 										d3.select("#chart").append("circle")
 											.attr('cx', 265)
@@ -562,6 +566,8 @@
 											.style('fill', 'white')
 											.attr('text-anchor', 'middle');
 
+											*/
+											
 										//grow text with bar
 										dummyBarText4.transition()
 											.attr('y', yScale(16))

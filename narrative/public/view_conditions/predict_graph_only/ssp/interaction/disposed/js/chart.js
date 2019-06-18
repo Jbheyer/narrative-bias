@@ -335,6 +335,8 @@
 									.html('82' + '%')
 									.attr('class', 'dummyBarText3')
 
+									/*
+
 								//append circle to dummy 3 for gap
 								d3.select("#chart").append("circle")
 									.attr('cx', 240)
@@ -349,6 +351,8 @@
 									.html(prediction1 - 82 + '%')
 									.style('fill', 'white')
 									.attr('text-anchor', 'middle');
+
+									*/
 
 								//grow text with bar
 								dummyBarText3.transition()

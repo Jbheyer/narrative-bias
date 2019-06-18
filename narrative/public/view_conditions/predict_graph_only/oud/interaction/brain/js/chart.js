@@ -334,6 +334,9 @@
 									.html('100' + '%')
 									.attr('class', 'dummyBarText3')
 
+									/*
+
+
 								//append circle to dummy 3 for gap
 								d3.select("#chart").append("circle")
 									.attr('cx', -90)
@@ -348,7 +351,9 @@
 									.html(prediction1 - 100 + '%')
 									.style('fill', 'white')
 									.attr('text-anchor', 'middle');
-
+									
+									*/
+									
 								//grow text with bar
 								dummyBarText3.transition()
 									.attr('height', CHART_HEIGHT - yScale(100))

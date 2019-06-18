@@ -335,6 +335,9 @@
 									.html('32' + '%')
 									.attr('class', 'dummyBarText3')
 
+									/*
+
+
 								//append circle to dummy 3 for gap
 								d3.select("#chart").append("circle")
 									.attr('cx', 240)
@@ -350,6 +353,8 @@
 									.style('fill', 'white')
 									.attr('text-anchor', 'middle');
 
+									*/
+									
 								//grow text with bar
 								dummyBarText3.transition()
 									.attr('height', CHART_HEIGHT - yScale(32))
