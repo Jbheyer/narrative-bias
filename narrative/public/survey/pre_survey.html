@@ -14,6 +14,8 @@
       for (i = 1; i < 17; i++) {
         if(!$("input[name='q"+i+"']:checked").val())
         {
+          alert('Please complete all questions')
+          return
           radioValues.push('NA')
         }
         else
@@ -78,13 +80,14 @@
 <div class="wrap" style="width: 800px"; font-family: sans-serif; font-size: 14pt;>
   <h1 class="likert-header">Pretest Survey</h1>
   <form onsubmit="return false;">
-    <label class="statement"><i>Pretest survey: (16 total) </i></label><br>
+    <label class="statement"><i>Pretest survey: (16 total) </i><br>
       <p></p>
 
         For each of the items below, select the response that best characterizes the extent to which you agree with each item<br>
         <p></p>
               
         <p></p>
+    </label>
         <label class="statement">1. Arrest rates are higher around treatment centers for drug addiction</label>
     <ul class='likert' style="list-style: none;">
       <li>
@@ -92,11 +95,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q1" value="strong_agree">
+        <input type="radio" name="q1" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q1" value="strong_agree">
+        <input type="radio" name="q1" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -104,7 +107,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q1" value="strong_agree">
+        <input type="radio" name="q1" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -116,11 +119,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q2" value="strong_agree">
+        <input type="radio" name="q2" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q2" value="strong_agree">
+        <input type="radio" name="q2" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -128,7 +131,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q2" value="strong_agree">
+        <input type="radio" name="q2" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -140,11 +143,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q3" value="strong_agree">
+        <input type="radio" name="q3" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q3" value="strong_agree">
+        <input type="radio" name="q3" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -152,7 +155,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q3" value="strong_agree">
+        <input type="radio" name="q3" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -164,11 +167,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q4" value="strong_agree">
+        <input type="radio" name="q4" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q4" value="strong_agree">
+        <input type="radio" name="q4" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -176,7 +179,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q4" value="strong_agree">
+        <input type="radio" name="q4" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -188,11 +191,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q5" value="strong_agree">
+        <input type="radio" name="q5" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q5" value="strong_agree">
+        <input type="radio" name="q5" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -200,7 +203,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q5" value="strong_agree">
+        <input type="radio" name="q5" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -212,11 +215,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q6" value="strong_agree">
+        <input type="radio" name="q6" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q6" value="strong_agree">
+        <input type="radio" name="q6" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -224,7 +227,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q6" value="strong_agree">
+        <input type="radio" name="q6" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -236,11 +239,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q7" value="strong_agree">
+        <input type="radio" name="q7" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q7" value="strong_agree">
+        <input type="radio" name="q7" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -248,7 +251,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q7" value="strong_agree">
+        <input type="radio" name="q7" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -260,11 +263,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q8" value="strong_agree">
+        <input type="radio" name="q8" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q8" value="strong_agree">
+        <input type="radio" name="q8" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -272,7 +275,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q8" value="strong_agree">
+        <input type="radio" name="q8" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -284,11 +287,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q9" value="strong_agree">
+        <input type="radio" name="q9" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q9" value="strong_agree">
+        <input type="radio" name="q9" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -296,7 +299,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q9" value="strong_agree">
+        <input type="radio" name="q9" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -308,11 +311,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q10" value="strong_agree">
+        <input type="radio" name="q10" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q10" value="strong_agree">
+        <input type="radio" name="q10" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -320,7 +323,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q10" value="strong_agree">
+        <input type="radio" name="q10" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -332,11 +335,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q11" value="strong_agree">
+        <input type="radio" name="q11" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q11" value="strong_agree">
+        <input type="radio" name="q11" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -344,7 +347,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q11" value="strong_agree">
+        <input type="radio" name="q11" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -356,11 +359,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q12" value="strong_agree">
+        <input type="radio" name="q12" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q12" value="strong_agree">
+        <input type="radio" name="q12" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -368,7 +371,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q12" value="strong_agree">
+        <input type="radio" name="q12" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -380,11 +383,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q13" value="strong_agree">
+        <input type="radio" name="q13" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q13" value="strong_agree">
+        <input type="radio" name="q13" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -392,7 +395,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q13" value="strong_agree">
+        <input type="radio" name="q13" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -404,11 +407,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q14" value="strong_agree">
+        <input type="radio" name="q14" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q14" value="strong_agree">
+        <input type="radio" name="q14" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -416,7 +419,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q14" value="strong_agree">
+        <input type="radio" name="q14" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -428,11 +431,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q15" value="strong_agree">
+        <input type="radio" name="q15" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q15" value="strong_agree">
+        <input type="radio" name="q15" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -440,7 +443,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q15" value="strong_agree">
+        <input type="radio" name="q15" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
@@ -452,11 +455,11 @@
         <label>Strongly agree</label>
       </li>
       <li>
-        <input type="radio" name="q16" value="strong_agree">
+        <input type="radio" name="q16" value="agree">
         <label>Agree</label>
       </li>
       <li>
-        <input type="radio" name="q16" value="strong_agree">
+        <input type="radio" name="q16" value="neutral">
         <label>Neutral</label>
       </li>
       <li>
@@ -464,7 +467,7 @@
         <label>Disagree</label>
       </li>
       <li>
-        <input type="radio" name="q16" value="strong_agree">
+        <input type="radio" name="q16" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
