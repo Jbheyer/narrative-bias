@@ -193,7 +193,7 @@ a {
 #visualizationHolder {
     width: 90%;
     height: 70%;
-    margin-top: -140px;
+
     display: flex;
     align-items: flex-end;
     justify-content: center;
