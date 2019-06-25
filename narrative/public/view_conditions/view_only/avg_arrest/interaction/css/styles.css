@@ -299,6 +299,8 @@ a {
     height: 100px;
     border: 1px solid black;
     font-size: 13pt;
+    margin-left: 30px;
+    
 }
 #subject2 {
     width: 300px;

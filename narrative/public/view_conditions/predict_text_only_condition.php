@@ -642,7 +642,7 @@ text-align: center; visibility: hidden;"> Hover over the charts below for more i
 
 <div class="arrow_box2"; style="position: absolute; left: 782px; top: 218px; width: 320px; height: 165px; font-size: 12.75pt;
 text-align: center; visibility: hidden;"> Click on any of the charts to the right to begin the interaction <p><br> Each chart has a new series of questions and interactions</p> 
-<br> Once an interaction is completed a green check mark will appear in the circle</div>
+<br> Once an interaction is completed the circle will turn green</div>
 
 <script>
 
