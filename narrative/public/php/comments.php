@@ -18,8 +18,8 @@ include 'connect.php';
 
     unset($_SESSION['error']);
 
-
-    $sql = "INSERT INTO comment (gender, age, education, freetext, userid) VALUES ('" . $_POST['gender'] . "','" . $_POST['age'] . "','" . $_POST['education'] . "','" . $_POST['comments'] . "', '" . $_SESSION['user'] . "')";
+    $comments = mysqli_real_escape_string($conn, $_POST['comments']);
+    $sql = "INSERT INTO comment (gender, age, education, freetext, userid) VALUES ('" . $_POST['gender'] . "','" . $_POST['age'] . "','" . $_POST['education'] . "','" . $comments . "', '" . $_SESSION['user'] . "')";
 
     if (mysqli_query($conn, $sql))
     {

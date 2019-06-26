@@ -46,16 +46,16 @@ if( $_POST['type'] == 'interactionText' || $_POST['type'] == 'synText' || $_POST
     if ($rowcount == 0) {
 
 
-
+        $interactionText = mysqli_real_escape_string($conn, $_POST['interactionText']);
         if($_POST['type'] == 'interactionText')
         {
             if (isset($_POST['predictValue1']) && isset($_POST['predictValue2']))
             {
-                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1, p1, p2) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $_POST['interactionText'] . "', " . $_POST['predictValue1'] . ", " . $_POST['predictValue2'] . ")";
+                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1, p1, p2) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $interactionText . "', " . $_POST['predictValue1'] . ", " . $_POST['predictValue2'] . ")";
 
             }
             else{
-                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $_POST['interactionText'] . "')";
+                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $interactionText . "')";
 
             }
 
@@ -65,31 +65,32 @@ if( $_POST['type'] == 'interactionText' || $_POST['type'] == 'synText' || $_POST
         {
             if (isset($_POST['predictValue1']))
             {
-                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1, p1) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $_POST['interactionText'] . "', " . $_POST['predictValue1'] . ")";
+                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1, p1) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $interactionText . "', " . $_POST['predictValue1'] . ")";
 
             }
             else{
-                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $_POST['interactionText'] . "')";
+                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e1) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $interactionText . "')";
 
             }
 
         }
         if($_POST['type'] == 'bottle_interactionText' || $_POST['type'] == 'disposed_interactionText')
         {
+
             if (isset($_POST['predictValue2']))
             {
-                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e2, p2) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $_POST['interactionText'] . "', " . $_POST['predictValue2'] . ")";
+                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e2, p2) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $interactionText . "', " . $_POST['predictValue2'] . ")";
             }
             else
             {
-                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e2) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $_POST['interactionText'] . "')";
+                $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, e2) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $interactionText . "')";
 
             }
 
         }
         if($_POST['type'] == 'synText')
         {
-            $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, syn) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $_POST['interactionText'] . "')";
+            $sql = "INSERT INTO narrative_response (user_id, narrative_condition,theme, syn) VALUES (" . $_SESSION['user'] . ", '" . $_SESSION['status'] . "',  '" . $_POST['theme'] . "', '" . $interactionText . "')";
 
         }
         echo $sql;
@@ -110,45 +111,48 @@ if( $_POST['type'] == 'interactionText' || $_POST['type'] == 'synText' || $_POST
         }
 
     } else {
+        $interactionText = mysqli_real_escape_string($conn, $_POST['interactionText']);
         if($_POST['type'] == 'interactionText') {
+
+
             if (isset($_POST['predictValue1']) && isset($_POST['predictValue2']))
             {
-                $sql = "Update  narrative_response set e1='" . $_POST['interactionText'] . "', p1=" . $_POST['predictValue1'] . ", p2=" . $_POST['predictValue2'] . " where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
+                $sql = "Update  narrative_response set e1='" . $interactionText . "', p1=" . $_POST['predictValue1'] . ", p2=" . $_POST['predictValue2'] . " where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
 
             }
             else
             {
-                $sql = "Update  narrative_response set e1='" . $_POST['interactionText'] . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
+                $sql = "Update  narrative_response set e1='" . $interactionText . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
             }
         }
 
         if($_POST['type'] == 'brain_interactionText' || $_POST['type'] == 'hiv_interactionText') {
             if (isset($_POST['predictValue1']))
             {
-                $sql = "Update  narrative_response set e1='" . $_POST['interactionText'] . "', p1=" . $_POST['predictValue1'] . " where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
+                $sql = "Update  narrative_response set e1='" . $interactionText . "', p1=" . $_POST['predictValue1'] . " where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
 
             }
             else
             {
-                $sql = "Update  narrative_response set e1='" . $_POST['interactionText'] . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
+                $sql = "Update  narrative_response set e1='" . $interactionText . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
 
             }
         }
         if($_POST['type'] == 'bottle_interactionText' || $_POST['type'] == 'disposed_interactionText') {
             if (isset($_POST['predictValue2']))
             {
-                $sql = "Update  narrative_response set e2='" . $_POST['interactionText'] . "', p2=" . $_POST['predictValue2'] . "  where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
+                $sql = "Update  narrative_response set e2='" . $interactionText . "', p2=" . $_POST['predictValue2'] . "  where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
 
             }
             else
             {
-                $sql = "Update  narrative_response set e2='" . $_POST['interactionText'] . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
+                $sql = "Update  narrative_response set e2='" . $interactionText . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
 
             }
         }
         if($_POST['type'] == 'synText')
         {
-            $sql = "Update  narrative_response set syn='" . $_POST['interactionText'] . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
+            $sql = "Update  narrative_response set syn='" . $interactionText . "' where user_id=" . $_SESSION['user'] . " and narrative_condition='" . $_SESSION['status'] . "' and  theme='" . $_POST['theme'] . "' ";
 
         }
         echo $sql;
