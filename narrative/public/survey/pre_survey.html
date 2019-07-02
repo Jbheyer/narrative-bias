@@ -11,7 +11,7 @@
 
       console.log("hello");
       var radioValues = []
-      for (i = 1; i < 17; i++) {
+      for (i = 1; i < 19; i++) {
         if(!$("input[name='q"+i+"']:checked").val())
         {
           alert('Please complete all questions')
@@ -80,7 +80,7 @@
 <div class="wrap" style="width: 800px"; font-family: sans-serif; font-size: 14pt;>
   <h1 class="likert-header">Pretest Survey</h1>
   <form onsubmit="return false;">
-    <label class="statement"><i>Pretest survey: (16 total) </i><br>
+    <label class="statement"><i>Pretest survey: (18 total) </i><br>
       <p></p>
 
         For each of the items below, select the response that best characterizes the extent to which you agree with each item<br>
@@ -468,6 +468,53 @@
       </li>
       <li>
         <input type="radio" name="q16" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    <label class="statement">17.	Public funding should be increased to reduce drug addiction</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q17" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+
+    <label class="statement">18.	Addressing drug addiction should be a goal of the criminal justice system</label>
+    <ul class='likert' style="list-style: none;">
+      <li>
+        <input type="radio" name="q18" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="strong_disagree">
         <label>Strongly disagree</label>
       </li>
     </ul>
