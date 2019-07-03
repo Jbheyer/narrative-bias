@@ -77,9 +77,9 @@
 
 		<div class="instructions title-cell">
 			<span class="title">
-				<br><div style="padding-right: 20px; font-size: 14px; font-family: monospace; font-weight: normal; text-align: right">IRB# 1902381479</div><br>
+				<br><div style="padding-right: 20px; font-size: 14px; font-family: monospace; font-weight: normal; text-align: right">IRB# 1811412310</div><br>
 				Indiana University Study Information Sheet
-				<p><span style="font-size: 16px">Quantifying Color Maps Accuracy</span>
+				<p><span style="font-size: 16px">Evaluation of the Impact of Narrative Visualizations on Bias</span>
 			</span>	
 		</div>
 
@@ -148,54 +148,63 @@
 
 
 
-<p class="terms">You are invited to participate in a study on the accuracy of reading color maps. You were selected as a possible subject because you expressed interest in this study. The entire study will take approximately 20 minutes to complete. However, admission to this study requires a short color-vision test (estimated to take 40 seconds). You will need to pass this test to continue with the study and receive compensation. If you qualify, the study will automatically continue.
+<p class="terms">You are invited to participate in a study on the effects of narrative visualization on bias and decision making.  You were selected as a possible subject because you expressed interest in this study. 
 
-<p class="terms">If you successfully complete this study, you will be paid $3.00. After successfully completing the study you will receive a completion code to enter into Mechanical Turk.  
+<p class="terms">To be eligible for the study you must be at least 18 years of age and over.  The entire study will take approximately 30 minutes to complete.  For your participation, we will compensate you with $3.  The payment will be routed and approved through Amazon Mechanical Turk.
 
-<p class="terms">The study is being conducted by Dr. Khairi Reda from School of Informatics and Computing, Indiana University, Indianapolis. Please read this form and ask any questions you may have before agreeing to be in the study. 
+<p class="terms">
+
+<p class="terms">This study is being conducted by Jeremy Heyer, MPH, MHI and Khairi Reda, PhD from the School of Informatics and Computing, Indiana University, Indianapolis.  Please read through this form and ask any questions you may have before agreeing to participate in the study.
 
 <p class="terms"><b>STUDY PURPOSE</b>
 
-<p class="terms">The purpose of this study is to investigate how accurately people understand information in color maps. Color mapping is a popular method to visualize how a phenomenon (e.g., temperature or terrain elevation) varies over geography. Your participation will help us determine optimal colors schemes to depict information, such as the distribution of warm air in weather maps.
+<p class="terms">The purpose of this study is to explore and understand how narrative visualizations impact peoples bias and decision making.  Your participation will assist us in designing new types of techniques and methods for developing narrative visualizations. 
 
 <p class="terms"><b>PROCEDURES FOR THE STUDY</b>
 
-<p class="terms">Admission to this study requires a short color-vision test (estimated to take 40 seconds). If you qualify, the study will automatically continue. If you do not qualify, the study will immediately end and you will not receive compensation. Additionally, study will include engagement checks to ensure that you understand the questions and that you are paying attention. If you do not pass these checks, you may be eliminated from the study, in which case you will not receive compensation. 
+<p class="terms">This study can be completed in one 30-minute session.  First, there will be a brief tutorial to introduce you to the interface.  You will then complete a pre-survey asking you general knowledge questions about a specific topic.  You will then see and interact with a narrative visualization to learn more about the topic. Throughout, you will see a number of data charts and you will be prompted to answer questions about the data presented.
 
-<p class="terms">You will be shown a series of color maps and promoted to complete a short task (e.g., determine the height of the terrain at a specified point on the map). You will be able to complete this study online, and it should take approximately 20 minutes to complete.
+<p class="terms">
 
+<p class="terms">You will enter your answers in a text box, or prompted to sketch your answers into the visualization using the mouse. At the end of the session, there will be a post survey with questions about the topic you learned about, followed by a brief demographic exit survey. 
+
+<p class="terms">Within both the pre and post surveys there are embedded engagement questions that will need to be answered correctly in order to receive payment for your participation.</p>
+
+<p class="terms">We are interested in how you interact with the visualization and data charts, and how you answer the questions.
+
+<p class="terms">The entire study should take 30 minutes to complete. You may take a break at any point during the study. However, you will need to complete all questions in order to receive the compensation.
 
 <p class="terms"><b>RISKS AND BENEFITS</b>
 
 <p class="terms">The risks or discomforts in this study are:
 <ul>
-<li class="terms">The stress associated with answering the questions.</li> 
+<li class="terms">The stress associated with using a computer for elongated periods of time.</li> 
 <li class="terms">A risk of possible loss of confidentiality.</li>
+<li class="terms">A risk of exposure if potentially sensitive answers you provide are released. </li>
 </ul>
 
 <p class="terms">To avoid loss of confidentiality, your identifiable information will not be shared with anyone outside the research team. 
 
-<p class="terms">You are not expected to benefit individually from participating in this research.  The broader benefits from your participation are allowing us to and determine optimal color schemes for various types of information. This will help researchers design visualizations, such as weather maps, to be more understandable
+<p class="terms">You are not expected to benefit individually from participating in this research.  The broader benefits from your participation are allowing us to design new data visualization techniques to maximize impact and minimize the effects of biases. 
 
 
 <p class="terms"><b>CONFIDENTIALITY</b>
 
-<p class="terms">Efforts will be made to keep your personal information confidential.  However, we cannot guarantee absolute confidentiality. Your personal information may be disclosed if required by law.  Your identity will be held in confidence in reports in which the study may be published and databases in which results may be stored. 
+<p class="terms">Efforts will be made to keep your personal information confidential. However, we cannot guarantee absolute confidentiality. Your personal information may be disclosed if required by law.  Your identity will be held in confidence in reports in which the study may be published and databases in which results may be stored. 
 
 <p class="terms">Organizations that may inspect and/or copy your research records for quality assurance and data analysis include groups such as the study investigator and his/her research associates, the Indiana University Institutional Review Board or its designees and (as allowed by law) state or federal agencies, specifically the Office for Human Research Protections (OHRP), etc., who may need to access your research records.
 
-<p class="terms"><b>FUTURE USE</b>
-<p class="terms">Information collected from you for this study may be used for future research studies or shared with other researchers for future research.  If this happens, information which could identify you will be removed before any information or specimens are shared.  Since identifying information will be removed, we will not ask for your additional consent.  
+<p class="terms">
+<p class="terms">
 
 
 <p class="terms"><b>PAYMENT</b>
 
-<p class="terms">If you successfully complete this study, you will be paid $3.00. If you decide to quit during the study, your answers will not be saved and you will not receive any payment. <!--You will be able to restart your session at a time of your convenience later and you will receive the payment after completing the experiment.-->
-
+<p class="terms">If you complete this study, you will be paid $3. The payment will be routed and approved through Amazon Mechanical Turk.
 
 <p class="terms"><b>CONTACTS FOR QUESTIONS OR PROBLEMS</b><br>
 
-For questions about the study or a research-related injury, contact the researcher, Dr. Khairi Reda, at (317) 274-5788 or by emailing redak@iu.edu. If you cannot reach the researchers during regular business hours (i.e., 8 a.m.  to 5 p.m.), please call the IU Human Subjects Office at 317-278-3458. 
+	For questions about the study or a research-related injury, contact the researcher, Jeremy Heyer, MPH, MHI by emailing jbheyer@iu.edu or Prof. Khairi Reda, at (317) 274-5788 or by emailing redak@iu.edu. If you cannot reach the researchers during regular business hours (i.e., 8 a.m.  to 5 p.m.), please call the IU Human Subjects Office at 317-278-3458. 
 
 <p class="terms"><b>VOLUNTARY NATURE OF THIS STUDY</b>
 
