@@ -167,6 +167,8 @@
 
 <p class="terms">You will enter your answers in a text box, or prompted to sketch your answers into the visualization using the mouse. At the end of the session, there will be a post survey with questions about the topic you learned about, followed by a brief demographic exit survey.
 
+<p class="terms">Within both the pre and post surveys are embedded engagement questions that will need to be answered correctly in order to receive payment for your participation.</p>
+
 <p class="terms">We are interested in how you interact with the visualization and data charts, and how you answer the questions.
 
 <p class="terms">The entire study should take 30 minutes to complete. You may take a break at any point during the study. However, you will need to complete all questions in order to receive the compensation.
