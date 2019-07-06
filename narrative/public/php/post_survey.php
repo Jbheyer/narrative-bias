@@ -26,7 +26,7 @@ if (!isset($_POST['post_survey_values'])) {
     $user_id =  strval($_SESSION['user']);
 
     $query= array();
-    $count = 17;
+    $count = 19;
 
     foreach( $survey_values as $survey_value ) {
 
