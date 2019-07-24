@@ -5,8 +5,8 @@ include 'connect.php';
 
 header("Content-type: text/csv");
 header("Content-Disposition: attachment; filename=result_file.csv");
-header("Pragma: no-cache");
-header("Expires: 0");
+
+set_time_limit(500);
 
 array_to_csv_download($conn);
 function array_to_csv_download($conn, $filename = "export.csv", $delimiter=";") {
