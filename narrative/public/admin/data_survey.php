@@ -10,14 +10,13 @@ header("Expires: 0");
 array_to_csv_download();
 function array_to_csv_download($filename = "export.csv", $delimiter=";") {
 
-        $servername = "localhost";
+    $servername = "localhost";
 
-        $username = "nirmal";
+    $username = "oldamasc_vis";
 
-        $password = "nirmal1989";
+    $password = "visresearch@!UPU!";
 
-        $dbname = "narrative_bias";
-
+    $dbname = "oldamasc_narrative_bias";
     // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
