@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../php/connect.php';
+include 'connect.php';
 
 header("Content-type: text/csv");
 header("Content-Disposition: attachment; filename=result_file.csv");
