@@ -1,7 +1,7 @@
 <?php
-
-
 session_start();
+
+
 header("Content-type: text/csv");
 header("Content-Disposition: attachment; filename=result_file.csv");
 header("Pragma: no-cache");
@@ -10,26 +10,23 @@ header("Expires: 0");
 array_to_csv_download();
 function array_to_csv_download($filename = "export.csv", $delimiter=";") {
 
-    $servername = "localhost";
+        $servername = "localhost";
 
-    $username = "oldamasc_vis";
+        $username = "nirmal";
 
-    $password = "visresearch@!UPU!";
+        $password = "nirmal1989";
 
-    $dbname = "oldamasc_narrative_bias";
+        $dbname = "narrative_bias";
 
-// Create connection
-    $conn = mysqli_connect($servername, $username, $password,$dbname);
+    // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-// Check connection
-    if (!$conn) {
+    // Check connection
+        if (!$conn) {
 
-        die("Connection failed: " . mysqli_connect_error());
+            die("Connection failed: " . mysqli_connect_error());
 
-    }
-
-
-
+        }
     $sql1 = "SELECT mturkid, userid, signuptime, totaltime, expcondition, ((survey_questions.question_id-1)%18+1) as surveyQuestion, type, question_response, responseValue from user, survey_questions, survey_response where user.userid=survey_response.user_id AND type='PRE' AND survey_response.question_id=survey_questions.question_id AND user.keyid is not null AND user.exclude is null order by userid, type, surveyQuestion";
 
     $sql2 = "SELECT mturkid, userid, signuptime, totaltime, expcondition, ((survey_questions.question_id-1)%18+1) as surveyQuestion, type, question_response, responseValue from user, survey_questions, survey_response where user.userid=survey_response.user_id AND type='POST' AND survey_response.question_id=survey_questions.question_id AND user.keyid is not null AND user.exclude is null order by userid, type, surveyQuestion";
