@@ -8,7 +8,7 @@ header("Content-Disposition: attachment; filename=result_file.csv");
 
 set_time_limit(500);
 
-array_to_csv_download($conn);
+
 $delimiter=";";
 
 
@@ -58,13 +58,13 @@ foreach ($json1 as $value1) {
                 'difference' => $difference
             );
             array_push($jsonresult,$temp);
-
+            echo $jsonresult;
 
         }
     }
 }
 
-$output = fopen("php://output", "w");
+$output = fopen("contact.csv", "w");
 foreach ($jsonresult as $row) {
     fputcsv($output, $row, $delimiter);
 }
